@@ -1,0 +1,5 @@
+D:\Dokumente\Code\Git\systems_programming_scripting\Exercise_One\Exercise_One\bin\Debug\Exercise_One.exe
+D:\Dokumente\Code\Git\systems_programming_scripting\Exercise_One\Exercise_One\bin\Debug\Exercise_One.pdb
+D:\Dokumente\Code\Git\systems_programming_scripting\Exercise_One\Exercise_One\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Dokumente\Code\Git\systems_programming_scripting\Exercise_One\Exercise_One\obj\x86\Debug\Exercise_One.exe
+D:\Dokumente\Code\Git\systems_programming_scripting\Exercise_One\Exercise_One\obj\x86\Debug\Exercise_One.pdb
