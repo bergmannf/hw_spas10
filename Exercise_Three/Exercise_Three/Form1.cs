@@ -15,5 +15,13 @@ namespace Exercise_Three
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double valueOne = Double.Parse(textBox1.Text);
+            double valueTwo = Double.Parse(textBox2.Text);
+            double result = valueOne + valueTwo;
+            textBox3.Text = result.ToString();
+        }
     }
 }
