@@ -1,0 +1,49 @@
+# gitignore for LaTeX stuff
+
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+
+# gitignore for VS.Stuff
+
+# compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+
+# VS Upgrade stuff #
+####################
+UpgradeLog.XML
+_UpgradeReport_Files/
+
+# Directories #
+###############
+bin/
+obj/
+TestResults/
+
