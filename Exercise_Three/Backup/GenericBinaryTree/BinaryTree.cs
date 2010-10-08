@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GenericBinaryTree
 {
-    class BinaryTree<T> where T : IComparable
+    class BinaryTree<T> : IEnumerable<T> where T : IComparable
     {
         public Node<T> Root { get; private set; }
 
@@ -80,32 +80,43 @@ namespace GenericBinaryTree
                 }
                 else
                 {
-                    return this.Traverse(Root, index);
+                    return this.Traverse(index);
                 }
             }
         }
 
-        private Node<T> Traverse(Node<T> node, int depth)
+        private Node<T> Traverse(int depth)
         {
-            if (depth == 0)
+            Stack<Node<T>> stack = new Stack();
+            stack.Push(Root);
+            Node<T> currentNode;
+            while (!stack.Count == 0)
             {
-                return node;
-            }
-            else
-            {
-                if (node.LeftChild != null)
+                currentNode = stack.Pop();
+                Node<T> right = currentNode.RightChild;
+                if (right != null)
                 {
-                    return Traverse(node.LeftChild, --depth);
-                }
-                else if (node.RightChild != null)
-                {
-                    return Traverse(node.RightChild, --depth);
-                }
-                else
-                {
-                    return null;
+                    stack.Push(right);
                 }
             }
         }
+
+        #region IEnumerable<T> Members
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new TreeEnumerator<T>(this);
+        }
+
+        #endregion
+
+        #region IEnumerable Members
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

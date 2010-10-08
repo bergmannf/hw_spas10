@@ -14,22 +14,8 @@ namespace GenericBinaryTree
             intTree.Insert(6);
             intTree.Insert(7);
             Console.WriteLine("Tree has {0} elements", intTree.Elements);
-            foreach (int item in intTree)
-            {
-                Console.WriteLine("Item: {0}", item);
-            }
-            Console.WriteLine("After applying the delegate");
-            intTree.Collect(Square);
-            foreach (int item in intTree)
-            {
-                Console.WriteLine("Item: {0}", item);
-            }
+            Node<int> n = intTree[2];
             Console.ReadLine();
-        }
-
-        public static int Square(int x)
-        {
-            return x * x;
         }
     }
 }

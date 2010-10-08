@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise_Three", "Exercise_Three\Exercise_Three.csproj", "{97AEC9BE-AD1A-4BC2-86C1-0C80D6B7D990}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBinaryTree", "GenericBinaryTree\GenericBinaryTree.csproj", "{C85C9169-C432-4859-A213-E261C2D67EAB}"

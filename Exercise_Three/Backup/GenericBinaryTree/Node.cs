@@ -7,7 +7,7 @@ namespace GenericBinaryTree
 {
     class Node<T> where T:IComparable
     {
-        public T Value { get; set; }
+        public T Value { get; private set; }
 
         public Node<T> LeftChild { get; set; }
 
