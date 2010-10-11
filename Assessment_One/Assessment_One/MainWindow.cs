@@ -15,5 +15,15 @@ namespace Assessment_One
         {
             InitializeComponent();
         }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

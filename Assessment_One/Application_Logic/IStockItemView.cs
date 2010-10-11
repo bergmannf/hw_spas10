@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Application_Logic
+namespace ApplicationLogic
 {
-    interface IStockItemView
+    interface IStockView
     {
         
     }
