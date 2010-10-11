@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ApplicationLogic
+namespace ApplicationLogic.Presenter
 {
-    interface IStockView
+    class StockItemPresenter
     {
-        
     }
 }

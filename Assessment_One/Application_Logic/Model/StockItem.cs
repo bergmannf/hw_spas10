@@ -90,6 +90,11 @@ namespace ApplicationLogic.Model
             this.CurrentStock = currentStock;
         }
 
+        public StockItem()
+        {
+            // TODO: Complete member initialization
+        }
+
         /// <summary>
         /// Checks if the stock code conforms to a certain format.
         /// Current format is exactly four numbers, with leading 0 allowed.
@@ -109,6 +114,16 @@ namespace ApplicationLogic.Model
                 return regexp.IsMatch(value);
             }
             
+        }
+
+        public void EditStockItem(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
+        {
+            this.StockCode = stockCode;
+            this.Name = name;
+            this.SupplierName = supplierName;
+            this.UnitCost = unitCost;
+            this.RequiredStock = required;
+            this.CurrentStock = currentStock;
         }
     }
 }
