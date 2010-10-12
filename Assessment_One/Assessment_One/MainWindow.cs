@@ -15,6 +15,7 @@ namespace Assessment_One
     public partial class MainWindow : Form, ICongregateView
     {
         private CongregatePresenter _Presenter;
+		private IViewModel _Model;
 
         private const int STOCKITEMTAB = 0;
         private const int BANKACCOUNTTAB = 1;
@@ -22,28 +23,34 @@ namespace Assessment_One
         public MainWindow()
         {
             InitializeComponent();
-            _Presenter = new CongregatePresenter(this);
+			this._Model = new AppLogicManager();
+            _Presenter = new CongregatePresenter(this, this._Model);
             SetUpDataBindings();
         }
 
         private void SetUpDataBindings()
         {
-            stockItemsListBox.DataSource = _Presenter.StockItems;
+            stockItemsListBox.DataSource = _Model.StockItems;
             stockItemsListBox.DisplayMember = "Name";
+			
+			/*
+			 * The datasourceupdatemode is set to "Never".
+			 * This leads to the ability to enforce the use of the presenter to update the values in the model.
+			 * This way the validation errors can be handled by the presenter thus leading to better seperation of concerns.
+			 */
+            stockCodeTextBox.DataBindings.Add("Text", _Model.StockItems, "StockCode", false, DataSourceUpdateMode.Never);
+            itemNameTextBox.DataBindings.Add("Text", _Model.StockItems, "Name", false, DataSourceUpdateMode.Never);
+            supplierNameTextBox.DataBindings.Add("Text", _Model.StockItems, "SupplierName", false, DataSourceUpdateMode.Never);
+            currStockTextBox.DataBindings.Add("Text", _Model.StockItems, "CurrentStock", false, DataSourceUpdateMode.Never);
+            reqStockTextBox.DataBindings.Add("Text", _Model.StockItems, "RequiredStock", false, DataSourceUpdateMode.Never);
+            priceTextBox.DataBindings.Add("Text", _Model.StockItems, "UnitCost", false, DataSourceUpdateMode.Never);
 
-            stockCodeTextBox.DataBindings.Add("Text", _Presenter.StockItems, "StockCode", false, DataSourceUpdateMode.OnValidation);
-            itemNameTextBox.DataBindings.Add("Text", _Presenter.StockItems, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
-            supplierNameTextBox.DataBindings.Add("Text", _Presenter.StockItems, "SupplierName", false, DataSourceUpdateMode.OnPropertyChanged);
-            currStockTextBox.DataBindings.Add("Text", _Presenter.StockItems, "CurrentStock", false, DataSourceUpdateMode.OnPropertyChanged);
-            reqStockTextBox.DataBindings.Add("Text", _Presenter.StockItems, "RequiredStock", false, DataSourceUpdateMode.OnPropertyChanged);
-            priceTextBox.DataBindings.Add("Text", _Presenter.StockItems, "UnitCost", false, DataSourceUpdateMode.OnPropertyChanged);
-
-            bankAccountsListBox.DataSource = _Presenter.BankAccounts;
+            bankAccountsListBox.DataSource = _Model.BankAccounts;
             bankAccountsListBox.DisplayMember = "AccountNumber";
 
-            accountNumberTextBox.DataBindings.Add("Text", _Presenter.BankAccounts, "AccountNumber", false, DataSourceUpdateMode.OnValidation);
-            nameTextBox.DataBindings.Add("Text", _Presenter.BankAccounts, "Surname", false, DataSourceUpdateMode.OnValidation);
-            balanceTextBox.DataBindings.Add("Text", _Presenter.BankAccounts, "Balance", false, DataSourceUpdateMode.OnValidation);
+            accountNumberTextBox.DataBindings.Add("Text", _Model.BankAccounts, "AccountNumber", false, DataSourceUpdateMode.Never);
+            nameTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Surname", false, DataSourceUpdateMode.Never);
+            balanceTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Balance", false, DataSourceUpdateMode.Never);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,12 +60,14 @@ namespace Assessment_One
 
         public bool ConfirmDelete()
         {
-            throw new NotImplementedException();
+			DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm delete");
+            return result == DialogResult.OK;
         }
 
         public bool ConfirmClose()
         {
-            throw new NotImplementedException();
+			DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm close");
+			return result == DialogResult.OK;
         }
 
         private void stockItemsListBox_SelectedValueChanged(object sender, EventArgs e)

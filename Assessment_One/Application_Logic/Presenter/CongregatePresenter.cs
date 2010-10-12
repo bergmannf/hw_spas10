@@ -8,79 +8,43 @@ using ApplicationLogic.Model;
 
 namespace ApplicationLogic.Presenter
 {
-    /// <summary>
-    /// Presenter for the MainWindow: handles events and application logic.
-    /// </summary>
-    public class CongregatePresenter
-    {
-        private BindingList<StockItem> _StockItems;
-        public BindingList<StockItem> StockItems
-        {
-            get
-            {
-                return _StockItems;
-            }
-            set
-            {
-                _StockItems = value;
-            }
-        }
+	/// <summary>
+	/// Presenter for the MainWindow: handles events and GUI-related part of the application logic.
+	/// </summary>
+	public class CongregatePresenter
+	{
+		
+		public ICongregateView _View;
+		public AppLogicManager _Model;
 
-        private BindingList<BankAccount> _BankAccounts;
-        public BindingList<BankAccount> BankAccounts
-        {
-            get
-            {
-                return _BankAccounts;
-            }
-            set
-            {
-                _BankAccounts = value;
-            }
-        }
-        public ICongregateView _View;
+		public CongregatePresenter (ICongregateView view, IViewModel model)
+		{
+			this._View = view;
+			this._Model = model as AppLogicManager;
+		}
+		
+		public void CreateNewStockItem ()
+		{
+			this._Model.CreateNewStockItem();
+		}
 
-        public CongregatePresenter(ICongregateView view)
-        {
-            this._View = view;
-            this.StockItems = new BindingList<StockItem>();
-            this.BankAccounts = new BindingList<BankAccount>();
-        }
+		public void DeleteStockItem (int p)
+		{
+			if (this._View.ConfirmDelete ()) {
+				this._Model.DeleteStockItem(p);
+			}
+		}
 
-        public void DeleteStockItem(int p)
-        {
-            if (p < this.StockItems.Count)
-            {
-                this.StockItems.RemoveAt(p);
-            }
-            else
-            {
-                throw new ArgumentException("Index is outside of range.");
-            }
-        }
+		public void CreateNewBankAccount ()
+		{
+			this._Model.CreateNewBankAccount();
+		}
 
-        public void CreateNewStockItem()
-        {
-            StockItem si = new StockItem("0000", "Dummy Item", "None", 0.0, 0, 0);
-            this.StockItems.Add(si);
-        }
-
-        public void CreateNewBankAccount()
-        {
-            BankAccount ba = new BankAccount(0, "Dummy Account", 0.0);
-            this.BankAccounts.Add(ba);
-        }
-
-        public void DeleteBankAccount(int p)
-        {
-            if (p < this.BankAccounts.Count)
-            {
-                this.BankAccounts.RemoveAt(p);
-            }
-            else
-            {
-                throw new ArgumentException("Index is outside of range.");
-            }
-        }
-    }
+		public void DeleteBankAccount (int p)
+		{
+			if (this._View.ConfirmDelete ()) {
+					this._Model.DeleteBankAccount(p);
+			}
+		}
+	}
 }
