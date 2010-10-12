@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using ApplicationLogic.Model;
 using ApplicationLogic.Interfaces;
+using ApplicationLogic.Model;
 
 namespace ApplicationLogic.Presenter
 {
@@ -26,16 +26,16 @@ namespace ApplicationLogic.Presenter
             }
         }
 
-        private BindingList<BankAccount> _BankAccoutns;
+        private BindingList<BankAccount> _BankAccounts;
         public BindingList<BankAccount> BankAccounts
         {
             get
             {
-                return _BankAccoutns;
+                return _BankAccounts;
             }
             set
             {
-                _BankAccoutns = value;
+                _BankAccounts = value;
             }
         }
         public ICongregateView _View;

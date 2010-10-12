@@ -133,5 +133,11 @@ namespace Assessment_One
             var file = this.openFileDialog;
             Console.WriteLine(file.ToString());
         }
+
+
+        public void DisplayValidationErrors(ErrorMessageCollection errorCollection)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace ApplicationLogic.Interfaces
         bool ConfirmDelete();
 
         bool ConfirmClose();
+
+        void DisplayValidationErrors(ErrorMessageCollection errorCollection);
     }
 }
