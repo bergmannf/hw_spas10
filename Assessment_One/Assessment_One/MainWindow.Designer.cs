@@ -66,7 +66,9 @@
             this.verticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.horizontalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.stockItemGroupBox = new System.Windows.Forms.GroupBox();
+            this.stockItemsListBox = new System.Windows.Forms.ListBox();
             this.bankAccountGroupBox = new System.Windows.Forms.GroupBox();
+            this.bankAccountsListBox = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.stockItemActionsGroupBox = new System.Windows.Forms.GroupBox();
@@ -106,8 +108,6 @@
             this.accountNumberTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.stockItemsListBox = new System.Windows.Forms.ListBox();
-            this.bankAccountsListBox = new System.Windows.Forms.ListBox();
             this.stockItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockItemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.congregatePresenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -292,7 +292,7 @@
             this.openToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -301,20 +301,20 @@
             this.saveToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.disk;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(145, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.door_open_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editMenuItem
@@ -451,6 +451,7 @@
             this.verticalSplitContainer.Size = new System.Drawing.Size(468, 373);
             this.verticalSplitContainer.SplitterDistance = 135;
             this.verticalSplitContainer.TabIndex = 2;
+            this.verticalSplitContainer.TabStop = false;
             // 
             // horizontalSplitContainer
             // 
@@ -471,6 +472,7 @@
             this.horizontalSplitContainer.Size = new System.Drawing.Size(129, 367);
             this.horizontalSplitContainer.SplitterDistance = 217;
             this.horizontalSplitContainer.TabIndex = 0;
+            this.horizontalSplitContainer.TabStop = false;
             // 
             // stockItemGroupBox
             // 
@@ -485,6 +487,18 @@
             this.stockItemGroupBox.TabStop = false;
             this.stockItemGroupBox.Text = "Stock Items";
             // 
+            // stockItemsListBox
+            // 
+            this.stockItemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.stockItemsListBox.FormattingEnabled = true;
+            this.stockItemsListBox.Location = new System.Drawing.Point(7, 20);
+            this.stockItemsListBox.Name = "stockItemsListBox";
+            this.stockItemsListBox.Size = new System.Drawing.Size(110, 186);
+            this.stockItemsListBox.TabIndex = 0;
+            this.stockItemsListBox.SelectedValueChanged += new System.EventHandler(this.stockItemsListBox_SelectedValueChanged);
+            // 
             // bankAccountGroupBox
             // 
             this.bankAccountGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -497,6 +511,18 @@
             this.bankAccountGroupBox.TabIndex = 0;
             this.bankAccountGroupBox.TabStop = false;
             this.bankAccountGroupBox.Text = "Bank Accounts";
+            // 
+            // bankAccountsListBox
+            // 
+            this.bankAccountsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.bankAccountsListBox.FormattingEnabled = true;
+            this.bankAccountsListBox.Location = new System.Drawing.Point(7, 20);
+            this.bankAccountsListBox.Name = "bankAccountsListBox";
+            this.bankAccountsListBox.Size = new System.Drawing.Size(110, 108);
+            this.bankAccountsListBox.TabIndex = 0;
+            this.bankAccountsListBox.SelectedIndexChanged += new System.EventHandler(this.bankAccountsListBox_SelectedIndexChanged);
             // 
             // tabControl1
             // 
@@ -552,6 +578,7 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(264, 46);
             this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "To place an order choose a valid bank account from the left-side and enter the qu" +
                 "antity to be ordered.\n";
             // 
@@ -562,7 +589,7 @@
             this.quantityTextBox.Location = new System.Drawing.Point(101, 71);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(114, 20);
-            this.quantityTextBox.TabIndex = 2;
+            this.quantityTextBox.TabIndex = 6;
             this.quantityTextBox.Text = "Quantity\r\n";
             // 
             // placeOrderButton
@@ -571,7 +598,7 @@
             this.placeOrderButton.Location = new System.Drawing.Point(221, 71);
             this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(75, 23);
-            this.placeOrderButton.TabIndex = 1;
+            this.placeOrderButton.TabIndex = 7;
             this.placeOrderButton.Text = "Place Order";
             this.placeOrderButton.UseVisualStyleBackColor = true;
             // 
@@ -588,11 +615,10 @@
             // applyButton
             // 
             this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.applyButton.Enabled = false;
             this.applyButton.Location = new System.Drawing.Point(228, 309);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 1;
+            this.applyButton.TabIndex = 8;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             // 
@@ -772,7 +798,7 @@
             this.withdrawButton.Location = new System.Drawing.Point(222, 48);
             this.withdrawButton.Name = "withdrawButton";
             this.withdrawButton.Size = new System.Drawing.Size(75, 23);
-            this.withdrawButton.TabIndex = 5;
+            this.withdrawButton.TabIndex = 16;
             this.withdrawButton.Text = "Withdraw";
             this.withdrawButton.UseVisualStyleBackColor = true;
             // 
@@ -783,7 +809,7 @@
             this.depositButton.Location = new System.Drawing.Point(222, 19);
             this.depositButton.Name = "depositButton";
             this.depositButton.Size = new System.Drawing.Size(75, 23);
-            this.depositButton.TabIndex = 4;
+            this.depositButton.TabIndex = 15;
             this.depositButton.Text = "Deposit";
             this.depositButton.UseVisualStyleBackColor = true;
             // 
@@ -803,7 +829,7 @@
             this.withdrawQuantityTextBox.Location = new System.Drawing.Point(98, 50);
             this.withdrawQuantityTextBox.Name = "withdrawQuantityTextBox";
             this.withdrawQuantityTextBox.Size = new System.Drawing.Size(118, 20);
-            this.withdrawQuantityTextBox.TabIndex = 2;
+            this.withdrawQuantityTextBox.TabIndex = 14;
             // 
             // depositQuantityTextBox
             // 
@@ -812,7 +838,7 @@
             this.depositQuantityTextBox.Location = new System.Drawing.Point(98, 19);
             this.depositQuantityTextBox.Name = "depositQuantityTextBox";
             this.depositQuantityTextBox.Size = new System.Drawing.Size(118, 20);
-            this.depositQuantityTextBox.TabIndex = 1;
+            this.depositQuantityTextBox.TabIndex = 13;
             // 
             // label1
             // 
@@ -826,11 +852,10 @@
             // applyBankAccountButton
             // 
             this.applyBankAccountButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.applyBankAccountButton.Enabled = false;
             this.applyBankAccountButton.Location = new System.Drawing.Point(228, 309);
             this.applyBankAccountButton.Name = "applyBankAccountButton";
             this.applyBankAccountButton.Size = new System.Drawing.Size(75, 23);
-            this.applyBankAccountButton.TabIndex = 3;
+            this.applyBankAccountButton.TabIndex = 17;
             this.applyBankAccountButton.Text = "Apply";
             this.applyBankAccountButton.UseVisualStyleBackColor = true;
             this.applyBankAccountButton.Click += new System.EventHandler(this.button2_Click);
@@ -889,7 +914,7 @@
             this.balanceTextBox.Location = new System.Drawing.Point(98, 78);
             this.balanceTextBox.Name = "balanceTextBox";
             this.balanceTextBox.Size = new System.Drawing.Size(157, 20);
-            this.balanceTextBox.TabIndex = 14;
+            this.balanceTextBox.TabIndex = 12;
             // 
             // nameTextBox
             // 
@@ -899,7 +924,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(98, 51);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(157, 20);
-            this.nameTextBox.TabIndex = 13;
+            this.nameTextBox.TabIndex = 10;
             // 
             // accountNumberTextBox
             // 
@@ -909,35 +934,11 @@
             this.accountNumberTextBox.Location = new System.Drawing.Point(98, 24);
             this.accountNumberTextBox.Name = "accountNumberTextBox";
             this.accountNumberTextBox.Size = new System.Drawing.Size(157, 20);
-            this.accountNumberTextBox.TabIndex = 12;
+            this.accountNumberTextBox.TabIndex = 9;
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // stockItemsListBox
-            // 
-            this.stockItemsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.stockItemsListBox.FormattingEnabled = true;
-            this.stockItemsListBox.Location = new System.Drawing.Point(7, 20);
-            this.stockItemsListBox.Name = "stockItemsListBox";
-            this.stockItemsListBox.Size = new System.Drawing.Size(110, 186);
-            this.stockItemsListBox.TabIndex = 0;
-            this.stockItemsListBox.SelectedValueChanged += new System.EventHandler(this.stockItemsListBox_SelectedValueChanged);
-            // 
-            // bankAccountsListBox
-            // 
-            this.bankAccountsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.bankAccountsListBox.FormattingEnabled = true;
-            this.bankAccountsListBox.Location = new System.Drawing.Point(7, 20);
-            this.bankAccountsListBox.Name = "bankAccountsListBox";
-            this.bankAccountsListBox.Size = new System.Drawing.Size(110, 108);
-            this.bankAccountsListBox.TabIndex = 0;
-            this.bankAccountsListBox.SelectedIndexChanged += new System.EventHandler(this.bankAccountsListBox_SelectedIndexChanged);
             // 
             // stockItemBindingSource
             // 
