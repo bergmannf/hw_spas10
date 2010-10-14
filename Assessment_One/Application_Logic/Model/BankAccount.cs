@@ -2,16 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 
 namespace ApplicationLogic.Model
 {
     /// <summary>
     /// Pseudo bank account to allow the placement of an order.
     /// </summary>
-    public class BankAccount
+    public class BankAccount : INotifyPropertyChanged
     {
-        public int AccountNumber { get; set; }
-        public String Surname { get; set; }
+        private int _AccountNumber;
+        public int AccountNumber
+        {
+            get
+            {
+                return _AccountNumber;
+            }
+            set
+            {
+                _AccountNumber = value;
+                this.NotifyPropertyChanged("AccountNumber");
+            }
+        }
+
+        private String _Surname;
+        public String Surname
+        {
+            get
+            {
+                return _Surname;
+            }
+            set
+            {
+                _Surname = value;
+                this.NotifyPropertyChanged("Surname");
+            }
+        }
+
         private double _Balance;
         public double Balance
         {
@@ -25,7 +52,12 @@ namespace ApplicationLogic.Model
                 {
                     throw new ArgumentException("This class does not allow a balance smaller than 0.");
                 }
-                _Balance = value;
+                else
+                {
+                    _Balance = value;
+                    this.NotifyPropertyChanged("Balance");
+                }
+                
             }
         }
 
@@ -100,6 +132,22 @@ namespace ApplicationLogic.Model
             {
                 throw new ArgumentException("It is not possible to transfer funds from another account to yours.");
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+
+        internal void EditBankAccount(string surname, int accountNumber)
+        {
+            this.Surname = surname;
+            this.AccountNumber = accountNumber;
         }
     }
 }

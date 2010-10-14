@@ -15,11 +15,15 @@ namespace ApplicationLogic.Presenter
 	{
 		
 		public ICongregateView _View;
+        public IStockItemView _StockItemView;
+        public IBankAccountView _BankAccountView;
 		public AppLogicManager _Model;
 
-		public CongregatePresenter (ICongregateView view, IViewModel model)
+		public CongregatePresenter (ICongregateView view, IStockItemView stockItemView, IBankAccountView bankAccountView, IViewModel model)
 		{
 			this._View = view;
+            this._StockItemView = stockItemView;
+            this._BankAccountView = bankAccountView;
 			this._Model = model as AppLogicManager;
 		}
 		
@@ -46,5 +50,23 @@ namespace ApplicationLogic.Presenter
 					this._Model.DeleteBankAccount(p);
 			}
 		}
-	}
+
+        public void EditStockItem(int index)
+        {
+            String stockCode = this._StockItemView.StockCode;
+            String supplier = this._StockItemView.SupplierName;
+            String name = this._StockItemView.ItemName;
+            int currentStock = this._StockItemView.CurrentStock;
+            int reqStock = this._StockItemView.RequiredStock;
+            double price = this._StockItemView.UnitCost;
+            this._Model.EditStockItem(index, stockCode, supplier, name, currentStock, reqStock, price);
+        }
+
+        public void EditBankAccount(int index)
+        {
+            String surname = this._BankAccountView.Surname;
+            int accountNumber = this._BankAccountView.AccountNumber;
+            this._Model.EditBankAccount(index, surname, accountNumber);
+        }
+    }
 }

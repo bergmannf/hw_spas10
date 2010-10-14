@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.ComponentModel;
 
 namespace ApplicationLogic.Model
 {
-    public class StockItem
+    public class StockItem : INotifyPropertyChanged
     {
         private String _StockCode;
         public String StockCode
@@ -21,13 +22,41 @@ namespace ApplicationLogic.Model
                 {
                     throw new ArgumentException("Provided stockcode did not match designated format.");
                 }
-                this._StockCode = value;
+                else
+                {
+                    this._StockCode = value;
+                    this.NotifyPropertyChanged("StockCode");
+                }
             }
         }
 
-        public String Name { get; set; }
+        private String _Name;
+        public String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                _Name = value;
+                this.NotifyPropertyChanged("Name");
+            }
+        }
 
-        public String SupplierName { get; set; }
+        private String _SupplierName;
+        public String SupplierName
+        {
+            get
+            {
+                return _SupplierName;
+            }
+            set
+            {
+                _SupplierName = value;
+                this.NotifyPropertyChanged("SupplierName");
+            }
+        }
 
         private double _UnitCost;
         public double UnitCost
@@ -42,7 +71,12 @@ namespace ApplicationLogic.Model
                 {
                     throw new ArgumentException("Price can not be lower than 0.");
                 }
-                _UnitCost = value;
+                else
+                {
+                    _UnitCost = value;
+                    this.NotifyPropertyChanged("UnitCost");
+                }
+                
             }
         }
 
@@ -59,7 +93,12 @@ namespace ApplicationLogic.Model
                 {
                     throw new ArgumentException("Can not require less than 0 items.");
                 }
-                _RequiredStock = value;
+                else
+                {
+                    _RequiredStock = value;
+                    this.NotifyPropertyChanged("RequiredStock");
+                }
+                
             }
         }
 
@@ -76,7 +115,12 @@ namespace ApplicationLogic.Model
                 {
                     throw new ArgumentException("Current stock can not be less than 0 items.");
                 }
-                _CurrentStock = value;
+                else
+                {
+                    _CurrentStock = value;
+                    this.NotifyPropertyChanged("CurrentStock");
+                }
+                
             }
         }
 
@@ -125,5 +169,16 @@ namespace ApplicationLogic.Model
             this.RequiredStock = required;
             this.CurrentStock = currentStock;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+
     }
 }

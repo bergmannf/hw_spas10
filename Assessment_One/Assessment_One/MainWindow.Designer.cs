@@ -621,6 +621,7 @@
             this.applyButton.TabIndex = 8;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // stockItemInformationGroupBox
             // 
@@ -858,7 +859,7 @@
             this.applyBankAccountButton.TabIndex = 17;
             this.applyBankAccountButton.Text = "Apply";
             this.applyBankAccountButton.UseVisualStyleBackColor = true;
-            this.applyBankAccountButton.Click += new System.EventHandler(this.button2_Click);
+            this.applyBankAccountButton.Click += new System.EventHandler(this.applyBankAccountButton_Click);
             // 
             // bankAccountInformationGroupBox
             // 

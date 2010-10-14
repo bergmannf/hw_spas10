@@ -12,7 +12,7 @@ using ApplicationLogic.Model;
 
 namespace Assessment_One
 {
-    public partial class MainWindow : Form, ICongregateView
+    public partial class MainWindow : Form, ICongregateView, IStockItemView, IBankAccountView
     {
         private CongregatePresenter _Presenter;
 		private IViewModel _Model;
@@ -24,7 +24,7 @@ namespace Assessment_One
         {
             InitializeComponent();
 			this._Model = new AppLogicManager();
-            _Presenter = new CongregatePresenter(this, this._Model);
+            _Presenter = new CongregatePresenter(this, this, this, this._Model);
             SetUpDataBindings();
         }
 
@@ -147,6 +147,64 @@ namespace Assessment_One
         public void DisplayValidationErrors(ErrorMessageCollection errorCollection)
         {
             throw new NotImplementedException();
+        }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+            int index = stockItemsListBox.SelectedIndex;
+            this._Presenter.EditStockItem(index);
+        }
+
+        private void applyBankAccountButton_Click(object sender, EventArgs e)
+        {
+            int index = bankAccountsListBox.SelectedIndex;
+            this._Presenter.EditBankAccount(index);
+        }
+
+        public int CurrentStock
+        {
+            get { return int.Parse(currStockTextBox.Text); }
+        }
+
+        public int RequiredStock
+        {
+            get { return int.Parse(reqStockTextBox.Text); }
+        }
+
+        public string StockCode
+        {
+            get { return stockCodeTextBox.Text; }
+        }
+
+        public string SupplierName
+        {
+            get { return supplierNameTextBox.Text; }
+        }
+
+        public double UnitCost
+        {
+            get { return double.Parse(priceTextBox.Text); }
+        }
+
+
+        public string ItemName
+        {
+            get { return itemNameTextBox.Text; }
+        }
+
+        public int AccountNumber
+        {
+            get { return int.Parse(accountNumberTextBox.Text); }
+        }
+
+        public string Surname
+        {
+            get { return nameTextBox.Text; }
+        }
+
+        public double Balance
+        {
+            get { return double.Parse(balanceTextBox.Text); }
         }
     }
 }

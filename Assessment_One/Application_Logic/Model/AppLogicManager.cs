@@ -57,6 +57,20 @@ namespace ApplicationLogic.Model
 		public void OrderItemFromAccount()
 		{
 		}
-	}
+
+        internal void EditStockItem(int index, string stockCode, string supplier, string name, int currentStock, int reqStock, double price)
+        {
+            StockItem si = StockItems[index];
+            // TODO Add validation!
+            si.EditStockItem(stockCode, name, supplier, price, reqStock, currentStock);
+        }
+
+        internal void EditBankAccount(int index, string surname, int accountNumber)
+        {
+            BankAccount ba = BankAccounts[index];
+            // TODO Add validation!
+            ba.EditBankAccount(surname, accountNumber);
+        }
+    }
 }
 
