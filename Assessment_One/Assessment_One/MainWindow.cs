@@ -24,7 +24,7 @@ namespace Assessment_One
         public MainWindow()
         {
             InitializeComponent();
-            this._Model = new AppLogicManager();
+            this._Model = new AppDataManager();
             _Presenter = new CongregatePresenter(this, this, this, this._Model);
             this.backgroundColorChanged = new List<Control>();
             SetUpDataBindings();
@@ -90,7 +90,7 @@ namespace Assessment_One
 
         private void deleteStockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _Presenter.DeleteStockItem(stockItemsListBox.SelectedIndex);
+            _Presenter.DeleteStockItem();
         }
 
         private void addBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace Assessment_One
 
         private void deleteBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this._Presenter.DeleteBankAccount(bankAccountsListBox.SelectedIndex);
+            this._Presenter.DeleteBankAccount();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,8 +113,7 @@ namespace Assessment_One
         private void applyButton_Click(object sender, EventArgs e)
         {
             this.ResetColoring();
-            int index = stockItemsListBox.SelectedIndex;
-            this._Presenter.EditStockItem(index);
+            this._Presenter.EditStockItem();
         }
 
         private void ResetColoring()
@@ -128,27 +127,22 @@ namespace Assessment_One
         private void applyBankAccountButton_Click(object sender, EventArgs e)
         {
             this.ResetColoring();
-            int index = bankAccountsListBox.SelectedIndex;
-            this._Presenter.EditBankAccount(index);
+            this._Presenter.EditBankAccount();
         }
 
         void PlaceOrderButton_Click(object sender, EventArgs e)
         {
-            int indexStockItem = stockItemsListBox.SelectedIndex;
-            int indexBankAccount = bankAccountsListBox.SelectedIndex;
-            this._Presenter.OrderItem(indexStockItem, indexBankAccount);
+            this._Presenter.OrderItem();
         }
 
         private void depositButton_Click(object sender, EventArgs e)
         {
-            int indexBankAccount = bankAccountsListBox.SelectedIndex;
-            this._Presenter.Deposit(indexBankAccount);
+            this._Presenter.Deposit();
         }
 
         private void withdrawButton_Click(object sender, EventArgs e)
         {
-            int indexBankAccount = bankAccountsListBox.SelectedIndex;
-            this._Presenter.Withdraw(indexBankAccount);
+            this._Presenter.Withdraw();
         }
 
         #endregion
@@ -273,6 +267,16 @@ namespace Assessment_One
 
         #region ICongregateView
 
+        public StockItem StockItem
+        {
+            get { return (StockItem)this.stockItemsListBox.SelectedItem; }
+        }
+
+        public BankAccount BankAccount
+        {
+            get { return (BankAccount)this.bankAccountsListBox.SelectedItem; }
+        }
+
         public int Quantity
         {
             get
@@ -375,6 +379,5 @@ namespace Assessment_One
         }
 
         #endregion
-
     }
 }

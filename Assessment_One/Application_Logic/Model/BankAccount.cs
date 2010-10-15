@@ -118,7 +118,7 @@ namespace ApplicationLogic.Model
         /// <param name="accountNumber">Account number to transfer the money to.</param>
         public void Transfer(int accountNumber, double amount)
         {
-            if (amount > 0.0)
+            if (amount >= 0.0)
             {
                 if (this.Balance > amount)
                 {

@@ -17,14 +17,14 @@ namespace ApplicationLogic.Presenter
 		public ICongregateView _View;
 		public IStockItemView _StockItemView;
 		public IBankAccountView _BankAccountView;
-		public AppLogicManager _Model;
+		public AppDataManager _Model;
 
 		public CongregatePresenter (ICongregateView view, IStockItemView stockItemView, IBankAccountView bankAccountView, IViewModel model)
 		{
 			this._View = view;
 			this._StockItemView = stockItemView;
 			this._BankAccountView = bankAccountView;
-			this._Model = model as AppLogicManager;
+			this._Model = model as AppDataManager;
 		}
 		
 		public void CreateNewStockItem ()
@@ -32,10 +32,11 @@ namespace ApplicationLogic.Presenter
 			this._Model.CreateNewStockItem();
 		}
 
-		public void DeleteStockItem (int p)
+		public void DeleteStockItem ()
 		{
 			if (this._View.ConfirmDelete ()) {
-				this._Model.DeleteStockItem(p);
+                StockItem si = this._View.StockItem;
+				this._Model.DeleteStockItem(si);
 			}
 		}
 
@@ -44,17 +45,19 @@ namespace ApplicationLogic.Presenter
 			this._Model.CreateNewBankAccount();
 		}
 
-		public void DeleteBankAccount (int p)
+		public void DeleteBankAccount ()
 		{
 			if (this._View.ConfirmDelete ()) {
-				this._Model.DeleteBankAccount(p);
+                BankAccount ba = this._View.BankAccount;
+				this._Model.DeleteBankAccount(ba);
 			}
 		}
 
-		public void EditStockItem(int index)
+		public void EditStockItem()
 		{
             try
             {
+                StockItem si = this._View.StockItem;
                 String stockCode = this._StockItemView.StockCode;
                 String supplier = this._StockItemView.SupplierName;
                 String name = this._StockItemView.ItemName;
@@ -64,7 +67,7 @@ namespace ApplicationLogic.Presenter
                 bool areValuesValid = this._Model.ValidateStockItem(stockCode, name, supplier, price, reqStock, currentStock);
                 if (areValuesValid)
                 {
-                    this._Model.EditStockItem(index, stockCode, supplier, name, currentStock, reqStock, price);
+                    this._Model.EditStockItem(si, stockCode, supplier, name, currentStock, reqStock, price);
                 }
                 else
                 {
@@ -79,16 +82,17 @@ namespace ApplicationLogic.Presenter
 			
 		}
 
-		public void EditBankAccount(int index)
+		public void EditBankAccount()
 		{
             try
             {
+                BankAccount ba = this._View.BankAccount;
                 String surname = this._BankAccountView.Surname;
                 int accountNumber = this._BankAccountView.AccountNumber;
                 bool areValuesValid = this._Model.ValidateBankAccount(accountNumber, surname);
                 if (areValuesValid)
                 {
-                    this._Model.EditBankAccount(index, surname, accountNumber);
+                    this._Model.EditBankAccount(ba, surname, accountNumber);
                 }
                 else
                 {
@@ -103,12 +107,15 @@ namespace ApplicationLogic.Presenter
 			
 		}
 
-		public void OrderItem(int indexStockItem, int indexBankAccount)
+		public void OrderItem()
 		{
             try
             {
+                BankAccount ba = this._View.BankAccount;
+                StockItem si = this._View.StockItem;
+                this.EditStockItem();
                 int quantity = this._View.Quantity;
-                this._Model.OrderItem(indexStockItem, indexBankAccount, quantity);
+                this._Model.OrderItem(si, ba, quantity);
             }
             catch (FormatException e)
             {
@@ -120,19 +127,13 @@ namespace ApplicationLogic.Presenter
             }
 		}
 
-        private void DisplayError(Exception e)
-        {
-            ErrorMessageCollection col = new ErrorMessageCollection();
-            col.Add(new ErrorMessage(e.Message));
-            this._View.DisplayValidationErrors(col);
-        }
-
-        public void Deposit(int indexBankAccount)
+        public void Deposit()
         {
             try
             {
+                BankAccount ba = this._View.BankAccount;
                 double amount = this._View.Deposit;
-                this._Model.Deposit(indexBankAccount, amount);
+                this._Model.Deposit(ba, amount);
             }
             catch (Exception e)
             {
@@ -140,17 +141,25 @@ namespace ApplicationLogic.Presenter
             }
         }
 
-        public void Withdraw(int indexBankAccount)
+        public void Withdraw()
         {
             try
             {
+                BankAccount ba = this._View.BankAccount;
                 double amount = this._View.Withdraw;
-                this._Model.Withdraw(indexBankAccount, amount);
+                this._Model.Withdraw(ba, amount);
             }
-            catch (FormatException e)
+            catch (Exception e)
             {
                 DisplayError(e);
             }
+        }
+
+        private void DisplayError(Exception e)
+        {
+            ErrorMessageCollection col = new ErrorMessageCollection();
+            col.Add(new ErrorMessage(e.Message));
+            this._View.DisplayValidationErrors(col);
         }
     }
 }

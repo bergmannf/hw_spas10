@@ -6,18 +6,22 @@ using ApplicationLogic.Model;
 
 namespace ApplicationLogic.Interfaces
 {
-	public interface ICongregateView
-	{
-		int Quantity{get;}
-		
-		double Deposit{get;}
+    public interface ICongregateView
+    {
+        StockItem StockItem { get; }
 
-		double Withdraw{get;}
-		
-		bool ConfirmDelete();
+        BankAccount BankAccount { get; }
 
-		bool ConfirmClose();
+        int Quantity { get; }
 
-		void DisplayValidationErrors(ErrorMessageCollection errorCollection);
-	}
+        double Deposit { get; }
+
+        double Withdraw { get; }
+
+        bool ConfirmDelete();
+
+        bool ConfirmClose();
+
+        void DisplayValidationErrors(ErrorMessageCollection errorCollection);
+    }
 }
