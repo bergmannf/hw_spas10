@@ -103,11 +103,32 @@ namespace Assessment_One
             this._Presenter.DeleteBankAccount();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openStockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.openFileDialog.ShowDialog();
-            var file = this.openFileDialog;
-            Console.WriteLine(file.ToString());
+            OpenFileDialog file = this.openFileDialog;
+            this._Presenter.LoadStockItemsFromFile(file.FileName);
+        }
+
+        private void openBankAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog.ShowDialog();
+            OpenFileDialog file = this.openFileDialog;
+            this._Presenter.LoadBankAccountsFromFile(file.FileName);
+        }
+
+        private void saveStockItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.saveFileDialog.ShowDialog();
+            SaveFileDialog file = this.saveFileDialog;
+            this._Presenter.SaveStockItemsToFile(file.FileName);
+        }
+
+        private void saveBankAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.saveFileDialog.ShowDialog();
+            SaveFileDialog file = this.saveFileDialog;
+            this._Presenter.SaveBankAccountsToFile(file.FileName);
         }
 
         private void applyButton_Click(object sender, EventArgs e)
@@ -143,6 +164,11 @@ namespace Assessment_One
         private void withdrawButton_Click(object sender, EventArgs e)
         {
             this._Presenter.Withdraw();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this._Presenter.CloseApplication();
         }
 
         #endregion
@@ -333,19 +359,19 @@ namespace Assessment_One
 
         public void DisplayValidationErrors(ErrorMessageCollection errorCollection)
         {
-            MessageBox.Show(errorCollection.ToString());
+            MessageBox.Show(errorCollection.ToString(), "Errors occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public bool ConfirmDelete()
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm delete");
-            return result == DialogResult.OK;
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return result == DialogResult.Yes;
         }
 
         public bool ConfirmClose()
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm close");
-            return result == DialogResult.OK;
+            DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return result == DialogResult.Yes;
         }
 
         #endregion
@@ -379,5 +405,8 @@ namespace Assessment_One
         }
 
         #endregion
+
+
+        
     }
 }

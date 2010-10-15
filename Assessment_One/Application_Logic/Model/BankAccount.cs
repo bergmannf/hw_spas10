@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using ApplicationLogic.Interfaces;
 
 namespace ApplicationLogic.Model
 {
     /// <summary>
     /// Pseudo bank account to allow the placement of an order.
     /// </summary>
-    public class BankAccount : INotifyPropertyChanged
+    public class BankAccount : INotifyPropertyChanged, ICSVSerializable<BankAccount>
     {
         private int _AccountNumber;
         public int AccountNumber
@@ -62,6 +63,10 @@ namespace ApplicationLogic.Model
         }
 
         public static ErrorMessageCollection ErrorMessages = new ErrorMessageCollection();
+
+        public BankAccount()
+        {
+        }
 
         public BankAccount(int acc, string name, double balance)
         {
@@ -163,6 +168,16 @@ namespace ApplicationLogic.Model
         {
             this.Surname = surname;
             this.AccountNumber = accountNumber;
+        }
+
+        public string CsvRepresentation()
+        {
+            return String.Format("{0},{1},{2}", this.AccountNumber, this.Surname, this.Balance);
+        }
+
+        public BankAccount ParseFromString(string stringRepresentation)
+        {
+            throw new NotImplementedException();
         }
     }
 }

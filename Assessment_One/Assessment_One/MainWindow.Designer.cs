@@ -43,7 +43,11 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openStockItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openBankAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveStockItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveBankAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,7 +161,7 @@
             this.loadToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.loadToolStripButton.Text = "toolStripButton2";
             this.loadToolStripButton.ToolTipText = "Open a file";
-            this.loadToolStripButton.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.loadToolStripButton.Click += new System.EventHandler(this.openStockItemToolStripMenuItem_Click);
             // 
             // saveToolStripButton
             // 
@@ -253,33 +257,69 @@
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openStockItemsToolStripMenuItem,
+            this.openBankAccountsToolStripMenuItem});
             this.openToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // openStockItemsToolStripMenuItem
+            // 
+            this.openStockItemsToolStripMenuItem.Name = "openStockItemsToolStripMenuItem";
+            this.openStockItemsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openStockItemsToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.openStockItemsToolStripMenuItem.Text = "Open stock Items";
+            this.openStockItemsToolStripMenuItem.Click += new System.EventHandler(this.openStockItemToolStripMenuItem_Click);
+            // 
+            // openBankAccountsToolStripMenuItem
+            // 
+            this.openBankAccountsToolStripMenuItem.Name = "openBankAccountsToolStripMenuItem";
+            this.openBankAccountsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
+            this.openBankAccountsToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.openBankAccountsToolStripMenuItem.Text = "Open bank accounts";
+            this.openBankAccountsToolStripMenuItem.Click += new System.EventHandler(this.openBankAccountsToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveStockItemsToolStripMenuItem,
+            this.saveBankAccountsToolStripMenuItem});
             this.saveToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.disk;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveStockItemsToolStripMenuItem
+            // 
+            this.saveStockItemsToolStripMenuItem.Name = "saveStockItemsToolStripMenuItem";
+            this.saveStockItemsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveStockItemsToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.saveStockItemsToolStripMenuItem.Text = "Save stock items";
+            this.saveStockItemsToolStripMenuItem.Click += new System.EventHandler(this.saveStockItemsToolStripMenuItem_Click);
+            // 
+            // saveBankAccountsToolStripMenuItem
+            // 
+            this.saveBankAccountsToolStripMenuItem.Name = "saveBankAccountsToolStripMenuItem";
+            this.saveBankAccountsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.saveBankAccountsToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.saveBankAccountsToolStripMenuItem.Text = "Save bank accounts";
+            this.saveBankAccountsToolStripMenuItem.Click += new System.EventHandler(this.saveBankAccountsToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.door_open_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editMenuItem
             // 
@@ -1020,6 +1060,10 @@
         private System.Windows.Forms.ListBox bankAccountsListBox;
         private System.Windows.Forms.BindingSource stockItemBindingSource1;
         private System.Windows.Forms.BindingSource congregatePresenterBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem openStockItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openBankAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveStockItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveBankAccountsToolStripMenuItem;
 
     }
 }

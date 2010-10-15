@@ -34,7 +34,8 @@ namespace ApplicationLogic.Presenter
 
 		public void DeleteStockItem ()
 		{
-			if (this._View.ConfirmDelete ()) {
+			if (this._View.ConfirmDelete ()) 
+            {
                 StockItem si = this._View.StockItem;
 				this._Model.DeleteStockItem(si);
 			}
@@ -160,6 +161,32 @@ namespace ApplicationLogic.Presenter
             ErrorMessageCollection col = new ErrorMessageCollection();
             col.Add(new ErrorMessage(e.Message));
             this._View.DisplayValidationErrors(col);
+        }
+
+        public void CloseApplication()
+        {
+            if (this._View.ConfirmClose())
+                Environment.Exit(1);
+        }
+
+        public void LoadStockItemsFromFile(String filePath)
+        {
+            this._Model.LoadStockItemsFromFile(filePath);
+        }
+
+        public void LoadBankAccountsFromFile(String filePath)
+        {
+            this._Model.LoadBankAccountsFromFile(filePath);
+        }
+
+        public void SaveStockItemsToFile(String filePath)
+        {
+            this._Model.SaveStockItemsToFile(filePath);
+        }
+
+        public void SaveBankAccountsToFile(String filePath)
+        {
+            this._Model.SaveBankAccountsToFile(filePath);
         }
     }
 }

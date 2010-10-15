@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
+using ApplicationLogic.Interfaces;
 
 namespace ApplicationLogic.Model
 {
-    public class StockItem : INotifyPropertyChanged
+    public class StockItem : INotifyPropertyChanged, ICSVSerializable<StockItem>
     {
         private String _StockCode;
         public String StockCode
@@ -126,6 +127,9 @@ namespace ApplicationLogic.Model
 
         public static ErrorMessageCollection ErrorMessages = new ErrorMessageCollection();
 
+        public StockItem()
+        { }
+
         public StockItem(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
         {
             this.StockCode = stockCode;
@@ -134,11 +138,6 @@ namespace ApplicationLogic.Model
             this.UnitCost = unitCost;
             this.RequiredStock = required;
             this.CurrentStock = currentStock;
-        }
-
-        public StockItem()
-        {
-            // TODO: Complete member initialization
         }
 
         /// <summary>
@@ -211,5 +210,60 @@ namespace ApplicationLogic.Model
             }
         }
 
+
+        public String CsvRepresentation()
+        {
+            return String.Format("{0},{1},{2},{3},{4},{5}", this.StockCode, this.Name, this.SupplierName, this.UnitCost, this.RequiredStock, this.CurrentStock);
+        }
+
+
+        public StockItem ParseFromString(string stringRepresentation)
+        {
+            string[] split = stringRepresentation.Split(',');
+            String stockCode = split[0];
+            String name = split[1];
+            String supplierName = split[2];
+            String unitCost = split[3];
+            String requiredStock = split[4];
+            String currentStock = split[5];
+            double cost = 0;
+            int reqStock = 0;
+            int currStock = 0;
+            if (!String.IsNullOrEmpty(unitCost))
+            {
+                try
+                {
+                    cost = double.Parse(unitCost);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                } 
+            }
+            if (!String.IsNullOrEmpty(requiredStock))
+            {
+                try
+                {
+                    reqStock = int.Parse(requiredStock);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                } 
+            }
+            if (!String.IsNullOrEmpty(currentStock))
+            {
+                try
+                {
+                    currStock = int.Parse(currentStock);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                } 
+            }
+
+            return new StockItem(stockCode, name, supplierName, cost, reqStock, currStock);
+        }
     }
 }

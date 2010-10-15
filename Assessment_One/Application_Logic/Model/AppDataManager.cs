@@ -2,6 +2,8 @@ using System;
 using System.ComponentModel;
 using System.Security.Cryptography;
 using ApplicationLogic.Interfaces;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ApplicationLogic.Model
 {
@@ -21,10 +23,15 @@ namespace ApplicationLogic.Model
             set { _BankAccounts = value; }
         }
 
+        public FileHandler<StockItem> StockItemHandler { get; private set; }
+        public FileHandler<BankAccount> BankAccountHandler { get; private set; }
+
         public AppDataManager()
         {
             this.StockItems = new BindingList<StockItem>();
             this.BankAccounts = new BindingList<BankAccount>();
+            this.StockItemHandler = new FileHandler<StockItem>();
+            this.BankAccountHandler = new FileHandler<BankAccount>();
         }
 
         public void CreateNewStockItem()
@@ -227,6 +234,40 @@ namespace ApplicationLogic.Model
             {
                 throw new ArgumentNullException("Bank account provided does not exist.");
             }
+        }
+
+        internal void LoadStockItemsFromFile(string filePath)
+        {
+            this.StockItemHandler.ReadFilePath = filePath;
+            IList<StockItem> stockItems = StockItemHandler.LoadFromFile(new StockItem());
+            this.StockItems.Clear();
+            foreach (StockItem item in stockItems)
+            {
+                this.StockItems.Add(item);
+            }
+        }
+
+        internal void LoadBankAccountsFromFile(string filePath)
+        {
+            this.BankAccountHandler.ReadFilePath = filePath;
+            IList<BankAccount> bankAccounts = BankAccountHandler.LoadFromFile(new BankAccount());
+            this.BankAccounts.Clear();
+            foreach (BankAccount item in bankAccounts)
+            {
+                this.BankAccounts.Add(item);
+            }
+        }
+
+        internal void SaveStockItemsToFile(string filePath)
+        {
+            this.StockItemHandler.WriteFilePath = filePath;
+            this.StockItemHandler.SaveToFile(this.StockItems);
+        }
+
+        internal void SaveBankAccountsToFile(string filePath)
+        {
+            this.BankAccountHandler.WriteFilePath = filePath;
+            this.BankAccountHandler.SaveToFile(this.BankAccounts);
         }
     }
 }

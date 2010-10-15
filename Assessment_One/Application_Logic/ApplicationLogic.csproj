@@ -41,15 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IBankAccountView.cs" />
+    <Compile Include="Interfaces\ICSVSerializable.cs" />
     <Compile Include="Model\ErrorMessage.cs" />
     <Compile Include="Model\ErrorMessageCollection.cs" />
     <Compile Include="Interfaces\ICongregateView.cs" />
     <Compile Include="Model\BankAccount.cs" />
     <Compile Include="Interfaces\IStockItemView.cs" />
+    <Compile Include="Model\ICSVSerializable.cs" />
     <Compile Include="Model\NotEnoughFundsException.cs" />
     <Compile Include="Model\StockItem.cs" />
     <Compile Include="Presenter\CongregatePresenter.cs" />
-    <Compile Include="Presenter\StockItemPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\FileHandler.cs" />
     <Compile Include="Model\ItemParser.cs" />
