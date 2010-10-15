@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\ICongregateView.cs" />
     <Compile Include="Model\BankAccount.cs" />
     <Compile Include="Interfaces\IStockItemView.cs" />
+    <Compile Include="Model\NotEnoughFundsException.cs" />
     <Compile Include="Model\StockItem.cs" />
     <Compile Include="Presenter\CongregatePresenter.cs" />
     <Compile Include="Presenter\StockItemPresenter.cs" />

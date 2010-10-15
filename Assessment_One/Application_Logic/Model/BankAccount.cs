@@ -116,7 +116,7 @@ namespace ApplicationLogic.Model
         /// </summary>
         /// <param name="amount">Amount to be transfered - must be greater than 0.</param>
         /// <param name="accountNumber">Account number to transfer the money to.</param>
-        public void Transfer(double amount, int accountNumber)
+        public void Transfer(int accountNumber, double amount)
         {
             if (amount > 0.0)
             {

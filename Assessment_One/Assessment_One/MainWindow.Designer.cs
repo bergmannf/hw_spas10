@@ -40,9 +40,6 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.deleteBankAccountToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.depositMoneyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.withdrawMoneyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +52,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addBankAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteBankAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.depositCashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.withdrawCashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -147,9 +141,6 @@
             this.toolStripButton6,
             this.deleteBankAccountToolStripButton,
             this.toolStripSeparator6,
-            this.depositMoneyToolStripButton,
-            this.withdrawMoneyToolStripButton,
-            this.toolStripSeparator7,
             this.helpToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -160,7 +151,7 @@
             // loadToolStripButton
             // 
             this.loadToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.loadToolStripButton.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
+            this.loadToolStripButton.Image = global::Assessment_One.Properties.Resources.disk;
             this.loadToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.loadToolStripButton.Name = "loadToolStripButton";
             this.loadToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -171,7 +162,7 @@
             // saveToolStripButton
             // 
             this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Assessment_One.Properties.Resources.disk;
+            this.saveToolStripButton.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -239,33 +230,6 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
-            // depositMoneyToolStripButton
-            // 
-            this.depositMoneyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.depositMoneyToolStripButton.Enabled = false;
-            this.depositMoneyToolStripButton.Image = global::Assessment_One.Properties.Resources.money__plus;
-            this.depositMoneyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.depositMoneyToolStripButton.Name = "depositMoneyToolStripButton";
-            this.depositMoneyToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.depositMoneyToolStripButton.Text = "toolStripButton9";
-            this.depositMoneyToolStripButton.ToolTipText = "Deposit Money";
-            // 
-            // withdrawMoneyToolStripButton
-            // 
-            this.withdrawMoneyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.withdrawMoneyToolStripButton.Enabled = false;
-            this.withdrawMoneyToolStripButton.Image = global::Assessment_One.Properties.Resources.money__minus;
-            this.withdrawMoneyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.withdrawMoneyToolStripButton.Name = "withdrawMoneyToolStripButton";
-            this.withdrawMoneyToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.withdrawMoneyToolStripButton.Text = "toolStripButton10";
-            this.withdrawMoneyToolStripButton.ToolTipText = "Withdraw money";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
-            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -324,10 +288,7 @@
             this.deleteStockItemToolStripMenuItem,
             this.toolStripSeparator1,
             this.addBankAccountToolStripMenuItem,
-            this.deleteBankAccountToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.depositCashToolStripMenuItem,
-            this.withdrawCashToolStripMenuItem});
+            this.deleteBankAccountToolStripMenuItem});
             this.editMenuItem.Name = "editMenuItem";
             this.editMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editMenuItem.Text = "Edit";
@@ -372,27 +333,6 @@
             this.deleteBankAccountToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.deleteBankAccountToolStripMenuItem.Text = "Delete Bank Account";
             this.deleteBankAccountToolStripMenuItem.Click += new System.EventHandler(this.deleteBankAccountToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(204, 6);
-            // 
-            // depositCashToolStripMenuItem
-            // 
-            this.depositCashToolStripMenuItem.Enabled = false;
-            this.depositCashToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.money__plus;
-            this.depositCashToolStripMenuItem.Name = "depositCashToolStripMenuItem";
-            this.depositCashToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.depositCashToolStripMenuItem.Text = "Deposit Cash";
-            // 
-            // withdrawCashToolStripMenuItem
-            // 
-            this.withdrawCashToolStripMenuItem.Enabled = false;
-            this.withdrawCashToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.money__minus;
-            this.withdrawCashToolStripMenuItem.Name = "withdrawCashToolStripMenuItem";
-            this.withdrawCashToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.withdrawCashToolStripMenuItem.Text = "Withdraw Cash";
             // 
             // helpMenuItem
             // 
@@ -580,7 +520,7 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "To place an order choose a valid bank account from the left-side and enter the qu" +
-                "antity to be ordered.\n";
+                "antity to be ordered.\nEnter 0 to order all required.";
             // 
             // quantityTextBox
             // 
@@ -601,6 +541,7 @@
             this.placeOrderButton.TabIndex = 7;
             this.placeOrderButton.Text = "Place Order";
             this.placeOrderButton.UseVisualStyleBackColor = true;
+            this.placeOrderButton.Click += new System.EventHandler(this.PlaceOrderButton_Click);
             // 
             // orderLabel
             // 
@@ -802,6 +743,7 @@
             this.withdrawButton.TabIndex = 16;
             this.withdrawButton.Text = "Withdraw";
             this.withdrawButton.UseVisualStyleBackColor = true;
+            this.withdrawButton.Click += new System.EventHandler(this.withdrawButton_Click);
             // 
             // depositButton
             // 
@@ -813,6 +755,7 @@
             this.depositButton.TabIndex = 15;
             this.depositButton.Text = "Deposit";
             this.depositButton.UseVisualStyleBackColor = true;
+            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
             // label2
             // 
@@ -1012,9 +955,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton deleteBankAccountToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton depositMoneyToolStripButton;
-        private System.Windows.Forms.ToolStripButton withdrawMoneyToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem fileMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -1027,9 +967,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem addBankAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteBankAccountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem depositCashToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem withdrawCashToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

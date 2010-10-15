@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Security.Cryptography;
 using ApplicationLogic.Interfaces;
 
 namespace ApplicationLogic.Model
@@ -58,48 +59,79 @@ namespace ApplicationLogic.Model
 		{
 		}
 
-        internal void EditStockItem(int index, string stockCode, string supplier, string name, int currentStock, int reqStock, double price)
+		internal void EditStockItem(int index, string stockCode, string supplier, string name, int currentStock, int reqStock, double price)
+		{
+			StockItem si = StockItems[index];
+			si.EditStockItem(stockCode, name, supplier, price, reqStock, currentStock);
+		}
+
+		internal void EditBankAccount(int index, string surname, int accountNumber)
+		{
+			BankAccount ba = BankAccounts[index];
+			ba.EditBankAccount(surname, accountNumber);
+		}
+
+		internal bool ValidateStockItem(string stockCode, string name, string supplier, double price, int reqStock, int currentStock)
+		{
+			bool areValuesValid = StockItem.Validate(stockCode, name, supplier, price, reqStock, currentStock);
+			return areValuesValid;
+		}
+
+		internal ErrorMessageCollection StockItemErrors()
+		{
+			return StockItem.ErrorMessages; ;
+		}
+
+		internal void ClearStockItemErrors()
+		{
+			StockItem.ErrorMessages.Clear();
+		}
+
+		internal void ClearBankAccountErrors()
+		{
+			BankAccount.ErrorMessages.Clear();
+		}
+
+		internal ErrorMessageCollection BankAccountErrors()
+		{
+			return BankAccount.ErrorMessages;
+		}
+
+		internal bool ValidateBankAccount(int accountNumber, string surname)
+		{
+			bool areValidValues = BankAccount.Validate(accountNumber, surname);
+			return areValidValues;
+		}
+		
+		public void OrderItem(int indexStockItem, int indexBankAccount, int quantity)
+		{
+			BankAccount ba = this.BankAccounts[indexBankAccount];
+			StockItem si = this.StockItems[indexStockItem];
+			if (quantity == 0 || quantity > si.RequiredStock) {
+				quantity = si.RequiredStock;
+			}
+			double priceOfOrder = quantity * si.UnitCost;
+			if (priceOfOrder < ba.Balance) {
+                ba.Transfer(1, priceOfOrder);
+				si.RequiredStock -= quantity;
+				si.CurrentStock += quantity;
+			}
+			else
+			{
+				throw new NotEnoughFundsException(String.Format("Not enough founds on bank account {0} to place order for {1} £", ba.AccountNumber, priceOfOrder));
+			}
+		}
+
+        internal void Deposit(int indexBankAccount, double amount)
         {
-            StockItem si = StockItems[index];
-            si.EditStockItem(stockCode, name, supplier, price, reqStock, currentStock);
+            BankAccount ba = BankAccounts[indexBankAccount];
+            ba.Deposit(amount);
         }
 
-        internal void EditBankAccount(int index, string surname, int accountNumber)
+        internal void Withdraw(int indexBankAccount, double amount)
         {
-            BankAccount ba = BankAccounts[index];
-            ba.EditBankAccount(surname, accountNumber);
-        }
-
-        internal bool ValidateStockItem(string stockCode, string name, string supplier, double price, int reqStock, int currentStock)
-        {
-            bool areValuesValid = StockItem.Validate(stockCode, name, supplier, price, reqStock, currentStock);
-            return areValuesValid;
-        }
-
-        internal ErrorMessageCollection StockItemErrors()
-        {
-            return StockItem.ErrorMessages; ;
-        }
-
-        internal void ClearStockItemErrors()
-        {
-            StockItem.ErrorMessages.Clear();
-        }
-
-        internal void ClearBankAccountErrors()
-        {
-            BankAccount.ErrorMessages.Clear();
-        }
-
-        internal ErrorMessageCollection BankAccountErrors()
-        {
-            return BankAccount.ErrorMessages;
-        }
-
-        internal bool ValidateBankAccount(int accountNumber, string surname)
-        {
-            bool areValidValues = BankAccount.Validate(accountNumber, surname);
-            return areValidValues;
+            BankAccount ba = BankAccounts[indexBankAccount];
+            ba.Withdraw(amount);
         }
     }
 }

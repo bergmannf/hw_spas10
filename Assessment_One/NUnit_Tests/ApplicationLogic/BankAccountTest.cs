@@ -55,7 +55,7 @@ namespace NUnit_Tests.ApplicationLogic
         public void TestTransferWithTooSmallValue()
         {
             double amountToTransferTooSmall = -10;
-            ba.Transfer(amountToTransferTooSmall, 123);
+            ba.Transfer(123, amountToTransferTooSmall);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace NUnit_Tests.ApplicationLogic
 
             double transfer = 10.50;
             currentValue -= transfer;
-            ba.Transfer(transfer, 123);
+            ba.Transfer(123, transfer);
             Assert.AreEqual(currentValue, ba.Balance);
         }
     }
