@@ -76,7 +76,7 @@ namespace ApplicationLogic.Model
                     _UnitCost = value;
                     this.NotifyPropertyChanged("UnitCost");
                 }
-                
+
             }
         }
 
@@ -98,7 +98,7 @@ namespace ApplicationLogic.Model
                     _RequiredStock = value;
                     this.NotifyPropertyChanged("RequiredStock");
                 }
-                
+
             }
         }
 
@@ -120,9 +120,11 @@ namespace ApplicationLogic.Model
                     _CurrentStock = value;
                     this.NotifyPropertyChanged("CurrentStock");
                 }
-                
+
             }
         }
+
+        public static ErrorMessageCollection ErrorMessages = new ErrorMessageCollection();
 
         public StockItem(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
         {
@@ -145,7 +147,7 @@ namespace ApplicationLogic.Model
         /// </summary>
         /// <param name="value">The string that must be checked against the schema.</param>
         /// <returns>True if the string conforms to the schema, false otherwise.</returns>
-        public bool IsValidStockCode(string value)
+        public static bool IsValidStockCode(string value)
         {
             if (String.IsNullOrEmpty(value))
             {
@@ -157,7 +159,7 @@ namespace ApplicationLogic.Model
                 Regex regexp = new Regex("^[0-9]{4}$");
                 return regexp.IsMatch(value);
             }
-            
+
         }
 
         public void EditStockItem(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
@@ -168,6 +170,35 @@ namespace ApplicationLogic.Model
             this.UnitCost = unitCost;
             this.RequiredStock = required;
             this.CurrentStock = currentStock;
+        }
+
+        public static bool Validate(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
+        {
+            if (String.IsNullOrEmpty(stockCode) || !IsValidStockCode(stockCode))
+            {
+                ErrorMessages.Add(new ErrorMessage("Need a stockcode that adheres to the stockcode format: 4 numbers."));
+            }
+            if (String.IsNullOrEmpty(name))
+            {
+                ErrorMessages.Add(new ErrorMessage("Need an item name."));
+            }
+            if (String.IsNullOrEmpty("supplierName"))
+            {
+                ErrorMessages.Add(new ErrorMessage("Need a supplier name."));
+            }
+            if (unitCost < 0.0)
+            {
+                ErrorMessages.Add(new ErrorMessage("Unit costs must be greater or equal 0."));
+            }
+            if (required < 0)
+            {
+                ErrorMessages.Add(new ErrorMessage("Required must be greater or equal 0."));
+            }
+            if (currentStock < 0)
+            {
+                ErrorMessages.Add(new ErrorMessage("Current must be greater or equal 0."));
+            }
+            return ErrorMessages.Count == 0;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

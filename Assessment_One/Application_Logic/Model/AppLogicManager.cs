@@ -61,15 +61,45 @@ namespace ApplicationLogic.Model
         internal void EditStockItem(int index, string stockCode, string supplier, string name, int currentStock, int reqStock, double price)
         {
             StockItem si = StockItems[index];
-            // TODO Add validation!
             si.EditStockItem(stockCode, name, supplier, price, reqStock, currentStock);
         }
 
         internal void EditBankAccount(int index, string surname, int accountNumber)
         {
             BankAccount ba = BankAccounts[index];
-            // TODO Add validation!
             ba.EditBankAccount(surname, accountNumber);
+        }
+
+        internal bool ValidateStockItem(string stockCode, string name, string supplier, double price, int reqStock, int currentStock)
+        {
+            bool areValuesValid = StockItem.Validate(stockCode, name, supplier, price, reqStock, currentStock);
+            return areValuesValid;
+        }
+
+        internal ErrorMessageCollection StockItemErrors()
+        {
+            return StockItem.ErrorMessages; ;
+        }
+
+        internal void ClearStockItemErrors()
+        {
+            StockItem.ErrorMessages.Clear();
+        }
+
+        internal void ClearBankAccountErrors()
+        {
+            BankAccount.ErrorMessages.Clear();
+        }
+
+        internal ErrorMessageCollection BankAccountErrors()
+        {
+            return BankAccount.ErrorMessages;
+        }
+
+        internal bool ValidateBankAccount(int accountNumber, string surname)
+        {
+            bool areValidValues = BankAccount.Validate(accountNumber, surname);
+            return areValidValues;
         }
     }
 }

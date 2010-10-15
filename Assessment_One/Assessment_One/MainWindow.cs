@@ -146,7 +146,7 @@ namespace Assessment_One
 
         public void DisplayValidationErrors(ErrorMessageCollection errorCollection)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(errorCollection.ToString());
         }
 
         private void applyButton_Click(object sender, EventArgs e)

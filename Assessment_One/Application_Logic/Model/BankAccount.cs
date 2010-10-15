@@ -61,6 +61,8 @@ namespace ApplicationLogic.Model
             }
         }
 
+        public static ErrorMessageCollection ErrorMessages = new ErrorMessageCollection();
+
         public BankAccount(int acc, string name, double balance)
         {
             this.AccountNumber = acc;
@@ -132,6 +134,19 @@ namespace ApplicationLogic.Model
             {
                 throw new ArgumentException("It is not possible to transfer funds from another account to yours.");
             }
+        }
+
+        internal static bool Validate(int accountNumber, String surname)
+        {
+            if (String.IsNullOrEmpty(surname))
+            {
+                ErrorMessages.Add(new ErrorMessage("Need the name of the account owner."));
+            }
+            if (accountNumber <= 0)
+            {
+                ErrorMessages.Add(new ErrorMessage("Need a valid account number: greater 0."));
+            }
+            return ErrorMessages.Count == 0;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

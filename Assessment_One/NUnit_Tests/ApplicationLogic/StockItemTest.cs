@@ -42,11 +42,11 @@ namespace NUnit_Tests
         [Test]
         public void TestIsValidStockCode()
         {
-            bool validSC = si.IsValidStockCode("1234");
+            bool validSC = StockItem.IsValidStockCode("1234");
             Assert.IsTrue(validSC);
-            bool tooLongSC = si.IsValidStockCode("123456");
+            bool tooLongSC = StockItem.IsValidStockCode("123456");
             Assert.IsFalse(tooLongSC);
-            bool stringSC = si.IsValidStockCode("test");
+            bool stringSC = StockItem.IsValidStockCode("test");
             Assert.IsFalse(stringSC);
         }
 
@@ -54,7 +54,7 @@ namespace NUnit_Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestIsValidStockCodeRaiseException()
         {
-            si.IsValidStockCode(null);
+            StockItem.IsValidStockCode(null);
         }
     }
 }

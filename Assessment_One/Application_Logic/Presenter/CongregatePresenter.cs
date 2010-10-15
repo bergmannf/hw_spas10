@@ -59,14 +59,47 @@ namespace ApplicationLogic.Presenter
             int currentStock = this._StockItemView.CurrentStock;
             int reqStock = this._StockItemView.RequiredStock;
             double price = this._StockItemView.UnitCost;
-            this._Model.EditStockItem(index, stockCode, supplier, name, currentStock, reqStock, price);
+            bool areValuesValid = this._Model.ValidateStockItem(stockCode, name, supplier, price, reqStock, currentStock);
+            if (areValuesValid)
+            {
+                this._Model.EditStockItem(index, stockCode, supplier, name, currentStock, reqStock, price);
+            }
+            else
+            {
+                this._View.DisplayValidationErrors(this._Model.StockItemErrors());
+                this._Model.ClearStockItemErrors();
+            }
         }
 
         public void EditBankAccount(int index)
         {
             String surname = this._BankAccountView.Surname;
             int accountNumber = this._BankAccountView.AccountNumber;
-            this._Model.EditBankAccount(index, surname, accountNumber);
+            bool areValuesValid = this._Model.ValidateBankAccount(accountNumber, surname);
+            if (areValuesValid)
+            {
+                this._Model.EditBankAccount(index, surname, accountNumber);
+            }
+            else
+            {
+                this._View.DisplayValidationErrors(this._Model.BankAccountErrors());
+                this._Model.ClearBankAccountErrors();
+            }
+        }
+
+        public void Deposit()
+        {
+            // TODO
+        }
+
+        public void Withdraw()
+        {
+            // TODO
+        }
+
+        public void OrderItem()
+        {
+            // TODO
         }
     }
 }

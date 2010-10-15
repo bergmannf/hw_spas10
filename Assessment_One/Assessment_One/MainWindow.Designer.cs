@@ -912,6 +912,7 @@
             this.balanceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.balanceTextBox.Enabled = false;
             this.balanceTextBox.Location = new System.Drawing.Point(98, 78);
             this.balanceTextBox.Name = "balanceTextBox";
             this.balanceTextBox.Size = new System.Drawing.Size(157, 20);

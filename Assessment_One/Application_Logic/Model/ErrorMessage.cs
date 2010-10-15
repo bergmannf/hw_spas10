@@ -9,5 +9,15 @@ namespace ApplicationLogic.Model
     {
         public String Message { get; set; }
         public String Source { get; set; }
+
+        public ErrorMessage(string p)
+        {
+            this.Message = p;
+        }
+
+        public override string ToString()
+        {
+            return Message;
+        }
     }
 }
