@@ -88,6 +88,20 @@ namespace Assessment_One.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap checkout3_blue {
+            get {
+                object obj = ResourceManager.GetObject("checkout3_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap control_power {
+            get {
+                object obj = ResourceManager.GetObject("control_power", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap disk {
             get {
                 object obj = ResourceManager.GetObject("disk", resourceCulture);
@@ -203,6 +217,13 @@ namespace Assessment_One.Properties {
         internal static System.Drawing.Bitmap wooden_box__plus {
             get {
                 object obj = ResourceManager.GetObject("wooden_box__plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap wrench_screwdriver {
+            get {
+                object obj = ResourceManager.GetObject("wrench_screwdriver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

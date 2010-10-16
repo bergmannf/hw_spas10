@@ -188,5 +188,21 @@ namespace ApplicationLogic.Presenter
         {
             this._Model.SaveBankAccountsToFile(filePath);
         }
+
+        public void SetUpStockItemFilePath(string filePathStockItems)
+        {
+            // TODO: Check if good.
+            this._Model.StockItemHandler.ReadFilePath = filePathStockItems;
+            this._Model.StockItemHandler.WriteFilePath = filePathStockItems;
+            this._Model.LoadStockItemsFromFile(filePathStockItems);
+        }
+
+        public void SetUpBankAccountsFilePath(string filePathBankAccounts)
+        {
+            // TODO: Check if good.
+            this._Model.BankAccountHandler.ReadFilePath = filePathBankAccounts;
+            this._Model.BankAccountHandler.WriteFilePath = filePathBankAccounts;
+            this._Model.LoadBankAccountsFromFile(filePathBankAccounts);
+        }
     }
 }

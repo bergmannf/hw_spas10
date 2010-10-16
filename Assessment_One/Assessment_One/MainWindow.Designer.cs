@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.loadToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.addStockItemToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deleteStockItemToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -48,6 +45,8 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveStockItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveBankAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,9 +135,6 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator4,
             this.addStockItemToolStripButton,
             this.deleteStockItemToolStripButton,
             this.toolStripSeparator5,
@@ -151,32 +147,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(468, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // loadToolStripButton
-            // 
-            this.loadToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.loadToolStripButton.Image = global::Assessment_One.Properties.Resources.disk;
-            this.loadToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.loadToolStripButton.Name = "loadToolStripButton";
-            this.loadToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.loadToolStripButton.Text = "toolStripButton2";
-            this.loadToolStripButton.ToolTipText = "Open a file";
-            this.loadToolStripButton.Click += new System.EventHandler(this.openStockItemToolStripMenuItem_Click);
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "toolStripButton1";
-            this.saveToolStripButton.ToolTipText = "Save to file";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
             // addStockItemToolStripButton
             // 
@@ -249,6 +219,8 @@
             this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.settingsToolStripMenuItem,
             this.toolStripSeparator8,
             this.exitToolStripMenuItem});
             this.fileMenuItem.Name = "fileMenuItem";
@@ -262,7 +234,7 @@
             this.openBankAccountsToolStripMenuItem});
             this.openToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.folder_horizontal_open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // openStockItemsToolStripMenuItem
@@ -288,7 +260,7 @@
             this.saveBankAccountsToolStripMenuItem});
             this.saveToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.disk;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveStockItemsToolStripMenuItem
@@ -307,17 +279,30 @@
             this.saveBankAccountsToolStripMenuItem.Text = "Save bank accounts";
             this.saveBankAccountsToolStripMenuItem.Click += new System.EventHandler(this.saveBankAccountsToolStripMenuItem_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(131, 6);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.wrench_screwdriver;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(131, 6);
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.door_open_out;
+            this.exitToolStripMenuItem.Image = global::Assessment_One.Properties.Resources.control_power;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -568,18 +553,21 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.quantityTextBox.Location = new System.Drawing.Point(101, 71);
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(114, 20);
+            this.quantityTextBox.Size = new System.Drawing.Size(103, 20);
             this.quantityTextBox.TabIndex = 6;
             this.quantityTextBox.Text = "Quantity\r\n";
             // 
             // placeOrderButton
             // 
             this.placeOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.placeOrderButton.Location = new System.Drawing.Point(221, 71);
+            this.placeOrderButton.Image = global::Assessment_One.Properties.Resources.checkout3_blue;
+            this.placeOrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.placeOrderButton.Location = new System.Drawing.Point(210, 68);
             this.placeOrderButton.Name = "placeOrderButton";
-            this.placeOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.placeOrderButton.Size = new System.Drawing.Size(86, 23);
             this.placeOrderButton.TabIndex = 7;
             this.placeOrderButton.Text = "Place Order";
+            this.placeOrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.placeOrderButton.UseVisualStyleBackColor = true;
             this.placeOrderButton.Click += new System.EventHandler(this.PlaceOrderButton_Click);
             // 
@@ -986,9 +974,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton loadToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton addStockItemToolStripButton;
         private System.Windows.Forms.ToolStripButton deleteStockItemToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -1064,6 +1049,8 @@
         private System.Windows.Forms.ToolStripMenuItem openBankAccountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveStockItemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveBankAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 
     }
 }

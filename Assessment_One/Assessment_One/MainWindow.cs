@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +10,8 @@ using System.Windows.Forms;
 using ApplicationLogic.Interfaces;
 using ApplicationLogic.Presenter;
 using ApplicationLogic.Model;
+using System.Collections.Specialized;
+using Assessment_One.Properties;
 
 namespace Assessment_One
 {
@@ -27,33 +30,11 @@ namespace Assessment_One
             this._Model = new AppDataManager();
             _Presenter = new CongregatePresenter(this, this, this, this._Model);
             this.backgroundColorChanged = new List<Control>();
+            LoadFilePathSettings();
             SetUpDataBindings();
         }
 
-        private void SetUpDataBindings()
-        {
-            stockItemsListBox.DataSource = _Model.StockItems;
-            stockItemsListBox.DisplayMember = "Name";
-
-            /*
-             * The datasourceupdatemode is set to "Never".
-             * This leads to the ability to enforce the use of the presenter to update the values in the model.
-             * This way the validation errors can be handled by the presenter thus leading to better seperation of concerns.
-             */
-            stockCodeTextBox.DataBindings.Add("Text", _Model.StockItems, "StockCode", false, DataSourceUpdateMode.Never);
-            itemNameTextBox.DataBindings.Add("Text", _Model.StockItems, "Name", false, DataSourceUpdateMode.Never);
-            supplierNameTextBox.DataBindings.Add("Text", _Model.StockItems, "SupplierName", false, DataSourceUpdateMode.Never);
-            currStockTextBox.DataBindings.Add("Text", _Model.StockItems, "CurrentStock", false, DataSourceUpdateMode.Never);
-            reqStockTextBox.DataBindings.Add("Text", _Model.StockItems, "RequiredStock", false, DataSourceUpdateMode.Never);
-            priceTextBox.DataBindings.Add("Text", _Model.StockItems, "UnitCost", false, DataSourceUpdateMode.Never);
-
-            bankAccountsListBox.DataSource = _Model.BankAccounts;
-            bankAccountsListBox.DisplayMember = "AccountNumber";
-
-            accountNumberTextBox.DataBindings.Add("Text", _Model.BankAccounts, "AccountNumber", false, DataSourceUpdateMode.Never);
-            nameTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Surname", false, DataSourceUpdateMode.Never);
-            balanceTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Balance", false, DataSourceUpdateMode.Never);
-        }
+        
 
         #region EventHandler
 
@@ -169,6 +150,12 @@ namespace Assessment_One
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this._Presenter.CloseApplication();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsWindow sw = new SettingsWindow();
+            sw.ShowDialog();
         }
 
         #endregion
@@ -404,9 +391,47 @@ namespace Assessment_One
             form.BackColor = Color.MistyRose;
         }
 
+        private void LoadFilePathSettings()
+        {
+            Settings settings = Settings.Default;
+
+            String filePathStockItems = settings.StockItemFilePath;
+            String filePathBankAccounts = settings.BankAccountFilePath;
+            if (!String.IsNullOrEmpty(filePathStockItems))
+            {
+                this._Presenter.SetUpStockItemFilePath(filePathStockItems);
+            }
+            if (!String.IsNullOrEmpty(filePathBankAccounts))
+            {
+                this._Presenter.SetUpBankAccountsFilePath(filePathBankAccounts);
+            }
+        }
+
+        private void SetUpDataBindings()
+        {
+            stockItemsListBox.DataSource = _Model.StockItems;
+            stockItemsListBox.DisplayMember = "Name";
+
+            /*
+             * The datasourceupdatemode is set to "Never".
+             * This leads to the ability to enforce the use of the presenter to update the values in the model.
+             * This way the validation errors can be handled by the presenter thus leading to better seperation of concerns.
+             */
+            stockCodeTextBox.DataBindings.Add("Text", _Model.StockItems, "StockCode", false, DataSourceUpdateMode.Never);
+            itemNameTextBox.DataBindings.Add("Text", _Model.StockItems, "Name", false, DataSourceUpdateMode.Never);
+            supplierNameTextBox.DataBindings.Add("Text", _Model.StockItems, "SupplierName", false, DataSourceUpdateMode.Never);
+            currStockTextBox.DataBindings.Add("Text", _Model.StockItems, "CurrentStock", false, DataSourceUpdateMode.Never);
+            reqStockTextBox.DataBindings.Add("Text", _Model.StockItems, "RequiredStock", false, DataSourceUpdateMode.Never);
+            priceTextBox.DataBindings.Add("Text", _Model.StockItems, "UnitCost", false, DataSourceUpdateMode.Never);
+
+            bankAccountsListBox.DataSource = _Model.BankAccounts;
+            bankAccountsListBox.DisplayMember = "AccountNumber";
+
+            accountNumberTextBox.DataBindings.Add("Text", _Model.BankAccounts, "AccountNumber", false, DataSourceUpdateMode.Never);
+            nameTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Surname", false, DataSourceUpdateMode.Never);
+            balanceTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Balance", false, DataSourceUpdateMode.Never);
+        }
+
         #endregion
-
-
-        
     }
 }

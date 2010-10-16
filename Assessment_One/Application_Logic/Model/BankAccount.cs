@@ -177,7 +177,35 @@ namespace ApplicationLogic.Model
 
         public BankAccount ParseFromString(string stringRepresentation)
         {
-            throw new NotImplementedException();
+            string[] split = stringRepresentation.Split(',');
+            String accountNumber = split[0];
+            String surname = split[1];
+            String balance = split[2];
+            int accNumber = 0;
+            double bal = 0;
+            if (!String.IsNullOrEmpty(accountNumber))
+            {
+                try
+                {
+                    accNumber = int.Parse(accountNumber);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+            if (!String.IsNullOrEmpty(balance))
+            {
+                try
+                {
+                    bal = double.Parse(balance);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+            return new BankAccount(accNumber, surname, bal);
         }
     }
 }
