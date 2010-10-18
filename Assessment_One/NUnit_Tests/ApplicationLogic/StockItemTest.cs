@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace NUnit_Tests
 {
     [TestFixture]
-    class StockItemTest
+    public class StockItemTest
     {
         private StockItem si;
 
@@ -56,5 +56,36 @@ namespace NUnit_Tests
         {
             StockItem.IsValidStockCode(null);
         }
+        
+		[Test]
+		public void TestStringParsing()
+		{
+			StockItem parseItem = new StockItem();
+			
+			String parseOne = "0001,Pencil Holder,John Rambo,5.50,10,15";
+			
+			StockItem si = parseItem.ParseFromString(parseOne);
+			Assert.IsNotNull(si);
+			
+			String parseTwo = "0001,,John Rambo,5.50,10,15";
+			
+			StockItem si2 = parseItem.ParseFromString(parseTwo);
+			Assert.IsNotNull(si2);
+			
+			String parseThree = "0001,,,,,";
+			
+			StockItem si3 = parseItem.ParseFromString(parseThree);
+			Assert.IsNotNull(si3);
+		}
+		
+		[Test]
+		[ExpectedException(typeof(FormatException))]
+		public void TestStringParsingInvalidValues()
+		{
+			StockItem parseItem = new StockItem();
+			
+			String parseOne = "0001,Pencil Holder,John Rambo,abc,10,15";
+			StockItem si = parseItem.ParseFromString(parseOne);
+		}
     }
 }

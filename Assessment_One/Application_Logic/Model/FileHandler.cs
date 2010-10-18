@@ -69,8 +69,12 @@ namespace ApplicationLogic
                     String readString = "";
                     while ((readString = sr.ReadLine()) != null)
                     {
-                        T t = item.ParseFromString(readString);
-                        returnList.Add(t);
+						try {
+							T t = item.ParseFromString(readString);
+                        	returnList.Add(t);	
+						} catch (FormatException ex) {
+							Console.WriteLine(ex.StackTrace);
+						}
                     }
                 }
                 return returnList;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ApplicationLogic.Model
 {
-    class NoFilePathSetException : Exception
+    public class NoFilePathSetException : Exception
     {
 
         public NoFilePathSetException(String msg)

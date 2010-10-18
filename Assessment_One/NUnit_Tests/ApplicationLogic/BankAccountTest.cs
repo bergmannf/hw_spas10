@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace NUnit_Tests.ApplicationLogic
 {
     [TestFixture]
-    class BankAccountTest
+    public class BankAccountTest
     {
         private BankAccount ba;
 
@@ -77,5 +77,27 @@ namespace NUnit_Tests.ApplicationLogic
             ba.Transfer(123, transfer);
             Assert.AreEqual(currentValue, ba.Balance);
         }
+        
+		[Test]
+		public void TestStringParsing()
+		{
+			BankAccount parseAccount = new BankAccount();
+			
+			String parseOne = "123456,Rambo,500.50";
+			BankAccount ba1 = parseAccount.ParseFromString(parseOne);
+			
+			String parseTwo = "000000,,";
+			BankAccount ba2 = parseAccount.ParseFromString(parseTwo);
+		}
+		
+		[Test]
+		[ExpectedException(typeof(FormatException))]
+		public void TestStringParsingInvalidValues()
+		{
+			BankAccount parseAccount = new BankAccount();
+			
+			String parseOne = "abcd,Rambo,50.50";
+			BankAccount ba1 = parseAccount.ParseFromString(parseOne);
+		}
     }
 }
