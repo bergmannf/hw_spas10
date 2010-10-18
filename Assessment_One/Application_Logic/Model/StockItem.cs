@@ -8,6 +8,9 @@ using ApplicationLogic.Interfaces;
 
 namespace ApplicationLogic.Model
 {
+    /// <summary>
+    /// Stores all necessary data for a StockItem.
+    /// </summary>
     public class StockItem : INotifyPropertyChanged, ICSVSerializable<StockItem>
     {
         private String _StockCode;
@@ -171,6 +174,16 @@ namespace ApplicationLogic.Model
             this.CurrentStock = currentStock;
         }
 
+        /// <summary>
+        /// Validates a set of possible changes to a StockItem.
+        /// </summary>
+        /// <param name="stockCode">StockCodew to be verified</param>
+        /// <param name="name">Name to be verified</param>
+        /// <param name="supplierName">SupplierName to be verified</param>
+        /// <param name="unitCost">UnitCost to be verified</param>
+        /// <param name="required">RequiredStock to be verified</param>
+        /// <param name="currentStock">CurrentStock to be verified</param>
+        /// <returns>True if the values would be valid, false otherwise.</returns>
         public static bool Validate(String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
         {
             if (String.IsNullOrEmpty(stockCode) || !IsValidStockCode(stockCode))
@@ -210,13 +223,20 @@ namespace ApplicationLogic.Model
             }
         }
 
-
+        /// <summary>
+        /// Returns the current StockItem object as a CSV-String.
+        /// </summary>
+        /// <returns>Representation of the current object as CSV-String.</returns>
         public String CsvRepresentation()
         {
             return String.Format("{0},{1},{2},{3},{4},{5}", this.StockCode, this.Name, this.SupplierName, this.UnitCost, this.RequiredStock, this.CurrentStock);
         }
 
-
+        /// <summary>
+        /// Attempts to create a StockItem object from a string.
+        /// </summary>
+        /// <param name="stringRepresentation">The String to be parsed to StockItem.</param>
+        /// <returns>StockItem object.</returns>
         public StockItem ParseFromString(string stringRepresentation)
         {
             string[] split = stringRepresentation.Split(',');
@@ -262,7 +282,6 @@ namespace ApplicationLogic.Model
                     Console.WriteLine(e.StackTrace);
                 } 
             }
-
             return new StockItem(stockCode, name, supplierName, cost, reqStock, currStock);
         }
     }

@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace ApplicationLogic.Model
 {
+    /// <summary>
+    /// Handles data and persistent.
+    /// </summary>
     public class AppDataManager : IViewModel
     {
         private BindingList<StockItem> _StockItems;
@@ -34,12 +37,20 @@ namespace ApplicationLogic.Model
             this.BankAccountHandler = new FileHandler<BankAccount>();
         }
 
+        /// <summary>
+        /// Creates a new StockItem and initializes it with dummy values.
+        /// Adds the item to the StockItem collection.
+        /// </summary>
         public void CreateNewStockItem()
         {
             StockItem si = new StockItem("0000", "Dummy Item", "None", 0.0, 0, 0);
             this.StockItems.Add(si);
         }
 
+        /// <summary>
+        /// Deletes a StockItem from the StockItem collection.
+        /// Throws an ArgumentException if the item can not be found.
+        /// </summary>
         public void DeleteStockItem(StockItem si)
         {
             if (this.StockItems.Contains(si))
@@ -52,12 +63,20 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Creates a new BankAccount and initializes it with dummy values.
+        /// Adds the item to the BankAccount collection.
+        /// </summary>
         public void CreateNewBankAccount()
         {
             BankAccount ba = new BankAccount(0, "Dummy Account", 0.0);
             this.BankAccounts.Add(ba);
         }
 
+        /// <summary>
+        /// Deletes a BankAccount from the BankAccount collection.
+        /// Throws an ArgumentException if the account can not be found.
+        /// </summary>
         public void DeleteBankAccount(BankAccount ba)
         {
             if (this.BankAccounts.Contains(ba))
@@ -71,6 +90,17 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Attempts to edit specified StockItem in the StockItem collection.
+        /// Throws an ArgumentException if the item can not be found.
+        /// </summary>
+        /// <param name="si">StockItem to be edited.</param>
+        /// <param name="stockCode">New StockCode</param>
+        /// <param name="supplier">New SupplierName</param>
+        /// <param name="name">New Name</param>
+        /// <param name="currentStock">New CurrentStock</param>
+        /// <param name="reqStock">New RequiredStock</param>
+        /// <param name="price">New Price</param>
         internal void EditStockItem(StockItem si, string stockCode, string supplier, string name, int currentStock, int reqStock, double price)
         {
             if (si != null)
@@ -83,6 +113,13 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Attempts to edit specified BankAccount in the BankAccount collection.
+        /// Throws an ArgumentException if the account can not be found.
+        /// </summary>
+        /// <param name="ba">BankAccount to be edited</param>
+        /// <param name="surname">New surname</param>
+        /// <param name="accountNumber">New accoutnumber</param>
         internal void EditBankAccount(BankAccount ba, string surname, int accountNumber)
         {
             if (ba != null)
@@ -236,6 +273,11 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Will reload the StockItem collection from the specified file.
+        /// Will overwrite the currently existing StockItem collection.
+        /// </summary>
+        /// <param name="filePath"></param>
         internal void LoadStockItemsFromFile(string filePath)
         {
             this.StockItemHandler.ReadFilePath = filePath;
@@ -247,6 +289,11 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Will reload the BankAccount collection from the specified file.
+        /// Will overwrite the currently existing BankAccount collection.
+        /// </summary>
+        /// <param name="filePath">The path to the file</param>
         internal void LoadBankAccountsFromFile(string filePath)
         {
             this.BankAccountHandler.ReadFilePath = filePath;
@@ -258,16 +305,42 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Will save the current StockItem collection to the specified file.
+        /// </summary>
+        /// <param name="filePath">The path to the file</param>
         internal void SaveStockItemsToFile(string filePath)
         {
             this.StockItemHandler.WriteFilePath = filePath;
             this.StockItemHandler.SaveToFile(this.StockItems);
         }
 
+        /// <summary>
+        /// Will save the current BankAccount collection to the specified file.
+        /// </summary>
+        /// <param name="filePath">The path to the file</param>
         internal void SaveBankAccountsToFile(string filePath)
         {
             this.BankAccountHandler.WriteFilePath = filePath;
             this.BankAccountHandler.SaveToFile(this.BankAccounts);
+        }
+
+        /// <summary>
+        /// Will save the current BankAccount collection to the file stored in the FileHandler.
+        /// Throws NoFilePathSetException if no path is set.
+        /// </summary>
+        internal void SaveBankAccountsToFile()
+        {
+            this.BankAccountHandler.SaveToFile(this.BankAccounts);
+        }
+
+        /// <summary>
+        /// Will save the current BankAccount collection to the file stored in the FileHandler.
+        /// Throws NoFilePathSetException if no path is set.
+        /// </summary>
+        internal void SaveStockItemsToFile()
+        {
+            this.StockItemHandler.SaveToFile(this.StockItems);
         }
     }
 }

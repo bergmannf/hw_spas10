@@ -109,6 +109,13 @@ namespace Assessment_One.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap disks {
+            get {
+                object obj = ResourceManager.GetObject("disks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap door_open_out {
             get {
                 object obj = ResourceManager.GetObject("door_open_out", resourceCulture);

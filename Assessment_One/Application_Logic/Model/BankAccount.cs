@@ -13,6 +13,10 @@ namespace ApplicationLogic.Model
     public class BankAccount : INotifyPropertyChanged, ICSVSerializable<BankAccount>
     {
         private int _AccountNumber;
+        /// <summary>
+        /// Gets or sets the account number.
+        /// </summary>
+        /// <value>The account number.</value>
         public int AccountNumber
         {
             get
@@ -27,6 +31,10 @@ namespace ApplicationLogic.Model
         }
 
         private String _Surname;
+        /// <summary>
+        /// Gets or sets the surname.
+        /// </summary>
+        /// <value>The surname.</value>
         public String Surname
         {
             get
@@ -41,6 +49,10 @@ namespace ApplicationLogic.Model
         }
 
         private double _Balance;
+        /// <summary>
+        /// Gets or sets the balance.
+        /// </summary>
+        /// <value>The balance.</value>
         public double Balance
         {
             get
@@ -64,10 +76,19 @@ namespace ApplicationLogic.Model
 
         public static ErrorMessageCollection ErrorMessages = new ErrorMessageCollection();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BankAccount"/> class.
+        /// </summary>
         public BankAccount()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BankAccount"/> class.
+        /// </summary>
+        /// <param name="acc">The acc.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="balance">The balance.</param>
         public BankAccount(int acc, string name, double balance)
         {
             this.AccountNumber = acc;
@@ -141,6 +162,12 @@ namespace ApplicationLogic.Model
             }
         }
 
+        /// <summary>
+        /// Validates a set of possible changes to a BankAccount.
+        /// </summary>
+        /// <param name="accountNumber">AccountNumber to be verified</param>
+        /// <param name="surname">Surename to be verified</param>
+        /// <returns>True if the values would be valid, false otherwise.</returns>
         internal static bool Validate(int accountNumber, String surname)
         {
             if (String.IsNullOrEmpty(surname))
@@ -170,11 +197,20 @@ namespace ApplicationLogic.Model
             this.AccountNumber = accountNumber;
         }
 
+        /// <summary>
+        /// Returns the current BankAccount object as a CSV-String.
+        /// </summary>
+        /// <returns>Representation of the current object as CSV-String.</returns>
         public string CsvRepresentation()
         {
             return String.Format("{0},{1},{2}", this.AccountNumber, this.Surname, this.Balance);
         }
 
+        /// <summary>
+        /// Attempts to create a BankAccount object from a string.
+        /// </summary>
+        /// <param name="stringRepresentation">The String to be parsed to bank account.</param>
+        /// <returns>BankAccount object.</returns>
         public BankAccount ParseFromString(string stringRepresentation)
         {
             string[] split = stringRepresentation.Split(',');

@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Florian Bergmann
- * Date: 15.10.2010
- * Time: 13:47
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 
 namespace ApplicationLogic.Model
 {

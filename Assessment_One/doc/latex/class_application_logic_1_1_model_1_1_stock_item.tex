@@ -1,0 +1,217 @@
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item}{
+\section{ApplicationLogic.Model.StockItem Class Reference}
+\label{class_application_logic_1_1_model_1_1_stock_item}\index{ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}}
+}
+
+
+Stores all necessary data for a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem}.  
+
+
+Inheritance diagram for ApplicationLogic.Model.StockItem:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_application_logic_1_1_model_1_1_stock_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a1a0d82de69fc9490ce2354ee4cdcd68c}{
+{\bfseries StockItem} (String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)}
+\label{class_application_logic_1_1_model_1_1_stock_item_a1a0d82de69fc9490ce2354ee4cdcd68c}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_ab1fd8e042a5b65bc7a3524e867431b80}{
+void {\bfseries EditStockItem} (String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)}
+\label{class_application_logic_1_1_model_1_1_stock_item_ab1fd8e042a5b65bc7a3524e867431b80}
+
+\item 
+String \hyperlink{class_application_logic_1_1_model_1_1_stock_item_ae274928bf9b87a0be6ab5bf1d59daa12}{CsvRepresentation} ()
+\begin{DoxyCompactList}\small\item\em Returns the current \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} object as a CSV-\/String. \item\end{DoxyCompactList}\item 
+\hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} \hyperlink{class_application_logic_1_1_model_1_1_stock_item_a04fe347e073b0c6472ed0d7d5e41b0fa}{ParseFromString} (string stringRepresentation)
+\begin{DoxyCompactList}\small\item\em Attempts to create a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} object from a string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_application_logic_1_1_model_1_1_stock_item_ac140618820a552685d321598ff7f6a7b}{IsValidStockCode} (string value)
+\begin{DoxyCompactList}\small\item\em Checks if the stock code conforms to a certain format. Current format is exactly four numbers, with leading 0 allowed. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_application_logic_1_1_model_1_1_stock_item_a59c86a35a73cead183c2c241b89eb45b}{Validate} (String stockCode, String name, String supplierName, double unitCost, int required, int currentStock)
+\begin{DoxyCompactList}\small\item\em Validates a set of possible changes to a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a8972b74cb26b3f7d5614b9aa1f4914a2}{
+static \hyperlink{class_application_logic_1_1_model_1_1_error_message_collection}{ErrorMessageCollection} {\bfseries ErrorMessages} = new \hyperlink{class_application_logic_1_1_model_1_1_error_message_collection}{ErrorMessageCollection}()}
+\label{class_application_logic_1_1_model_1_1_stock_item_a8972b74cb26b3f7d5614b9aa1f4914a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_abc6471ae8a9f6e698ba6fa0c02d7e355}{
+String {\bfseries StockCode}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_abc6471ae8a9f6e698ba6fa0c02d7e355}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a18b45890feaa6899c057a142202d01ee}{
+String {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a18b45890feaa6899c057a142202d01ee}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_aadbd14e8abca790ac80240b9ea2961bf}{
+String {\bfseries SupplierName}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_aadbd14e8abca790ac80240b9ea2961bf}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a2c6c6486442e41e67821cdf448a5140d}{
+double {\bfseries UnitCost}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a2c6c6486442e41e67821cdf448a5140d}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a1073d5b4818d8c5de5992827a73f9776}{
+int {\bfseries RequiredStock}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a1073d5b4818d8c5de5992827a73f9776}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a73bf9194af029abd1a095050e89aaccd}{
+int {\bfseries CurrentStock}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a73bf9194af029abd1a095050e89aaccd}
+
+\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_ad93e65c8394722e2c7cacfd507d10581}{
+PropertyChangedEventHandler {\bfseries PropertyChanged}}
+\label{class_application_logic_1_1_model_1_1_stock_item_ad93e65c8394722e2c7cacfd507d10581}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores all necessary data for a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem}. 
+
+Definition at line 14 of file StockItem.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_ae274928bf9b87a0be6ab5bf1d59daa12}{
+\index{ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}!CsvRepresentation@{CsvRepresentation}}
+\index{CsvRepresentation@{CsvRepresentation}!ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}}
+\subsubsection[{CsvRepresentation}]{\setlength{\rightskip}{0pt plus 5cm}String ApplicationLogic.Model.StockItem.CsvRepresentation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_stock_item_ae274928bf9b87a0be6ab5bf1d59daa12}
+
+
+Returns the current \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} object as a CSV-\/String. 
+
+\begin{DoxyReturn}{Returns}
+Representation of the current object as CSV-\/String.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_application_logic_1_1_interfaces_1_1_i_c_s_v_serializable-g}{ApplicationLogic.Interfaces.ICSVSerializable$<$ T $>$}.
+
+
+
+Definition at line 230 of file StockItem.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_ac140618820a552685d321598ff7f6a7b}{
+\index{ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}!IsValidStockCode@{IsValidStockCode}}
+\index{IsValidStockCode@{IsValidStockCode}!ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}}
+\subsubsection[{IsValidStockCode}]{\setlength{\rightskip}{0pt plus 5cm}static bool ApplicationLogic.Model.StockItem.IsValidStockCode (
+\begin{DoxyParamCaption}
+\item[{string}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_ac140618820a552685d321598ff7f6a7b}
+
+
+Checks if the stock code conforms to a certain format. Current format is exactly four numbers, with leading 0 allowed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The string that must be checked against the schema.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string conforms to the schema, false otherwise.
+\end{DoxyReturn}
+
+
+Definition at line 152 of file StockItem.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a04fe347e073b0c6472ed0d7d5e41b0fa}{
+\index{ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}!ParseFromString@{ParseFromString}}
+\index{ParseFromString@{ParseFromString}!ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}}
+\subsubsection[{ParseFromString}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StockItem} ApplicationLogic.Model.StockItem.ParseFromString (
+\begin{DoxyParamCaption}
+\item[{string}]{ stringRepresentation}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a04fe347e073b0c6472ed0d7d5e41b0fa}
+
+
+Attempts to create a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} object from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stringRepresentation} & The String to be parsed to \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} object.
+\end{DoxyReturn}
+
+
+Definition at line 240 of file StockItem.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_stock_item_a59c86a35a73cead183c2c241b89eb45b}{
+\index{ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}!Validate@{Validate}}
+\index{Validate@{Validate}!ApplicationLogic::Model::StockItem@{ApplicationLogic::Model::StockItem}}
+\subsubsection[{Validate}]{\setlength{\rightskip}{0pt plus 5cm}static bool ApplicationLogic.Model.StockItem.Validate (
+\begin{DoxyParamCaption}
+\item[{String}]{ stockCode, }
+\item[{String}]{ name, }
+\item[{String}]{ supplierName, }
+\item[{double}]{ unitCost, }
+\item[{int}]{ required, }
+\item[{int}]{ currentStock}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_application_logic_1_1_model_1_1_stock_item_a59c86a35a73cead183c2c241b89eb45b}
+
+
+Validates a set of possible changes to a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stockCode} & StockCodew to be verified\\
+\hline
+{\em name} & Name to be verified\\
+\hline
+{\em supplierName} & SupplierName to be verified\\
+\hline
+{\em unitCost} & UnitCost to be verified\\
+\hline
+{\em required} & RequiredStock to be verified\\
+\hline
+{\em currentStock} & CurrentStock to be verified\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the values would be valid, false otherwise.
+\end{DoxyReturn}
+
+
+Definition at line 187 of file StockItem.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Application\_\-Logic/Model/StockItem.cs\end{DoxyCompactItemize}

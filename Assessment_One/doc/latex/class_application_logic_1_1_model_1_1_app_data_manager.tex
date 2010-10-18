@@ -1,0 +1,162 @@
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager}{
+\section{ApplicationLogic.Model.AppDataManager Class Reference}
+\label{class_application_logic_1_1_model_1_1_app_data_manager}\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+}
+
+
+Handles data and persistent.  
+
+
+Inheritance diagram for ApplicationLogic.Model.AppDataManager:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_application_logic_1_1_model_1_1_app_data_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_application_logic_1_1_model_1_1_app_data_manager_afb43e13b4f73d9dc2af1b0198df394d0}{CreateNewStockItem} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} and initializes it with dummy values. Adds the item to the \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} collection. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_model_1_1_app_data_manager_ac529e92b640c1f6ca06b9c9a8bfaaf77}{DeleteStockItem} (\hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} si)
+\begin{DoxyCompactList}\small\item\em Deletes a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} from the \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} collection. Throws an ArgumentException if the item can not be found. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_model_1_1_app_data_manager_a6ea600a1df3f50f6167a8c97a69244bd}{CreateNewBankAccount} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} and initializes it with dummy values. Adds the item to the \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} collection. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_model_1_1_app_data_manager_a94061c92cc5a1d87c21e91bd2e8f0de2}{DeleteBankAccount} (\hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} ba)
+\begin{DoxyCompactList}\small\item\em Deletes a \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} from the \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} collection. Throws an ArgumentException if the account can not be found. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_model_1_1_app_data_manager_a3d9fae714bf8a482a6648a2913fbc9de}{OrderItem} (\hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} si, \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} ba, int quantity)
+\begin{DoxyCompactList}\small\item\em Attempts to order an item. If no quantity was provided the required quantity will be ordered. Otherwise the provided quantity will be ordered. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a79dc47f13d21e4e642f6ded6acb5b0e7}{
+BindingList$<$ \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} $>$ {\bfseries StockItems}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a79dc47f13d21e4e642f6ded6acb5b0e7}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a238a74e43986f8b3d868cb934fba4462}{
+BindingList$<$ \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} $>$ {\bfseries BankAccounts}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a238a74e43986f8b3d868cb934fba4462}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a46f9d4c52d73f7101814771c37e90dd2}{
+FileHandler$<$ \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} $>$ {\bfseries StockItemHandler}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a46f9d4c52d73f7101814771c37e90dd2}
+
+\item 
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_ab4a14edb0f427e31a7129e7fb6606036}{
+FileHandler$<$ \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} $>$ {\bfseries BankAccountHandler}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_ab4a14edb0f427e31a7129e7fb6606036}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles data and persistent. 
+
+Definition at line 13 of file AppDataManager.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a6ea600a1df3f50f6167a8c97a69244bd}{
+\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}!CreateNewBankAccount@{CreateNewBankAccount}}
+\index{CreateNewBankAccount@{CreateNewBankAccount}!ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+\subsubsection[{CreateNewBankAccount}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Model.AppDataManager.CreateNewBankAccount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a6ea600a1df3f50f6167a8c97a69244bd}
+
+
+Creates a new \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} and initializes it with dummy values. Adds the item to the \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} collection. 
+
+
+
+Definition at line 70 of file AppDataManager.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_afb43e13b4f73d9dc2af1b0198df394d0}{
+\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}!CreateNewStockItem@{CreateNewStockItem}}
+\index{CreateNewStockItem@{CreateNewStockItem}!ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+\subsubsection[{CreateNewStockItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Model.AppDataManager.CreateNewStockItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_afb43e13b4f73d9dc2af1b0198df394d0}
+
+
+Creates a new \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} and initializes it with dummy values. Adds the item to the \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} collection. 
+
+
+
+Definition at line 44 of file AppDataManager.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a94061c92cc5a1d87c21e91bd2e8f0de2}{
+\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}!DeleteBankAccount@{DeleteBankAccount}}
+\index{DeleteBankAccount@{DeleteBankAccount}!ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+\subsubsection[{DeleteBankAccount}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Model.AppDataManager.DeleteBankAccount (
+\begin{DoxyParamCaption}
+\item[{{\bf BankAccount}}]{ ba}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a94061c92cc5a1d87c21e91bd2e8f0de2}
+
+
+Deletes a \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} from the \hyperlink{class_application_logic_1_1_model_1_1_bank_account}{BankAccount} collection. Throws an ArgumentException if the account can not be found. 
+
+
+
+Definition at line 80 of file AppDataManager.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_ac529e92b640c1f6ca06b9c9a8bfaaf77}{
+\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}!DeleteStockItem@{DeleteStockItem}}
+\index{DeleteStockItem@{DeleteStockItem}!ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+\subsubsection[{DeleteStockItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Model.AppDataManager.DeleteStockItem (
+\begin{DoxyParamCaption}
+\item[{{\bf StockItem}}]{ si}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_ac529e92b640c1f6ca06b9c9a8bfaaf77}
+
+
+Deletes a \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} from the \hyperlink{class_application_logic_1_1_model_1_1_stock_item}{StockItem} collection. Throws an ArgumentException if the item can not be found. 
+
+
+
+Definition at line 54 of file AppDataManager.cs.
+
+\hypertarget{class_application_logic_1_1_model_1_1_app_data_manager_a3d9fae714bf8a482a6648a2913fbc9de}{
+\index{ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}!OrderItem@{OrderItem}}
+\index{OrderItem@{OrderItem}!ApplicationLogic::Model::AppDataManager@{ApplicationLogic::Model::AppDataManager}}
+\subsubsection[{OrderItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Model.AppDataManager.OrderItem (
+\begin{DoxyParamCaption}
+\item[{{\bf StockItem}}]{ si, }
+\item[{{\bf BankAccount}}]{ ba, }
+\item[{int}]{ quantity}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_model_1_1_app_data_manager_a3d9fae714bf8a482a6648a2913fbc9de}
+
+
+Attempts to order an item. If no quantity was provided the required quantity will be ordered. Otherwise the provided quantity will be ordered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indexStockItem} & Index of the stock item in the stock items list.\\
+\hline
+{\em indexBankAccount} & Index of the bank account in the bank account list.\\
+\hline
+{\em quantity} & The quantity to be ordered. 0 orders the required quantity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file AppDataManager.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Application\_\-Logic/Model/AppDataManager.cs\end{DoxyCompactItemize}

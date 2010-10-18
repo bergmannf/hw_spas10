@@ -5,6 +5,9 @@ using System.Text;
 
 namespace ApplicationLogic.Interfaces
 {
+    /// <summary>
+    /// Utilized by the presenter to get the necessary values from a view.
+    /// </summary>
     public interface IBankAccountView
     {
         int AccountNumber { get; }

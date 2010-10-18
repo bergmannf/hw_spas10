@@ -6,6 +6,9 @@ using ApplicationLogic.Model;
 
 namespace ApplicationLogic.Interfaces
 {
+    /// <summary>
+    /// Utilized by the presenter to get the necessary values from a view.
+    /// </summary>
     public interface ICongregateView
     {
         StockItem StockItem { get; }

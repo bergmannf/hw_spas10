@@ -1,3 +1,46 @@
 %************************************************
 \chapter{Introduction}\label{ch:introduction}
 %************************************************
+
+In  chapter an overview over the document, as well as the specified requirements shall be given.
+
+\section{Document overview}
+\label{sec:document_overview}
+
+This report fulfils in major parts the role of a requirements document. As such, it is intended for different audiences:
+\autoref{ch:requirements} provides an overview over the fulfilled requirements and thus should be of greatest interest for the managerial department, as well as the end users.
+
+\autoref{ch:user_guide} is a user guide that showcases the use of the program by showing how to accomplish certain tasks with the application. Naturally  part is essential for end users.
+
+\autoref{ch:design} and \autoref{ch:developer_guide} are intended for engineers and software developers. They provide an overview over the application's high- and low-level design, highlighting certain important aspects that might need to be taken into account to allow further development to proceed at an efficient pace.
+
+\autoref{ch:testing} provides an overview over the testing that has happened during the development.
+
+\autoref{ch:conclusions} will wrap up the development of the application and provide an outlook at possible improvements that might be made.
+
+\section{Remit}
+\label{sec:remit}
+
+ section shall provide a short recap of the specified requirements. A list of fulfilled requirements will be provided in \autoref{ch:requirements}.
+
+The requirements as understood by the contractor are as following \footnote{For further reference the requirements are prefixed with unique numbers: \ac{MSI}, \ac{MBA}, \ac{MDA}, \ac{GUI}}:
+
+\begin{description}
+\item[MSI01:] Allow the management of \textit{Stock Items}. Management includes the following operations: add, edit, delete.
+\item[MSI02:] The operation \textit{add} and \textit{delete} should be possible without the use of an external storage.
+\item[MSI03:] Every stock item should consist of the following attributes: a \textit{Stock Code}, an \textit{Item Name}, a \textit{Supplier Name}, a \textit{Unit's cost}, the \textit{Number Required} and the \textit{Current stock level}.
+\item[MSI04:] Allow the ordering of stock items via a money transfer.
+\item[MBA01:] Allow the management of \textit{Bank Accounts}: Management includes the following operations: add, edit, delete.
+\item[MBA02:] The real transaction of money needs \textbf{not} to be implemented.
+\item[MBA03:] An order should deduct the needed money from the bank account and change the \textit{required} and \textit{current} stock of an item accordingly.
+\item[MDA01:] Allow the import and export of \textit{Stock Items} from \ac{CSV}-file.
+\item[MDA02:] The location of the file may be chosen by the user.
+\item[MDA03:] The ordering of the \ac{CSV}-file may not be changed.
+\item[MDA04:] The ordering of the files is as follows:
+\begin{lstlisting}
+StockCode,Name,SupplierName,UnitCost,RequiredStock,CurrentStock
+\end{lstlisting}
+\item[MDA04:] The file should support blank fields by not entering data between two commas.
+\item[GUI01:] Interaction between user and program shall happen via a \ac{GUI}.
+\item[GUI02:] The \ac{GUI} shall provide menus, buttons and icons for easier accessibility.
+\end{description}

@@ -1,0 +1,458 @@
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter}{
+\section{ApplicationLogic.Presenter.CongregatePresenter Class Reference}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter}\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+}
+
+
+\hyperlink{namespace_application_logic_1_1_presenter}{Presenter} for the MainWindow: handles events and GUI-\/related part of the application logic.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4599df5ec46ce56bc80c1ccf058cda5d}{CongregatePresenter} (\hyperlink{interface_application_logic_1_1_interfaces_1_1_i_congregate_view}{ICongregateView} view, \hyperlink{interface_application_logic_1_1_interfaces_1_1_i_stock_item_view}{IStockItemView} stockItemView, \hyperlink{interface_application_logic_1_1_interfaces_1_1_i_bank_account_view}{IBankAccountView} bankAccountView, \hyperlink{interface_application_logic_1_1_interfaces_1_1_i_view_model}{IViewModel} model)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter}{CongregatePresenter} class. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a78dd23169c77d2b14d3bab837388a9ac}{CreateNewStockItem} ()
+\begin{DoxyCompactList}\small\item\em ApplicationLogic.Model.AppDataManagerClass \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_afb7e0ccf364f29cf8062bac56efc8f2f}{DeleteStockItem} ()
+\begin{DoxyCompactList}\small\item\em Deletes the stock item. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_af591e9f32c6b55747ec0c1789ffe2fe6}{CreateNewBankAccount} ()
+\begin{DoxyCompactList}\small\item\em Creates the new bank account. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a2407edbf6827238bfa5f706ed128f8ff}{DeleteBankAccount} ()
+\begin{DoxyCompactList}\small\item\em Deletes the bank account. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a7d37db88a339d87fc43733dd89ab81a2}{EditStockItem} ()
+\begin{DoxyCompactList}\small\item\em Edits the stock item. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9323005b2ae99075acf88483aff383f3}{EditBankAccount} ()
+\begin{DoxyCompactList}\small\item\em Edits the bank account. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a1430360f84dca7b71d9a0e080ed99703}{OrderItem} ()
+\begin{DoxyCompactList}\small\item\em Orders the item. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4e04206afeb957490b1fa2acddfbf890}{Deposit} ()
+\begin{DoxyCompactList}\small\item\em Deposits this instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a912cb34b6bfc35dbc016d6c1e1372b03}{Withdraw} ()
+\begin{DoxyCompactList}\small\item\em Withdraws this instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9c5ef28a27cbd13c11f1ee147805b9b0}{CloseApplication} ()
+\begin{DoxyCompactList}\small\item\em Closes the application. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a771cb47ece00fe6223089d7f0b0cef31}{LoadStockItemsFromFile} (String filePath)
+\begin{DoxyCompactList}\small\item\em Loads the stock items from file. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_abd887c47c94ba9ee09752599366ae894}{LoadBankAccountsFromFile} (String filePath)
+\begin{DoxyCompactList}\small\item\em Loads the bank accounts from file. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a17a85c2e2036d7c6f44f1ed6854327a8}{SaveStockItemsToFile} (String filePath)
+\begin{DoxyCompactList}\small\item\em Saves the stock items to file. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a68bc08bf2c366a84f92c9e40104aeb57}{SaveBankAccountsToFile} (String filePath)
+\begin{DoxyCompactList}\small\item\em Saves the bank accounts to file. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a45ef7a71499993d5781c88cce6528c5b}{SetUpStockItemFilePath} (string filePathStockItems)
+\begin{DoxyCompactList}\small\item\em Sets up stock item file path. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a805286b73eb8dec4b5f2f95a26fe4aa0}{SetUpBankAccountsFilePath} (string filePathBankAccounts)
+\begin{DoxyCompactList}\small\item\em Sets up bank accounts file path. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_ae4084d9827704f4078f8d42584f70fb5}{SaveBankAccountsToFile} ()
+\begin{DoxyCompactList}\small\item\em Saves the bank accounts to file. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter_a535c52933dd24176dc16fc6d257b9edd}{SaveStockItemsToFile} ()
+\begin{DoxyCompactList}\small\item\em Saves the stock items to file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a6fd77a2d719fd3cbc1776fd81acc1ea3}{
+\hyperlink{interface_application_logic_1_1_interfaces_1_1_i_congregate_view}{ICongregateView} {\bfseries \_\-View}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a6fd77a2d719fd3cbc1776fd81acc1ea3}
+
+\item 
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_aa66dab7ba15f1148c45bcdac1dd68558}{
+\hyperlink{interface_application_logic_1_1_interfaces_1_1_i_stock_item_view}{IStockItemView} {\bfseries \_\-StockItemView}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_aa66dab7ba15f1148c45bcdac1dd68558}
+
+\item 
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a40e2fd8e8b8c743817a7d871138825fa}{
+\hyperlink{interface_application_logic_1_1_interfaces_1_1_i_bank_account_view}{IBankAccountView} {\bfseries \_\-BankAccountView}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a40e2fd8e8b8c743817a7d871138825fa}
+
+\item 
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a54e13a5780ceb93549574397fe6cc1b6}{
+\hyperlink{class_application_logic_1_1_model_1_1_app_data_manager}{AppDataManager} {\bfseries \_\-Model}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a54e13a5780ceb93549574397fe6cc1b6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{namespace_application_logic_1_1_presenter}{Presenter} for the MainWindow: handles events and GUI-\/related part of the application logic. 
+
+Definition at line 14 of file CongregatePresenter.cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4599df5ec46ce56bc80c1ccf058cda5d}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!CongregatePresenter@{CongregatePresenter}}
+\index{CongregatePresenter@{CongregatePresenter}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{CongregatePresenter}]{\setlength{\rightskip}{0pt plus 5cm}ApplicationLogic.Presenter.CongregatePresenter.CongregatePresenter (
+\begin{DoxyParamCaption}
+\item[{{\bf ICongregateView}}]{ view, }
+\item[{{\bf IStockItemView}}]{ stockItemView, }
+\item[{{\bf IBankAccountView}}]{ bankAccountView, }
+\item[{{\bf IViewModel}}]{ model}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4599df5ec46ce56bc80c1ccf058cda5d}
+
+
+Initializes a new instance of the \hyperlink{class_application_logic_1_1_presenter_1_1_congregate_presenter}{CongregatePresenter} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The view.\\
+\hline
+{\em stockItemView} & The stock item view.\\
+\hline
+{\em bankAccountView} & The bank account view.\\
+\hline
+{\em model} & The model.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file CongregatePresenter.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9c5ef28a27cbd13c11f1ee147805b9b0}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!CloseApplication@{CloseApplication}}
+\index{CloseApplication@{CloseApplication}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{CloseApplication}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.CloseApplication (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9c5ef28a27cbd13c11f1ee147805b9b0}
+
+
+Closes the application. 
+
+
+
+Definition at line 207 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_af591e9f32c6b55747ec0c1789ffe2fe6}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!CreateNewBankAccount@{CreateNewBankAccount}}
+\index{CreateNewBankAccount@{CreateNewBankAccount}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{CreateNewBankAccount}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.CreateNewBankAccount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_af591e9f32c6b55747ec0c1789ffe2fe6}
+
+
+Creates the new bank account. 
+
+
+
+Definition at line 60 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a78dd23169c77d2b14d3bab837388a9ac}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!CreateNewStockItem@{CreateNewStockItem}}
+\index{CreateNewStockItem@{CreateNewStockItem}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{CreateNewStockItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.CreateNewStockItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a78dd23169c77d2b14d3bab837388a9ac}
+
+
+ApplicationLogic.Model.AppDataManagerClass 
+
+
+
+Definition at line 40 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a2407edbf6827238bfa5f706ed128f8ff}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!DeleteBankAccount@{DeleteBankAccount}}
+\index{DeleteBankAccount@{DeleteBankAccount}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{DeleteBankAccount}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.DeleteBankAccount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a2407edbf6827238bfa5f706ed128f8ff}
+
+
+Deletes the bank account. 
+
+
+
+Definition at line 68 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_afb7e0ccf364f29cf8062bac56efc8f2f}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!DeleteStockItem@{DeleteStockItem}}
+\index{DeleteStockItem@{DeleteStockItem}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{DeleteStockItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.DeleteStockItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_afb7e0ccf364f29cf8062bac56efc8f2f}
+
+
+Deletes the stock item. 
+
+
+
+Definition at line 48 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4e04206afeb957490b1fa2acddfbf890}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!Deposit@{Deposit}}
+\index{Deposit@{Deposit}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{Deposit}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.Deposit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a4e04206afeb957490b1fa2acddfbf890}
+
+
+Deposits this instance. 
+
+
+
+Definition at line 162 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9323005b2ae99075acf88483aff383f3}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!EditBankAccount@{EditBankAccount}}
+\index{EditBankAccount@{EditBankAccount}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{EditBankAccount}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.EditBankAccount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a9323005b2ae99075acf88483aff383f3}
+
+
+Edits the bank account. 
+
+
+
+Definition at line 111 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a7d37db88a339d87fc43733dd89ab81a2}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!EditStockItem@{EditStockItem}}
+\index{EditStockItem@{EditStockItem}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{EditStockItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.EditStockItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a7d37db88a339d87fc43733dd89ab81a2}
+
+
+Edits the stock item. 
+
+
+
+Definition at line 79 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_abd887c47c94ba9ee09752599366ae894}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!LoadBankAccountsFromFile@{LoadBankAccountsFromFile}}
+\index{LoadBankAccountsFromFile@{LoadBankAccountsFromFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{LoadBankAccountsFromFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.LoadBankAccountsFromFile (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_abd887c47c94ba9ee09752599366ae894}
+
+
+Loads the bank accounts from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a771cb47ece00fe6223089d7f0b0cef31}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!LoadStockItemsFromFile@{LoadStockItemsFromFile}}
+\index{LoadStockItemsFromFile@{LoadStockItemsFromFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{LoadStockItemsFromFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.LoadStockItemsFromFile (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a771cb47ece00fe6223089d7f0b0cef31}
+
+
+Loads the stock items from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a1430360f84dca7b71d9a0e080ed99703}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!OrderItem@{OrderItem}}
+\index{OrderItem@{OrderItem}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{OrderItem}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.OrderItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a1430360f84dca7b71d9a0e080ed99703}
+
+
+Orders the item. 
+
+
+
+Definition at line 139 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a68bc08bf2c366a84f92c9e40104aeb57}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SaveBankAccountsToFile@{SaveBankAccountsToFile}}
+\index{SaveBankAccountsToFile@{SaveBankAccountsToFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SaveBankAccountsToFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SaveBankAccountsToFile (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a68bc08bf2c366a84f92c9e40104aeb57}
+
+
+Saves the bank accounts to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_ae4084d9827704f4078f8d42584f70fb5}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SaveBankAccountsToFile@{SaveBankAccountsToFile}}
+\index{SaveBankAccountsToFile@{SaveBankAccountsToFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SaveBankAccountsToFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SaveBankAccountsToFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_ae4084d9827704f4078f8d42584f70fb5}
+
+
+Saves the bank accounts to file. 
+
+
+
+Definition at line 276 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a535c52933dd24176dc16fc6d257b9edd}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SaveStockItemsToFile@{SaveStockItemsToFile}}
+\index{SaveStockItemsToFile@{SaveStockItemsToFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SaveStockItemsToFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SaveStockItemsToFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a535c52933dd24176dc16fc6d257b9edd}
+
+
+Saves the stock items to file. 
+
+
+
+Definition at line 291 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a17a85c2e2036d7c6f44f1ed6854327a8}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SaveStockItemsToFile@{SaveStockItemsToFile}}
+\index{SaveStockItemsToFile@{SaveStockItemsToFile}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SaveStockItemsToFile}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SaveStockItemsToFile (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a17a85c2e2036d7c6f44f1ed6854327a8}
+
+
+Saves the stock items to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a805286b73eb8dec4b5f2f95a26fe4aa0}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SetUpBankAccountsFilePath@{SetUpBankAccountsFilePath}}
+\index{SetUpBankAccountsFilePath@{SetUpBankAccountsFilePath}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SetUpBankAccountsFilePath}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SetUpBankAccountsFilePath (
+\begin{DoxyParamCaption}
+\item[{string}]{ filePathBankAccounts}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a805286b73eb8dec4b5f2f95a26fe4aa0}
+
+
+Sets up bank accounts file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePathBankAccounts} & The file path bank accounts.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a45ef7a71499993d5781c88cce6528c5b}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!SetUpStockItemFilePath@{SetUpStockItemFilePath}}
+\index{SetUpStockItemFilePath@{SetUpStockItemFilePath}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{SetUpStockItemFilePath}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.SetUpStockItemFilePath (
+\begin{DoxyParamCaption}
+\item[{string}]{ filePathStockItems}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a45ef7a71499993d5781c88cce6528c5b}
+
+
+Sets up stock item file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePathStockItems} & The file path stock items.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 253 of file CongregatePresenter.cs.
+
+\hypertarget{class_application_logic_1_1_presenter_1_1_congregate_presenter_a912cb34b6bfc35dbc016d6c1e1372b03}{
+\index{ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}!Withdraw@{Withdraw}}
+\index{Withdraw@{Withdraw}!ApplicationLogic::Presenter::CongregatePresenter@{ApplicationLogic::Presenter::CongregatePresenter}}
+\subsubsection[{Withdraw}]{\setlength{\rightskip}{0pt plus 5cm}void ApplicationLogic.Presenter.CongregatePresenter.Withdraw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_application_logic_1_1_presenter_1_1_congregate_presenter_a912cb34b6bfc35dbc016d6c1e1372b03}
+
+
+Withdraws this instance. 
+
+
+
+Definition at line 179 of file CongregatePresenter.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Application\_\-Logic/Presenter/CongregatePresenter.cs\end{DoxyCompactItemize}

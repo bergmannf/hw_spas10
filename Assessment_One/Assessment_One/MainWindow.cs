@@ -34,7 +34,7 @@ namespace Assessment_One
             SetUpDataBindings();
         }
 
-        
+
 
         #region EventHandler
 
@@ -86,30 +86,39 @@ namespace Assessment_One
 
         private void openStockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.openFileDialog.ShowDialog();
-            OpenFileDialog file = this.openFileDialog;
-            this._Presenter.LoadStockItemsFromFile(file.FileName);
+            
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                OpenFileDialog file = this.openFileDialog;
+                this._Presenter.LoadStockItemsFromFile(file.FileName);
+            }
         }
 
         private void openBankAccountsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.openFileDialog.ShowDialog();
-            OpenFileDialog file = this.openFileDialog;
-            this._Presenter.LoadBankAccountsFromFile(file.FileName);
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                OpenFileDialog file = this.openFileDialog;
+                this._Presenter.LoadBankAccountsFromFile(file.FileName);
+            }
         }
 
         private void saveStockItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog.ShowDialog();
-            SaveFileDialog file = this.saveFileDialog;
-            this._Presenter.SaveStockItemsToFile(file.FileName);
+            if (this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveFileDialog file = this.saveFileDialog;
+                this._Presenter.SaveStockItemsToFile(file.FileName);
+            }
         }
 
         private void saveBankAccountsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog.ShowDialog();
-            SaveFileDialog file = this.saveFileDialog;
-            this._Presenter.SaveBankAccountsToFile(file.FileName);
+            if (this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveFileDialog file = this.saveFileDialog;
+                this._Presenter.SaveBankAccountsToFile(file.FileName);
+            }
         }
 
         private void applyButton_Click(object sender, EventArgs e)
@@ -156,6 +165,13 @@ namespace Assessment_One
         {
             SettingsWindow sw = new SettingsWindow();
             sw.ShowDialog();
+            this.LoadFilePathSettings();
+        }
+
+        private void saveStripButton_Click(object sender, EventArgs e)
+        {
+            this._Presenter.SaveBankAccountsToFile();
+            this._Presenter.SaveStockItemsToFile();
         }
 
         #endregion
@@ -430,6 +446,20 @@ namespace Assessment_One
             accountNumberTextBox.DataBindings.Add("Text", _Model.BankAccounts, "AccountNumber", false, DataSourceUpdateMode.Never);
             nameTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Surname", false, DataSourceUpdateMode.Never);
             balanceTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Balance", false, DataSourceUpdateMode.Never);
+        }
+
+        private void quantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            String newText = quantityTextBox.Text;
+            int parseInt = 0;
+            if (int.TryParse(newText, out parseInt))
+            {
+                placeOrderButton.Enabled = true;
+            }
+            else
+            {
+                placeOrderButton.Enabled = false;
+            }
         }
 
         #endregion

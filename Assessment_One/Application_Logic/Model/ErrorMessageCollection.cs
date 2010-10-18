@@ -5,6 +5,9 @@ using System.Text;
 
 namespace ApplicationLogic.Model
 {
+    /// <summary>
+    /// Used to store meaningful errormessages for further use.
+    /// </summary>
     public class ErrorMessageCollection : List<ErrorMessage>
     {
         public override string ToString()
