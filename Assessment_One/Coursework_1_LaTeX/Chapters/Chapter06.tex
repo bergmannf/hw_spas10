@@ -1,3 +1,23 @@
 %************************************************
 \chapter{Testing}\label{ch:testing} % $\mathbb{ZNR}$
 %************************************************
+
+Testing was performed in two stages:
+
+\begin{enumerate}
+\item Unit-Testing
+\item System-Integration-Testing
+\end{enumerate}
+
+The part of sub-system-integration-testing as lined out in \textcite[520]{Sommerville2006} was skipped, as there was no significant number of sub-modules that needed testing. Most of the integration consisted of passing on parameters through the three layers of the application (view, presenter, model).
+
+These tests were incorporated into the main system-integration-testing.
+
+As the model was the part that hosted most of the application logic, test-cases were created for its three main-classes:
+
+\begin{enumerate}
+\item \texttt{StockItem}
+\item \texttt{BankAccount}
+\item \texttt{FileHandler}
+\end{enumerate}
+
