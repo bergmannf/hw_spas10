@@ -24,6 +24,9 @@ namespace Assessment_One
         private const int STOCKITEMTAB = 0;
         private const int BANKACCOUNTTAB = 1;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -178,6 +181,10 @@ namespace Assessment_One
 
         #region IStockItemView
 
+        /// <summary>
+        /// Gets the current stock.
+        /// </summary>
+        /// <value>The current stock.</value>
         public int CurrentStock
         {
             get
@@ -196,6 +203,10 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the required stock.
+        /// </summary>
+        /// <value>The required stock.</value>
         public int RequiredStock
         {
             get
@@ -214,16 +225,28 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the stock code.
+        /// </summary>
+        /// <value>The stock code.</value>
         public string StockCode
         {
             get { return stockCodeTextBox.Text; }
         }
 
+        /// <summary>
+        /// Gets the name of the supplier.
+        /// </summary>
+        /// <value>The name of the supplier.</value>
         public string SupplierName
         {
             get { return supplierNameTextBox.Text; }
         }
 
+        /// <summary>
+        /// Gets the unit cost.
+        /// </summary>
+        /// <value>The unit cost.</value>
         public double UnitCost
         {
             get
@@ -242,6 +265,10 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the name of the item.
+        /// </summary>
+        /// <value>The name of the item.</value>
         public string ItemName
         {
             get { return itemNameTextBox.Text; }
@@ -251,6 +278,10 @@ namespace Assessment_One
 
         #region IBankAccountView
 
+        /// <summary>
+        /// Gets the account number.
+        /// </summary>
+        /// <value>The account number.</value>
         public int AccountNumber
         {
             get
@@ -269,11 +300,19 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the surname.
+        /// </summary>
+        /// <value>The surname.</value>
         public string Surname
         {
             get { return nameTextBox.Text; }
         }
 
+        /// <summary>
+        /// Gets the balance.
+        /// </summary>
+        /// <value>The balance.</value>
         public double Balance
         {
             get
@@ -296,16 +335,28 @@ namespace Assessment_One
 
         #region ICongregateView
 
+        /// <summary>
+        /// Gets the stock item.
+        /// </summary>
+        /// <value>The stock item.</value>
         public StockItem StockItem
         {
             get { return (StockItem)this.stockItemsListBox.SelectedItem; }
         }
 
+        /// <summary>
+        /// Gets the bank account.
+        /// </summary>
+        /// <value>The bank account.</value>
         public BankAccount BankAccount
         {
             get { return (BankAccount)this.bankAccountsListBox.SelectedItem; }
         }
 
+        /// <summary>
+        /// Gets the quantity value.
+        /// </summary>
+        /// <value>The quantity.</value>
         public int Quantity
         {
             get
@@ -324,6 +375,10 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the deposit value.
+        /// </summary>
+        /// <value>The deposit.</value>
         public double Deposit
         {
             get
@@ -342,6 +397,10 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Gets the withdraw value.
+        /// </summary>
+        /// <value>The withdraw.</value>
         public double Withdraw
         {
             get
@@ -360,17 +419,29 @@ namespace Assessment_One
             }
         }
 
+        /// <summary>
+        /// Displays the validation errors.
+        /// </summary>
+        /// <param name="errorCollection">The error collection.</param>
         public void DisplayValidationErrors(ErrorMessageCollection errorCollection)
         {
             MessageBox.Show(errorCollection.ToString(), "Errors occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// Asks fir confirmation of a deletion.
+        /// </summary>
+        /// <returns></returns>
         public bool ConfirmDelete()
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return result == DialogResult.Yes;
         }
 
+        /// <summary>
+        /// Asks fir confirmation of closing the application.
+        /// </summary>
+        /// <returns></returns>
         public bool ConfirmClose()
         {
             DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

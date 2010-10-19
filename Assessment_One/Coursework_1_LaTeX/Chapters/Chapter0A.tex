@@ -5,6 +5,50 @@
 
 \section{View}
 
-\section{Model}
+\lstinputlisting[caption=MainWindow.cs]{\viewRoot/MainWindow.cs}
+
+\lstinputlisting[caption=Settings.cs]{\viewRoot/SettingsWindow.cs}
+
+\section{Application Logic}
+
+\subsection{Interfaces Package}
+
+\lstinputlisting[caption=IBankAccountView.cs]{\logicRoot/Interfaces/IBankAccountView.cs}
+
+\lstinputlisting[caption=ICongegrateView.cs]{\logicRoot/Interfaces/ICongregateView.cs}
+
+\lstinputlisting[caption=ICSVSerializable.cs]{\logicRoot/Interfaces/ICSVSerializable.cs}
+
+\lstinputlisting[caption=IStockItemView.cs]{\logicRoot/Interfaces/IStockItemView.cs}
+
+\lstinputlisting[caption=IViewModel.cs]{\logicRoot/Interfaces/IViewModel.cs}
+
+\subsection{Model Package}
+
+\lstinputlisting[caption=AppDataManager.cs]{\logicRoot/Model/AppDataManager.cs}
+
+\lstinputlisting[caption=BankAccount.cs]{\logicRoot/Model/BankAccount.cs}
+
+\lstinputlisting[caption=ErrorMessage.cs]{\logicRoot/Model/ErrorMessage.cs}
+
+\lstinputlisting[caption=ErrorMessageCollection.cs]{\logicRoot/Model/ErrorMessageCollection.cs}
+
+\lstinputlisting[caption=FileHandler.cs]{\logicRoot/Model/FileHandler.cs}
+
+\lstinputlisting[caption=NoFilePathSetException.cs]{\logicRoot/Model/NoFilePathSetException.cs}
+
+\lstinputlisting[caption=NotEnoughFundsException.cs]{\logicRoot/Model/NotEnoughFundsException.cs}
+
+\lstinputlisting[caption=StockItem.cs]{\logicRoot/Model/StockItem.cs}
+
+\subsection{Presenter Package}
+
+\lstinputlisting[caption=CongregatePresenter.cs]{\logicRoot/Presenter/CongregatePresenter.cs}
 
 \section{Tests}
+
+\lstinputlisting[caption=BankAccountTest.cs]{\testRoot/ApplicationLogic/BankAccountTest.cs}
+
+\lstinputlisting[caption=FileHandlerTest.cs]{\testRoot/ApplicationLogic/FileHandlerTest.cs}
+
+\lstinputlisting[caption=StockItemTest.cs]{\testRoot/ApplicationLogic/StockItemTest.cs}

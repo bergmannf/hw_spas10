@@ -13,6 +13,7 @@ namespace ApplicationLogic.Model
 	/// </summary>
 	public class StockItem : INotifyPropertyChanged, ICSVSerializable<StockItem>
 	{
+        private const string REGEX = "^[0-9]{4}$";
 		private String _StockCode;
 		public String StockCode {
 			get { return _StockCode; }
@@ -114,7 +115,7 @@ namespace ApplicationLogic.Model
 				throw new ArgumentNullException ("Provided stockcode was null or empty.");
 			} else {
 				// TODO: Do not use magic numbers in code
-				Regex regexp = new Regex ("^[0-9]{4}$");
+				Regex regexp = new Regex (REGEX);
 				return regexp.IsMatch (value);
 			}
 			

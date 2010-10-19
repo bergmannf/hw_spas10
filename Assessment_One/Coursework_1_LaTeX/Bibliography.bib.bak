@@ -1,0 +1,102 @@
+% This file was created with JabRef 2.6.
+% Encoding: Cp1252
+
+@BOOK{AndrewStellmanandJenniferGreene2010,
+  title = {Head First CSharp},
+  publisher = {O'Reilly},
+  year = {2010},
+  author = {{Andrew Stellman and Jennifer Greene}},
+  isbn = {978-1-449-38034-2},
+  owner = {Florian Bergmann},
+  timestamp = {2010.10.19}
+}
+
+@BOOK{Balzert09,
+  title = {{Lehrbuch der Software-Technik: Basiskonzepte und Requirements Engineering}},
+  publisher = {Spektrum},
+  year = {2009},
+  author = {Helmut Balzert},
+  address = {Heidelberg},
+  edition = {3.},
+  abstract = {Die Softwaretechnik bildet einen Grundpfeiler der Informatik. Jede
+	Softwareentwicklung basiert auf Prinzipien, Methoden und Werkzeugen.
+	Mit Basiskonzepten kann die Statik, Dynamik und Logik von Softwaresystemen
+	beschrieben und modelliert werden. Die Anforderungen an ein neues
+	Softwareprodukt zu ermitteln, zu spezifizieren, zu analysieren, zu
+	validieren und daraus eine fachliche L{\"o}sung abzuleiten bzw. ein
+	Produktmodell zu entwickeln, geh{\"o}rt mit zu den anspruchsvollsten
+	Aufgaben innerhalb der Softwaretechnik. Dieser Band des dreiteiligen
+	Lehrbuchs der Softwaretechnik vermittelt in systematischer und klassifizierender
+	Art und Weise die Basistechniken und die Basiskonzepte der Softwareentwicklung
+	und beschreibt die Aktivit{\"a}ten, Artefakte und Methoden des Requirements
+	Engineering.},
+  added-at = {2010-07-17T18:46:57.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2ac2443d87bea7fadc0510480f09a0132/flint63},
+  file = {Springer Product page:http\://www.springer.com/978-3-8274-1705-3:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/3827417058/:URL},
+  interhash = {c25f0a2b873cdb0e02032ad579e5bc29},
+  intrahash = {ac2443d87bea7fadc0510480f09a0132},
+  isbn = {9783827417053},
+  keywords = {software development v1002 book requirements engineering}
+}
+
+@BOOK{Dorman2010,
+  title = {{Sams Teach Yourself Visual CSharp®2010 in 24 Hours: Complete Starter
+	Kit}},
+  publisher = {Sams Publishing},
+  year = {2010},
+  author = {Scott Dorman},
+  isbn = {978-0-672-33101-5},
+  owner = {Florian Bergmann},
+  timestamp = {2010.10.19}
+}
+
+@BOOK{FreemF2004,
+  title = {Head First - Design Pattern},
+  publisher = {O'Reilly},
+  year = {2004},
+  editor = {Mike Loukides},
+  author = {Eric Freeman and Elisabeth Freeman},
+  added-at = {2010-09-07T21:25:41.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2417a2fcd20ff366b4eb9c00138b7699d/funthomas424242},
+  interhash = {7dae4e874e2f0b7c9ee0f0d9ee6aed2f},
+  intrahash = {417a2fcd20ff366b4eb9c00138b7699d},
+  isbn = {0-596-00712-4},
+  keywords = {Design Pattern},
+  owner = {tmichel},
+  timestamp = {14.05.2007}
+}
+
+@BOOK{Noyes2006,
+  title = {Data Binding With Windows Forms 2.0 - Programming Smart Client Data
+	Applications With .NET},
+  publisher = {Addison Wesley Professional},
+  year = {2006},
+  author = {Brian Noyes},
+  isbn = {978-0-321-26892-1},
+  owner = {Florian Bergmann},
+  timestamp = {2010.10.19}
+}
+
+@BOOK{Sommerville2006,
+  title = {Software Engineering},
+  publisher = {Addison Wesley},
+  year = {2006},
+  author = {Ian Sommerville},
+  edition = {8},
+  added-at = {2010-10-17T02:11:35.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2a1a11c215b318a4d9dec80f323429c5f/lleme},
+  file = {Sommerville2006.pdf:Sommerville2006.pdf:PDF},
+  interhash = {dffb8e905d9dc3e19986235545befe3c},
+  intrahash = {a1a11c215b318a4d9dec80f323429c5f},
+  isbn = {9780321210265},
+  keywords = {software-engineering}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

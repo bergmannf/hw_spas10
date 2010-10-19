@@ -13,6 +13,10 @@ namespace ApplicationLogic.Model
     public class AppDataManager : IViewModel
     {
         private BindingList<StockItem> _StockItems;
+        /// <summary>
+        /// Gets or sets the stock items.
+        /// </summary>
+        /// <value>The stock items.</value>
         public BindingList<StockItem> StockItems
         {
             get { return _StockItems; }
@@ -20,13 +24,25 @@ namespace ApplicationLogic.Model
         }
 
         private BindingList<BankAccount> _BankAccounts;
+        /// <summary>
+        /// Gets or sets the bank accounts.
+        /// </summary>
+        /// <value>The bank accounts.</value>
         public BindingList<BankAccount> BankAccounts
         {
             get { return _BankAccounts; }
             set { _BankAccounts = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the stock item handler.
+        /// </summary>
+        /// <value>The stock item handler.</value>
         public FileHandler<StockItem> StockItemHandler { get; private set; }
+        /// <summary>
+        /// Gets or sets the bank account handler.
+        /// </summary>
+        /// <value>The bank account handler.</value>
         public FileHandler<BankAccount> BankAccountHandler { get; private set; }
 
         public AppDataManager()

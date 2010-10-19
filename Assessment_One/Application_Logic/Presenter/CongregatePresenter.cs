@@ -167,7 +167,7 @@ namespace ApplicationLogic.Presenter
                 double amount = this._View.Deposit;
                 this._Model.Deposit(ba, amount);
             }
-            catch (Exception e)
+            catch (ArgumentNullException e)
             {
                 DisplayError(e);
             }
@@ -184,7 +184,7 @@ namespace ApplicationLogic.Presenter
                 double amount = this._View.Withdraw;
                 this._Model.Withdraw(ba, amount);
             }
-            catch (Exception e)
+            catch (ArgumentNullException e)
             {
                 DisplayError(e);
             }
@@ -279,7 +279,7 @@ namespace ApplicationLogic.Presenter
             {
                 this._Model.SaveBankAccountsToFile();
             }
-            catch (Exception e)
+            catch (NoFilePathSetException e)
             {
                 DisplayError(e);
             } 
@@ -294,7 +294,7 @@ namespace ApplicationLogic.Presenter
             {
                 this._Model.SaveStockItemsToFile();
             }
-            catch (Exception e)
+            catch (NoFilePathSetException e)
             {
                 DisplayError(e);
             }

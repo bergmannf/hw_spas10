@@ -120,7 +120,7 @@ namespace ApplicationLogic.Model
 			if (amount >= 0.0) {
 				if (this.Balance > amount) {
 					this.Balance -= amount;
-					// TODO: Fancy logic to transfer money.
+					// TODO: In reality: fancy logic to transfer money.
 				} else {
 					throw new ArgumentException ("There are not enough funds present to fulfill the required action.");
 				}
