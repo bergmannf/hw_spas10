@@ -56,6 +56,38 @@ namespace NUnit_Tests
         {
             StockItem.IsValidStockCode(null);
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestCreateStockItemInvalidStockCode()
+        {
+            String invalidStockCode = "00001";
+            StockItem si = new StockItem(invalidStockCode, "", "", 0.0, 0, 0);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestCreateStockItemInvalidCost()
+        {
+            double invalidCost = -1.0;
+            StockItem si = new StockItem("0001", "", "", invalidCost, 0, 0);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestCreateStockItemInvalidRequiredStock()
+        {
+            int invalidStock = -1;
+            StockItem si = new StockItem("0001", "", "", 0.0, invalidStock, 0);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestCreateStockItemInvalidCurrentStock()
+        {
+            int invalidStock = -1;
+            StockItem si = new StockItem("0001", "", "", 0.0,  0, invalidStock);
+        }
         
 		[Test]
 		public void TestStringParsing()

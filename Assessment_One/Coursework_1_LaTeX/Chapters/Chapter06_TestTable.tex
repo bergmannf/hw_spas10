@@ -1,0 +1,21 @@
+\begin{longtable}{X X X}
+\hline Under Test & Input & Output \\ 
+\hline
+\hline Stock Item & Invalid StockCode & ArgumentException \\ 
+\hline Stock Item & Invalid Current Stock & ArgumentException \\ 
+\hline Stock Item & Invalid Required Stock & ArgumentException \\ 
+\hline Stock Item & Invalid Parsing & FormatException \\ 
+\hline Stock Item & Invalid Cost & ArgumentException \\ 
+\hline Bank Account & Invalid Balance & ArgumentException \\ 
+\hline Bank Account & Invalid Withdraw & ArgumentException \\ 
+\hline Bank Account & Invalid Deposit & ArgumentException \\ 
+\hline Bank Account & Invalid Transfer & ArgumentException \\
+\hline Bank Account & Too little funds for transfer & NotEnoughFundsException \\
+\hline Bank Account & Invalid Parsing & FormatException \\
+\hline AppDataManager & Remove invalid item & ArgumentException \\
+\hline AppDataManager & Perform Order & Correct sequence of statements \\
+\hline AppDataManager & Order with too little funds & NotEnoughFundsException \\
+\hline File Handler & Save without file path & NoFilePathSetException \\
+\hline File Handler & Load without file path & NoFilePathSetException \\
+\caption{Performed tests.}
+\end{longtable} 

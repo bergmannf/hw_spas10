@@ -15,7 +15,7 @@ namespace ApplicationLogic.Model
 	{
         private const string REGEX = "^[0-9]{4}$";
 		private String _StockCode;
-		public String StockCode {
+		public virtual String StockCode {
 			get { return _StockCode; }
 			set {
 				if (!IsValidStockCode (value)) {
@@ -28,7 +28,7 @@ namespace ApplicationLogic.Model
 		}
 
 		private String _Name;
-		public String Name {
+		public virtual String Name {
 			get { return _Name; }
 			set {
 				_Name = value;
@@ -37,7 +37,7 @@ namespace ApplicationLogic.Model
 		}
 
 		private String _SupplierName;
-		public String SupplierName {
+		public virtual String SupplierName {
 			get { return _SupplierName; }
 			set {
 				_SupplierName = value;
@@ -46,7 +46,7 @@ namespace ApplicationLogic.Model
 		}
 
 		private double _UnitCost;
-		public double UnitCost {
+		public virtual double UnitCost {
 			get { return _UnitCost; }
 			private set {
 				if (value < 0.0) {
@@ -60,7 +60,7 @@ namespace ApplicationLogic.Model
 		}
 
 		private int _RequiredStock;
-		public int RequiredStock {
+		public virtual int RequiredStock {
 			get { return _RequiredStock; }
 			set {
 				if (value < 0) {
@@ -74,7 +74,7 @@ namespace ApplicationLogic.Model
 		}
 
 		private int _CurrentStock;
-		public int CurrentStock {
+		public virtual int CurrentStock {
 			get { return _CurrentStock; }
 			set {
 				if (value < 0) {

@@ -1,16 +1,6 @@
 % This file was created with JabRef 2.6.
 % Encoding: Cp1252
 
-@BOOK{AndrewStellmanandJenniferGreene2010,
-  title = {Head First CSharp},
-  publisher = {O'Reilly},
-  year = {2010},
-  author = {{Andrew Stellman and Jennifer Greene}},
-  isbn = {978-1-449-38034-2},
-  owner = {Florian Bergmann},
-  timestamp = {2010.10.19}
-}
-
 @BOOK{Balzert09,
   title = {{Lehrbuch der Software-Technik: Basiskonzepte und Requirements Engineering}},
   publisher = {Spektrum},
@@ -37,6 +27,20 @@
   intrahash = {ac2443d87bea7fadc0510480f09a0132},
   isbn = {9783827417053},
   keywords = {software development v1002 book requirements engineering}
+}
+
+@ELECTRONIC{,
+  author = {Jean-Paul Boodhoo},
+  month = {August},
+  year = {2006},
+  title = {Design Patterns: Model View Presenter},
+  language = {English},
+  howpublished = {Website},
+  organization = {Microsoft},
+  url = {http://msdn.microsoft.com/en-us/magazine/cc188690.aspx},
+  owner = {Florian Bergmann},
+  timestamp = {2010.10.19},
+  urldate = {2010.19.10}
 }
 
 @BOOK{Dorman2010,
@@ -90,6 +94,16 @@
   intrahash = {a1a11c215b318a4d9dec80f323429c5f},
   isbn = {9780321210265},
   keywords = {software-engineering}
+}
+
+@BOOK{AndrewStellmanandJenniferGreene2010,
+  title = {Head First CSharp},
+  publisher = {O'Reilly},
+  year = {2010},
+  author = {Andrew Stellman and Jennifer Greene},
+  isbn = {978-1-449-38034-2},
+  owner = {Florian Bergmann},
+  timestamp = {2010.10.19}
 }
 
 @comment{jabref-meta: selector_publisher:}

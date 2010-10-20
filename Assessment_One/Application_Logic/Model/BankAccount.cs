@@ -17,7 +17,7 @@ namespace ApplicationLogic.Model
 		/// Gets or sets the account number.
 		/// </summary>
 		/// <value>The account number.</value>
-		public int AccountNumber {
+		public virtual int AccountNumber {
 			get { return _AccountNumber; }
 			set {
 				_AccountNumber = value;
@@ -30,7 +30,7 @@ namespace ApplicationLogic.Model
 		/// Gets or sets the surname.
 		/// </summary>
 		/// <value>The surname.</value>
-		public String Surname {
+		public virtual String Surname {
 			get { return _Surname; }
 			set {
 				_Surname = value;
@@ -43,7 +43,7 @@ namespace ApplicationLogic.Model
 		/// Gets or sets the balance.
 		/// </summary>
 		/// <value>The balance.</value>
-		public double Balance {
+		public virtual double Balance {
 			get { return _Balance; }
 			private set {
 				if (value < 0.0) {

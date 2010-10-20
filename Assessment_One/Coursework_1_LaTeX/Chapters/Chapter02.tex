@@ -6,12 +6,12 @@ From the requirements stated in \autoref{sec:remit}, the following were fulfille
 
 \begin{description}
 \item[MSI01:] Implemented in StockItem class with getters and setters.
-\item[MSI02:] Implemented in a manager-class that allow adding and deleting.
-\item[MSI03:] Implemented as StockItem class.
-\item[MSI04:] Implemented in manager-class.
+\item[MSI02:] Implemented in a manager-class that handles adding and deleting in-memory.
+\item[MSI03:] Implemented in StockItem class.
+\item[MSI04:] Implemented in AppDataManager-class.
 \item[MBA01:] Implemented in BankAccount class with getters and setters.
 \item[MBA02:] Fake-method for ordering: will adjust account balance, but not transfer money.
-\item[MBA03:] Implemented in manager-class: takes care of Atomicity of request.
+\item[MBA03:] Implemented in AppDataManager-class: takes care of Atomicity of request.
 \item[MDA01:] Implemented in FileHandler-class and StockItem-class.
 \item[MDA02:] Implemented in FileHandler-class.
 \item[MDA03:] Implemented in StockItem-class.
@@ -25,7 +25,7 @@ From the requirements stated in \autoref{sec:remit}, the following were fulfille
 Apart from fulfilling these requirements the following features were implemented as well to improve the user-experience of the program:
 
 \begin{description}
-\item[Error Notification:] Upon entering invalid information the user will be informed about the mistakes.
-\item[BankAccount Persistence:] It is possible to import and export bank accounts as well.
+\item[Error notification:] Upon entering invalid information the user will be informed about the mistakes by the \ac{GUI}.
+\item[Bank account persistence:] It is possible to import and export bank accounts as well.
 \item[Order quantity:] It is possible to order a certain quantity instead of always ordering the required number of items.
 \end{description}

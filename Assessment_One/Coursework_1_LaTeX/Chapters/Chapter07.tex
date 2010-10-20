@@ -1,3 +1,16 @@
 %************************************************
 \chapter{Conclusions}\label{ch:conclusions} % $\mathbb{ZNR}$
 %************************************************
+
+After developing the application and looking at the resulting design, there are a few things that might have been accomplished differently and produced a better and cleaner design.
+
+The data-binding part - due to the removal of the back-write mechanism (so the view does not automatically update the model) was mostly unnecessary and restricted the choices of collections in the model-part to \texttt{BindingLists}, whereas the model should actually be independent of the views.
+
+Another problem arising from the \texttt{BindingLists} is that they can not be returned as read-only and this way can provide write access to the model. However, the lists were still implemented as public properties to allow unit-testing.
+
+Another fact that became clear while testing was that the auto-creation of stock items and bank accounts in the model was unfortunate to test the correct behaviour of adding and deleting items. One could not easily add a specific item and delete the same one, but let the model create one, acquire a reference to it, delete it and test if the list was changed accordingly. A thorough \ac{TDD}-approach might have circumvented these shortcomings.
+
+However, even with these shortcomings the application should fulfil the requirements.
+Moreover, the implementation of the generic file handler should be reusable to persist all kinds of objects - even in other projects.
+
+And with the provided test-cases many cases should be covered that should allow a thorough refactoring of the application if the need arises.

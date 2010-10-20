@@ -2,16 +2,20 @@
 % Appendix
 %*******************************************************
 \chapter{Appendix: Source Code}
+\label{appendix}
 
 \section{View}
+\label{app:view}
 
 \lstinputlisting[caption=MainWindow.cs]{\viewRoot/MainWindow.cs}
 
 \lstinputlisting[caption=Settings.cs]{\viewRoot/SettingsWindow.cs}
 
 \section{Application Logic}
+\label{applog}
 
 \subsection{Interfaces Package}
+\label{al:ip}
 
 \lstinputlisting[caption=IBankAccountView.cs]{\logicRoot/Interfaces/IBankAccountView.cs}
 
@@ -24,6 +28,7 @@
 \lstinputlisting[caption=IViewModel.cs]{\logicRoot/Interfaces/IViewModel.cs}
 
 \subsection{Model Package}
+\label{al:mp}
 
 \lstinputlisting[caption=AppDataManager.cs]{\logicRoot/Model/AppDataManager.cs}
 
@@ -42,13 +47,17 @@
 \lstinputlisting[caption=StockItem.cs]{\logicRoot/Model/StockItem.cs}
 
 \subsection{Presenter Package}
+\label{al:pp}
 
 \lstinputlisting[caption=CongregatePresenter.cs]{\logicRoot/Presenter/CongregatePresenter.cs}
 
 \section{Tests}
+\label{al:t}
 
 \lstinputlisting[caption=BankAccountTest.cs]{\testRoot/ApplicationLogic/BankAccountTest.cs}
 
 \lstinputlisting[caption=FileHandlerTest.cs]{\testRoot/ApplicationLogic/FileHandlerTest.cs}
 
 \lstinputlisting[caption=StockItemTest.cs]{\testRoot/ApplicationLogic/StockItemTest.cs}
+
+\lstinputlisting[caption=AppDataManagerTest.cs]{\testRoot/ApplicationLogic/AppDataManagerTest.cs}

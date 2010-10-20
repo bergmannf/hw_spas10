@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace ApplicationLogic.Model
 {
     /// <summary>
-    /// Handles data and persistent.
+    /// Handles persistence issues and ensure the correct sequence of method calls.
     /// </summary>
     public class AppDataManager : IViewModel
     {
