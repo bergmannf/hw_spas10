@@ -7,9 +7,11 @@
 \hline Stock Item & Invalid Parsing & FormatException \\ 
 \hline Stock Item & Invalid Cost & ArgumentException \\ 
 \hline Bank Account & Invalid Balance & ArgumentException \\ 
-\hline Bank Account & Invalid Withdraw & ArgumentException \\ 
-\hline Bank Account & Invalid Deposit & ArgumentException \\ 
-\hline Bank Account & Invalid Transfer & ArgumentException \\
+\hline Bank Account & Invalid Withdraw (Value too small)& ArgumentException \\
+\hline Bank Account & Invalid Withdraw (Value too high)& NotEnoughFundsException \\
+\hline Bank Account & Invalid Deposit (Value too small) & ArgumentException \\
+\hline Bank Account & Invalid Transfer (Value too small) & ArgumentException \\
+\hline Bank Account & Invalid Transfer (Value too high)& NotEnoughFundsException \\
 \hline Bank Account & Too little funds for transfer & NotEnoughFundsException \\
 \hline Bank Account & Invalid Parsing & FormatException \\
 \hline AppDataManager & Remove invalid item & ArgumentException \\

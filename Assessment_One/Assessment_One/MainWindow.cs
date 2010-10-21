@@ -75,6 +75,7 @@ namespace Assessment_One
         private void deleteStockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _Presenter.DeleteStockItem();
+            this.quantityTextBox.Text = "";
         }
 
         private void addBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +86,8 @@ namespace Assessment_One
         private void deleteBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this._Presenter.DeleteBankAccount();
+            this.depositQuantityTextBox.Text = "";
+            this.withdrawQuantityTextBox.Text = "";
         }
 
         private void openStockItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,16 +150,19 @@ namespace Assessment_One
         void PlaceOrderButton_Click(object sender, EventArgs e)
         {
             this._Presenter.OrderItem();
+            this.quantityTextBox.Text = "";
         }
 
         private void depositButton_Click(object sender, EventArgs e)
         {
             this._Presenter.Deposit();
+            this.depositQuantityTextBox.Text = "";
         }
 
         private void withdrawButton_Click(object sender, EventArgs e)
         {
             this._Presenter.Withdraw();
+            this.withdrawQuantityTextBox.Text = "";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -175,6 +181,32 @@ namespace Assessment_One
         {
             this._Presenter.SaveBankAccountsToFile();
             this._Presenter.SaveStockItemsToFile();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == BANKACCOUNTTAB)
+            {
+                if (bankAccountsListBox.SelectedItem != null)
+                {
+                    this.SwitchBankAccountControls(true);
+                }
+                else
+                {
+                    this.SwitchBankAccountControls(false);
+                }
+            }
+            else
+            {
+                if (stockItemsListBox.SelectedItem != null)
+                {
+                    this.SwitchStockItemControls(true);
+                }
+                else
+                {
+                    this.SwitchStockItemControls(false);
+                }
+            }
         }
 
         #endregion
@@ -460,6 +492,10 @@ namespace Assessment_One
         {
             this.deleteBankAccountToolStripMenuItem.Enabled = enabled;
             this.deleteBankAccountToolStripButton.Enabled = enabled;
+            this.accountNumberTextBox.Enabled = enabled;
+            this.nameTextBox.Enabled = enabled;
+            this.depositQuantityTextBox.Enabled = enabled;
+            this.withdrawQuantityTextBox.Enabled = enabled;
         }
 
         /// <summary>
@@ -470,6 +506,12 @@ namespace Assessment_One
         {
             this.deleteStockItemToolStripButton.Enabled = enabled;
             this.deleteStockItemToolStripMenuItem.Enabled = enabled;
+            this.stockCodeTextBox.Enabled = enabled;
+            this.itemNameTextBox.Enabled = enabled;
+            this.supplierNameTextBox.Enabled = enabled;
+            this.reqStockTextBox.Enabled = enabled;
+            this.currStockTextBox.Enabled = enabled;
+            this.priceTextBox.Enabled = enabled;
         }
 
         private void DisplayError(Control form)
@@ -534,5 +576,7 @@ namespace Assessment_One
         }
 
         #endregion
+
+        
     }
 }

@@ -156,10 +156,10 @@ namespace ApplicationLogic.Model
 				ErrorMessages.Add (new ErrorMessage ("Unit costs must be greater or equal 0."));
 			}
 			if (required < 0) {
-				ErrorMessages.Add (new ErrorMessage ("Required must be greater or equal 0."));
+				ErrorMessages.Add (new ErrorMessage ("Required stock must be greater or equal 0."));
 			}
 			if (currentStock < 0) {
-				ErrorMessages.Add (new ErrorMessage ("Current must be greater or equal 0."));
+				ErrorMessages.Add (new ErrorMessage ("Current stock must be greater or equal 0."));
 			}
 			return ErrorMessages.Count == 0;
 		}
@@ -190,25 +190,36 @@ namespace ApplicationLogic.Model
 		public StockItem ParseFromString (string stringRepresentation)
 		{
 			string[] split = stringRepresentation.Split (',');
-			String stockCode = split[0];
-			String name = split[1];
-			String supplierName = split[2];
-			String unitCost = split[3];
-			String requiredStock = split[4];
-			String currentStock = split[5];
-			double cost = 0;
-			int reqStock = 0;
-			int currStock = 0;
-			if (!String.IsNullOrEmpty (unitCost)) {
-				cost = double.Parse (unitCost);
-			}
-			if (!String.IsNullOrEmpty (requiredStock)) {
-				reqStock = int.Parse (requiredStock);
-			}
-			if (!String.IsNullOrEmpty (currentStock)) {
-				currStock = int.Parse (currentStock);
-			}
-			return new StockItem (stockCode, name, supplierName, cost, reqStock, currStock);
+            if (split.Length == 6)
+            {
+                String stockCode = split[0];
+                String name = split[1];
+                String supplierName = split[2];
+                String unitCost = split[3];
+                String requiredStock = split[4];
+                String currentStock = split[5];
+                double cost = 0;
+                int reqStock = 0;
+                int currStock = 0;
+                if (!String.IsNullOrEmpty(unitCost))
+                {
+                    cost = double.Parse(unitCost);
+                }
+                if (!String.IsNullOrEmpty(requiredStock))
+                {
+                    reqStock = int.Parse(requiredStock);
+                }
+                if (!String.IsNullOrEmpty(currentStock))
+                {
+                    currStock = int.Parse(currentStock);
+                }
+                return new StockItem(stockCode, name, supplierName, cost, reqStock, currStock);
+            }
+            else
+            {
+                throw new WrongStringToParseException("Can not parse a stock item from the provided string.");
+            }
+			
 		}
 	}
 }

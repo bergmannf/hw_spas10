@@ -86,13 +86,13 @@ namespace ApplicationLogic.Model
 		public void Withdraw (double amount)
 		{
 			if (amount > 0.0) {
-				if (Balance > amount) {
+				if (Balance >= amount) {
 					this.Balance -= amount;
 				} else {
-					throw new ArgumentException ("Not enough founds on bank account to withdraw.");
+					throw new NotEnoughFundsException ("Not enough founds on bank account to withdraw.");
 				}
 			} else {
-				throw new ArgumentException ("There are not enough funds present to fulfill the required action.");
+                throw new ArgumentException("To deposit money please use the appropriate function.");
 			}
 		}
 
@@ -118,11 +118,11 @@ namespace ApplicationLogic.Model
 		public void Transfer (int accountNumber, double amount)
 		{
 			if (amount >= 0.0) {
-				if (this.Balance > amount) {
+				if (this.Balance >= amount) {
 					this.Balance -= amount;
 					// TODO: In reality: fancy logic to transfer money.
 				} else {
-					throw new ArgumentException ("There are not enough funds present to fulfill the required action.");
+					throw new NotEnoughFundsException ("There are not enough funds present to fulfill the required action.");
 				}
 			} else {
 				throw new ArgumentException ("It is not possible to transfer funds from another account to yours.");
@@ -178,18 +178,27 @@ namespace ApplicationLogic.Model
 		public BankAccount ParseFromString (string stringRepresentation)
 		{
 			string[] split = stringRepresentation.Split (',');
-			String accountNumber = split[0];
-			String surname = split[1];
-			String balance = split[2];
-			int accNumber = 0;
-			double bal = 0;
-			if (!String.IsNullOrEmpty (accountNumber)) {
-				accNumber = int.Parse (accountNumber);
-			}
-			if (!String.IsNullOrEmpty (balance)) {
-				bal = double.Parse (balance);
-			}
-			return new BankAccount (accNumber, surname, bal);
+            if (split.Length == 3)
+            {
+                String accountNumber = split[0];
+                String surname = split[1];
+                String balance = split[2];
+                int accNumber = 0;
+                double bal = 0;
+                if (!String.IsNullOrEmpty(accountNumber))
+                {
+                    accNumber = int.Parse(accountNumber);
+                }
+                if (!String.IsNullOrEmpty(balance))
+                {
+                    bal = double.Parse(balance);
+                }
+                return new BankAccount(accNumber, surname, bal);
+            }
+            else
+            {
+                throw new WrongStringToParseException("Can not parse a bank account from the provided string.");
+            }
 		}
 	}
 }

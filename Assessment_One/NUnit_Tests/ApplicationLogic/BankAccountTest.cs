@@ -26,12 +26,11 @@ namespace NUnit_Tests.ApplicationLogic
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(NotEnoughFundsException))]
         public void TestWithdrawalWithTooHighValues()
         {
             double amountToWithdrawTooHigh = 50.0;
             ba.Withdraw(amountToWithdrawTooHigh);
-            TestWithdrawalWithTooSmallValues();
         }
 
         [Test]
@@ -48,6 +47,14 @@ namespace NUnit_Tests.ApplicationLogic
         {
             double amountToDepositTooSmall = -10;
             ba.Deposit(amountToDepositTooSmall);
+        }
+
+        [Test]
+        [ExpectedException(typeof(NotEnoughFundsException))]
+        public void TestTransferWithTooHighValue()
+        {
+            double amountToTransferTooHigh = 10;
+            ba.Transfer(123, amountToTransferTooHigh);
         }
 
         [Test]
@@ -76,6 +83,26 @@ namespace NUnit_Tests.ApplicationLogic
             currentValue -= transfer;
             ba.Transfer(123, transfer);
             Assert.AreEqual(currentValue, ba.Balance);
+        }
+
+        [Test]
+        public void TestDepositWithdrawSameAmount()
+        {
+            double amount = 50;
+            double value = 0;
+            ba.Deposit(amount);
+            ba.Withdraw(amount);
+            Assert.AreEqual(value, ba.Balance);
+        }
+
+        [Test]
+        public void TestTransferAllMoney()
+        {
+            double amount = 50;
+            double value = 0;
+            ba.Deposit(amount);
+            ba.Transfer(0, amount);
+            Assert.AreEqual(value, ba.Balance);
         }
         
 		[Test]

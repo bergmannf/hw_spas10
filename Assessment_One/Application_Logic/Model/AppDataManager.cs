@@ -226,10 +226,13 @@ namespace ApplicationLogic.Model
                 }
                 else
                 {
+                    /*
+                     * It is possible to order more than the needed quantity.
+                     */
                     buyExcessStock = true;
                 }
                 double priceOfOrder = quantity * si.UnitCost;
-                if (priceOfOrder < ba.Balance)
+                if (priceOfOrder <= ba.Balance)
                 {
                     ba.Transfer(1, priceOfOrder);
                     si.CurrentStock += quantity;
@@ -246,7 +249,7 @@ namespace ApplicationLogic.Model
                 }
                 else
                 {
-                    throw new NotEnoughFundsException(String.Format("Not enough founds on bank account {0} to place order for {1} £", ba.AccountNumber, priceOfOrder));
+                    throw new NotEnoughFundsException(String.Format("Not enough founds on bank account {0} to place an order for {1} £", ba.AccountNumber, priceOfOrder));
                 }
             }
             else

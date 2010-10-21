@@ -11,13 +11,13 @@ namespace ApplicationLogic.Presenter
     /// <summary>
     /// Presenter for the MainWindow: handles events and GUI-related part of the application logic.
     /// </summary>
-	public class CongregatePresenter
-	{
-		
-		public ICongregateView _View;
-		public IStockItemView _StockItemView;
-		public IBankAccountView _BankAccountView;
-		public AppDataManager _Model;
+    public class CongregatePresenter
+    {
+
+        public ICongregateView _View;
+        public IStockItemView _StockItemView;
+        public IBankAccountView _BankAccountView;
+        public AppDataManager _Model;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CongregatePresenter"/> class.
@@ -26,58 +26,59 @@ namespace ApplicationLogic.Presenter
         /// <param name="stockItemView">The stock item view.</param>
         /// <param name="bankAccountView">The bank account view.</param>
         /// <param name="model">The model.</param>
-		public CongregatePresenter (ICongregateView view, IStockItemView stockItemView, IBankAccountView bankAccountView, IViewModel model)
-		{
-			this._View = view;
-			this._StockItemView = stockItemView;
-			this._BankAccountView = bankAccountView;
-			this._Model = model as AppDataManager;
-		}
+        public CongregatePresenter(ICongregateView view, IStockItemView stockItemView, IBankAccountView bankAccountView, IViewModel model)
+        {
+            this._View = view;
+            this._StockItemView = stockItemView;
+            this._BankAccountView = bankAccountView;
+            this._Model = model as AppDataManager;
+        }
 
         /// <summary>
         /// 	<see cref="ApplicationLogic.Model.AppDataManagerClass"/>
         /// </summary>
-		public void CreateNewStockItem ()
-		{
-			this._Model.CreateNewStockItem();
-		}
+        public void CreateNewStockItem()
+        {
+            this._Model.CreateNewStockItem();
+        }
 
         /// <summary>
         /// Deletes the stock item.
         /// </summary>
-		public void DeleteStockItem ()
-		{
-			if (this._View.ConfirmDelete ()) 
+        public void DeleteStockItem()
+        {
+            if (this._View.ConfirmDelete())
             {
                 StockItem si = this._View.StockItem;
-				this._Model.DeleteStockItem(si);
-			}
-		}
+                this._Model.DeleteStockItem(si);
+            }
+        }
 
         /// <summary>
         /// Creates the new bank account.
         /// </summary>
-		public void CreateNewBankAccount ()
-		{
-			this._Model.CreateNewBankAccount();
-		}
+        public void CreateNewBankAccount()
+        {
+            this._Model.CreateNewBankAccount();
+        }
 
         /// <summary>
         /// Deletes the bank account.
         /// </summary>
-		public void DeleteBankAccount ()
-		{
-			if (this._View.ConfirmDelete ()) {
+        public void DeleteBankAccount()
+        {
+            if (this._View.ConfirmDelete())
+            {
                 BankAccount ba = this._View.BankAccount;
-				this._Model.DeleteBankAccount(ba);
-			}
-		}
+                this._Model.DeleteBankAccount(ba);
+            }
+        }
 
         /// <summary>
         /// Edits the stock item.
         /// </summary>
-		public void EditStockItem()
-		{
+        public void EditStockItem()
+        {
             try
             {
                 StockItem si = this._View.StockItem;
@@ -102,14 +103,14 @@ namespace ApplicationLogic.Presenter
             {
                 DisplayError(e);
             }
-			
-		}
+
+        }
 
         /// <summary>
         /// Edits the bank account.
         /// </summary>
-		public void EditBankAccount()
-		{
+        public void EditBankAccount()
+        {
             try
             {
                 BankAccount ba = this._View.BankAccount;
@@ -130,14 +131,14 @@ namespace ApplicationLogic.Presenter
             {
                 DisplayError(e);
             }
-			
-		}
+
+        }
 
         /// <summary>
         /// Orders the item.
         /// </summary>
-		public void OrderItem()
-		{
+        public void OrderItem()
+        {
             try
             {
                 BankAccount ba = this._View.BankAccount;
@@ -154,7 +155,7 @@ namespace ApplicationLogic.Presenter
             {
                 DisplayError(e);
             }
-		}
+        }
 
         /// <summary>
         /// Deposits this instance.
@@ -168,6 +169,18 @@ namespace ApplicationLogic.Presenter
                 this._Model.Deposit(ba, amount);
             }
             catch (ArgumentNullException e)
+            {
+                DisplayError(e);
+            }
+            catch (ArgumentException e)
+            {
+                DisplayError(e);
+            }
+            catch (FormatException e)
+            {
+                DisplayError(e);
+            }
+            catch (NotEnoughFundsException e)
             {
                 DisplayError(e);
             }
@@ -185,6 +198,18 @@ namespace ApplicationLogic.Presenter
                 this._Model.Withdraw(ba, amount);
             }
             catch (ArgumentNullException e)
+            {
+                DisplayError(e);
+            }
+            catch (ArgumentException e)
+            {
+                DisplayError(e);
+            }
+            catch (FormatException e)
+            {
+                DisplayError(e);
+            }
+            catch (NotEnoughFundsException e)
             {
                 DisplayError(e);
             }
@@ -216,7 +241,15 @@ namespace ApplicationLogic.Presenter
         /// <param name="filePath">The file path.</param>
         public void LoadStockItemsFromFile(String filePath)
         {
-            this._Model.LoadStockItemsFromFile(filePath);
+            try
+            {
+                this._Model.LoadStockItemsFromFile(filePath);
+            }
+            catch (WrongStringToParseException e)
+            {
+                DisplayError(e);
+            }
+            
         }
 
         /// <summary>
@@ -225,7 +258,14 @@ namespace ApplicationLogic.Presenter
         /// <param name="filePath">The file path.</param>
         public void LoadBankAccountsFromFile(String filePath)
         {
-            this._Model.LoadBankAccountsFromFile(filePath);
+            try
+            {
+                this._Model.LoadBankAccountsFromFile(filePath);
+            }
+            catch (WrongStringToParseException e)
+            {
+                DisplayError(e);
+            }
         }
 
         /// <summary>
@@ -255,7 +295,15 @@ namespace ApplicationLogic.Presenter
             // TODO: Check if good.
             this._Model.StockItemHandler.ReadFilePath = filePathStockItems;
             this._Model.StockItemHandler.WriteFilePath = filePathStockItems;
-            this._Model.LoadStockItemsFromFile(filePathStockItems);
+            try
+            {
+                this._Model.LoadStockItemsFromFile(filePathStockItems);
+            }
+            catch (WrongStringToParseException e)
+            {
+                DisplayError(e);
+            }
+            
         }
 
         /// <summary>
@@ -267,7 +315,15 @@ namespace ApplicationLogic.Presenter
             // TODO: Check if good.
             this._Model.BankAccountHandler.ReadFilePath = filePathBankAccounts;
             this._Model.BankAccountHandler.WriteFilePath = filePathBankAccounts;
-            this._Model.LoadBankAccountsFromFile(filePathBankAccounts);
+            try
+            {
+                this._Model.LoadBankAccountsFromFile(filePathBankAccounts);
+            }
+            catch (WrongStringToParseException e)
+            {
+                DisplayError(e);
+            }
+            
         }
 
         /// <summary>
@@ -282,7 +338,7 @@ namespace ApplicationLogic.Presenter
             catch (NoFilePathSetException e)
             {
                 DisplayError(e);
-            } 
+            }
         }
 
         /// <summary>

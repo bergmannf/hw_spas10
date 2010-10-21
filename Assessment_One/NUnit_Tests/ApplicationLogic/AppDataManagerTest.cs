@@ -101,7 +101,7 @@ namespace NUnit_Tests.ApplicationLogic
 
             this._Manager.BankAccounts.Add(mockBa.Object);
             this._Manager.StockItems.Add(mockSi.Object);
-            this._Manager.OrderItem(mockSi.Object, mockBa.Object, 0);
+            this._Manager.OrderItem(mockSi.Object, mockBa.Object, 1);
 
             mockBa.VerifyGet(ba => ba.Balance);
             mockBa.Verify(ba => ba.Transfer(0, 10.0), Times.Never());
