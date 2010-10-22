@@ -71,7 +71,7 @@ To manage a bank account there are two more possible commands the user can issue
 
 To place an order the user has to select a bank account and a stock item from the lists (an item needs to be highlighted in both lists).
 
-Then a value can be entered inside the \textit{quantity}-box: either the amount of items to be ordered, or 0. By entering 0 the program will try to order the \textit{required amount}.
+Then a value needs to be entered inside the \textit{quantity}-box: either the amount of items to be ordered, or 0 (zero). By entering 0 the program will try to order the \textit{required amount}.
 
 If enough funds are available the order will be placed and the stock information will be updated.
 If not enough funds are available the application will output an error message.
@@ -95,7 +95,7 @@ Therefore the user has to choose the appropriate option from the file menu or se
 \subsection{File menu}
 \label{subsec:file_menu}
 
-To save or load only one of the list the user selects \texttt{File $\Rightarrow$ Save (Open) $\Rightarrow$ Save (Open) bank accounts / Save (Open) stock items}.
+To save or load only one of the list the user selects \texttt{File $\Rightarrow$ Save (Open) $\Rightarrow$ Save (Open) bank accounts / Save (Open) stock items (bank accounts)}.
 
 \begin{figure}[H]
 \begin{center}
@@ -104,6 +104,8 @@ To save or load only one of the list the user selects \texttt{File $\Rightarrow$
 \label{fig:save_file_menu}
 \end{center}
 \end{figure}
+
+When loading a new set of items or accounts the currently stored objects will be discarded and overwritten by the contents of the file.
 
 \subsection{Menu-bar icon}
 
@@ -117,4 +119,12 @@ To save via the menu icon it is necessary to first set default file paths for th
 \end{center}
 \end{figure}
 
-After setting these paths both lists can be saved with a single click on the menu-bar icon (denoted by two disks).
+After setting these paths both lists can be saved with a single click on the menu-bar icon (denoted by two disks):
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{gfx/save_both_lists.png}
+\caption{Menu icon to save both lists.}
+\label{fig:save_both_lists}
+\end{center}
+\end{figure}

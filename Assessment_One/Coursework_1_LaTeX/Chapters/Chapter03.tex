@@ -9,7 +9,7 @@ This chapter should provide a very general overview over the developed system, m
 
 The application was developed taking into account the principle of separating the program logic from interface design. To support this approach the \acf{MVP} design pattern was utilised.
 
-In this pattern the presenter separates the \ac{GUI} from the logical part of the application. The view communicates with the model only through the presenter. However, the model can notify the view directly of  data-changes if an observer-pattern or data-binding is employed\footnote{More information can be found at \textcite{Boodhoo2006}.}.:
+In this pattern the presenter separates the \ac{GUI} from the logical part of the application. The view communicates with the model only through the presenter. However, the model can notify the view directly of  data-changes if an observer-pattern or data-binding is employed\footnote{More information can be found at \textcite{Boodhoo2006}.}:
 
 \begin{figure}[H]
 \begin{center}
@@ -58,8 +58,8 @@ There is one class that handles all incoming requests - the \textit{AppDataManag
 It coordinates statements as needed: e.g. check if enough money is present on bank account $\rightarrow$ place order $\rightarrow$ update stock item.
 Moreover the lists holding the stock items and bank accounts are managed by this class.
 
-Naturally the classes for handling bank accounts and stock items are implemented in the application-logic-project, as well. Moreover, a generic file handler (see \autoref{subsec:filehandler} for implementation details) and an error-handling-facility (see \autoref{subsec:error_handling}) were implemented.
+Naturally the classes for handling bank accounts and stock items are implemented in the application-logic-project as well. Moreover, a generic file handler (see \autoref{subsec:filehandler} for implementation details) and an error-handling-facility (see \autoref{subsec:error_handling}) were implemented.
 
-Noteworthy is the fact that \texttt{BindingList}s were used in the \texttt{AppDataManager} to store the bank account and stock item lists, to allow the necessary data-binding with the view to work.
+Noteworthy is the fact that \texttt{BindingList}s were used in the \texttt{AppDataManager} to store the bank account and stock item lists. This was necessary to allow the data-binding with the view to work.
 
 The \texttt{CongregatePresenter} seen in the picture is the connection point for the \ac{GUI} part of the application and mostly forwards the requests to the \texttt{AppDataManager}.

@@ -209,6 +209,11 @@ namespace Assessment_One
             }
         }
 
+        private void quantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            CheckQuantity();
+        }
+
         #endregion
 
         #region IStockItemView
@@ -561,7 +566,9 @@ namespace Assessment_One
             balanceTextBox.DataBindings.Add("Text", _Model.BankAccounts, "Balance", false, DataSourceUpdateMode.Never);
         }
 
-        private void quantityTextBox_TextChanged(object sender, EventArgs e)
+        
+
+        private void CheckQuantity()
         {
             String newText = quantityTextBox.Text;
             int parseInt = 0;

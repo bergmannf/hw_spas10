@@ -155,6 +155,10 @@ namespace ApplicationLogic.Presenter
             {
                 DisplayError(e);
             }
+            catch (ArgumentNullException e)
+            {
+                DisplayError(e);                 
+            }
         }
 
         /// <summary>

@@ -29,40 +29,40 @@
 \defcounter {refsection}{0}
 \contentsline {lstlisting}{\numberline {6}MainWindow.cs}{23}{lstlisting.6}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {7}Settings.cs}{34}{lstlisting.7}
+\contentsline {lstlisting}{\numberline {7}Settings.cs}{35}{lstlisting.7}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {8}IBankAccountView.cs}{35}{lstlisting.8}
+\contentsline {lstlisting}{\numberline {8}IBankAccountView.cs}{36}{lstlisting.8}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {9}ICongegrateView.cs}{36}{lstlisting.9}
+\contentsline {lstlisting}{\numberline {9}ICongegrateView.cs}{37}{lstlisting.9}
 \defcounter {refsection}{0}
 \contentsline {lstlisting}{\numberline {10}ICSVSerializable.cs}{37}{lstlisting.10}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {11}IStockItemView.cs}{37}{lstlisting.11}
+\contentsline {lstlisting}{\numberline {11}IStockItemView.cs}{38}{lstlisting.11}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {12}IViewModel.cs}{37}{lstlisting.12}
+\contentsline {lstlisting}{\numberline {12}IViewModel.cs}{38}{lstlisting.12}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {13}AppDataManager.cs}{38}{lstlisting.13}
+\contentsline {lstlisting}{\numberline {13}AppDataManager.cs}{39}{lstlisting.13}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {14}BankAccount.cs}{45}{lstlisting.14}
+\contentsline {lstlisting}{\numberline {14}BankAccount.cs}{46}{lstlisting.14}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {15}ErrorMessage.cs}{50}{lstlisting.15}
+\contentsline {lstlisting}{\numberline {15}ErrorMessage.cs}{51}{lstlisting.15}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {16}ErrorMessageCollection.cs}{50}{lstlisting.16}
+\contentsline {lstlisting}{\numberline {16}ErrorMessageCollection.cs}{51}{lstlisting.16}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {17}FileHandler.cs}{51}{lstlisting.17}
+\contentsline {lstlisting}{\numberline {17}FileHandler.cs}{52}{lstlisting.17}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {18}NoFilePathSetException.cs}{53}{lstlisting.18}
+\contentsline {lstlisting}{\numberline {18}NoFilePathSetException.cs}{54}{lstlisting.18}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {19}NotEnoughFundsException.cs}{53}{lstlisting.19}
+\contentsline {lstlisting}{\numberline {19}NotEnoughFundsException.cs}{54}{lstlisting.19}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {20}StockItem.cs}{53}{lstlisting.20}
+\contentsline {lstlisting}{\numberline {20}StockItem.cs}{54}{lstlisting.20}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {21}CongregatePresenter.cs}{58}{lstlisting.21}
+\contentsline {lstlisting}{\numberline {21}CongregatePresenter.cs}{60}{lstlisting.21}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {22}BankAccountTest.cs}{65}{lstlisting.22}
+\contentsline {lstlisting}{\numberline {22}BankAccountTest.cs}{67}{lstlisting.22}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {23}FileHandlerTest.cs}{68}{lstlisting.23}
+\contentsline {lstlisting}{\numberline {23}FileHandlerTest.cs}{70}{lstlisting.23}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {24}StockItemTest.cs}{68}{lstlisting.24}
+\contentsline {lstlisting}{\numberline {24}StockItemTest.cs}{70}{lstlisting.24}
 \defcounter {refsection}{0}
-\contentsline {lstlisting}{\numberline {25}AppDataManagerTest.cs}{71}{lstlisting.25}
+\contentsline {lstlisting}{\numberline {25}AppDataManagerTest.cs}{73}{lstlisting.25}

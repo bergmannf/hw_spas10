@@ -28,7 +28,7 @@ The requirements, as understood by the contractor, are as follows \footnote{For 
 \begin{description}
 \item[MSI01:] Allow the management of \textit{stock items}. Management includes the following operations: \textit{add}, \textit{edit}, \textit{delete}.
 \item[MSI02:] The operation \textit{add} and \textit{delete} should be possible without the use of an external storage.
-\item[MSI03:] Every stock item should consist of the following attributes: a \textit{Stock Code}, an \textit{item name}, a \textit{supplier name}, a \textit{unit's cost}, the \textit{number required} and the \textit{current stock}.
+\item[MSI03:] Every stock item should consist of the following attributes: a \textit{Stock Code}, an \textit{item name}, a \textit{supplier name}, a \textit{unit's cost}, the \textit{number required} and the \textit{current stock}\footnote{For verification purposes it was assumed that the stock code is 4-digit number with trailing zeros allowed.}.
 \item[MSI04:] Allow the ordering of stock items via a money transfer.
 \item[MBA01:] Allow the management of \textit{bank accounts}: Management includes the following operations: \textit{add}, \textit{edit}, \textit{delete}.
 \item[MBA02:] The real transaction of money needs \textbf{not} to be implemented.
@@ -36,12 +36,12 @@ The requirements, as understood by the contractor, are as follows \footnote{For 
 \item[MDA01:] Allow the import and export of \textit{stock items} from \ac{CSV}-file.
 \item[MDA02:] The location of the file may be chosen by the user.
 \item[MDA03:] The ordering of the \ac{CSV}-file may not be changed.
-\item[MDA04:] The ordering of the files is as follows:
+\item[MDA04:] The ordering of the file is as follows:
 \begin{lstlisting}
 StockCode,Name,SupplierName,UnitCost,RequiredStock,CurrentStock
 \end{lstlisting}
 \item[MDA04:] The file should support blank fields by not entering data between two commas.
-\item[MDA05:] The application should be able to handle at least \textit{100} items.
+\item[MDA05:] The application should be able to handle \textit{at least} 100 items.
 \item[GUI01:] Interaction between user and program shall happen via a \ac{GUI}.
 \item[GUI02:] The \ac{GUI} shall provide menus, buttons and icons for easier accessibility.
 \end{description}

@@ -52,16 +52,16 @@ The \texttt{MainWindow} implements three of these presenter-related interfaces: 
 
 \lstinputlisting[caption=Interface \texttt{ICongregateView}]{\logicRoot/Interfaces/ICongregateView.cs}
 
-It allows to delete items and bank accounts, as well as provide the necessary application logic to order items, deposit and withdraw money as well as method to display possible validation errors.
+It allows to delete items and bank accounts, provides the necessary application logic to order items, deposit and withdraw money and exposes a method to display possible validation errors.
 
-Should new views be added an interface should be provided that guarantees the separation between view and presenter, thus allowing the possible reuse of the presenter across multiple \ac{GUI}s.
+Should new views be added an interface should be provided that guarantees the separation between view and presenter. This might allow the reuse of the presenter across multiple \ac{GUI}s.
 
 A problem arising from the .NET architecture is that only the \ac{GUI} project provides a settings file. This leads to the fact that the WinForms-\ac{GUI} has to handle the loading and saving of user-preferences (the file paths to the bank accounts and stock items files).
 
 \section{ApplicationLogic}
 \label{sec:application_logic}
 
-The application logic project hosts the \texttt{presenter(s)} as well as the \texttt{models}.
+The application logic project hosts the \texttt{presenter} as well as the \texttt{models}.
 
 As has been pointed auto in \autoref{ch:design}, the \texttt{AppDataManager}-class works as a \textit{facade} for the rest of the model.
 
@@ -83,7 +83,7 @@ Due to this fact - both - the \texttt{StockItem} and the \texttt{BankAccount}-cl
 
 Error handling is achieved by the separate classes \texttt{ErrorMessageCollection} and \texttt{ErrorMessage}.
 
-On validation error-messages will be added to an error-message-collection that can be accessed from the presenter to display the occurred errors.
+On validation, error-messages will be added to an error-message-collection that can be accessed from the presenter to force the view to display the occurred errors.
 
 As an example the code of the stock item's \texttt{Validate()} method, as well as a sequence-diagram of the calling sequence is shown:
 
