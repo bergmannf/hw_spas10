@@ -1,11 +1,14 @@
-﻿Feature: Addition
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+﻿Feature: RequestSending
+	In order to fetch a website
+	As a user
+	I want to be send a http request to an URL
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: Navigate to google website
+	Given I have entered http://www.google.co.uk/
+	When I press go
+	Then a 200-header-message should be returned
+
+Scenario: Navigate to invalid google website
+	Given I have entered http://www.google.co.u/
+	When I press go
+	Then a 404-header-message should be returned

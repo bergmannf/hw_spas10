@@ -1,0 +1,37 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assessment_Two_Specs/PageHandling.feature" ctype="Workbench">
+    <Files>
+      <File FileName="Assessment_Two_Specs/PageHandling.feature" Line="14" Column="19" />
+      <File FileName="Assessment_Two_Specs/PageHandling.feature.cs" Line="53" Column="8" />
+      <File FileName="Assessment_Two_Specs/PageHandling.cs" Line="10" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assessment_Two_Specs" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="External Assemblies" expanded="True" />
+            <Node name="PageHandling.feature" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+</Properties>
