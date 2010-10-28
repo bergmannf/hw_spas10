@@ -61,7 +61,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
 testRunner.Given("I have entered http://www.google.co.uk/");
 #line 8
-testRunner.When("I press go");
+testRunner.When("I request the page");
 #line 9
 testRunner.Then("a 200-header-message should be returned");
 #line hidden
@@ -78,9 +78,43 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
 testRunner.Given("I have entered http://www.google.co.u/");
 #line 13
-testRunner.When("I press go");
+testRunner.When("I request the page");
 #line 14
 testRunner.Then("a 404-header-message should be returned");
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Navigate to forbidden website")]
+        public virtual void NavigateToForbiddenWebsite()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to forbidden website", ((string[])(null)));
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 17
+testRunner.Given("I have entered a forbidden website");
+#line 18
+testRunner.When("I request the page");
+#line 19
+testRunner.Then("a 403-header-message should be returned");
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Send invalid html")]
+        public virtual void SendInvalidHtml()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send invalid html", ((string[])(null)));
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+testRunner.Given("I have entered an invalid request");
+#line 23
+testRunner.When("I request the page");
+#line 24
+testRunner.Then("a 400-header-message should be returned");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
