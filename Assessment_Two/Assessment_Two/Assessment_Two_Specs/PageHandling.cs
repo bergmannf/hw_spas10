@@ -10,17 +10,18 @@ namespace Assessment_Two_Specs
 		[Given(@"I have entered http://www.google.co.uk/")]
         public void GivenIHaveEnteredHttpWww_Google_Co_Uk()
         {
-            ScenarioContext.Current.Pending();
+            var pageHandler = new PageHandler();
+            pageHandler.RequestURL = "http://www.google.co.uk/";
         }
-		
-		[When(@"I press go")]
-        public void WhenIPressGo()
+
+        [When(@"I request the page")]
+        public void WhenIRequestThePage()
         {
             ScenarioContext.Current.Pending();
         }
 
-		[Then(@"then valid html should be returned")]
-        public void ThenThenValidHtmlShouldBeReturned()
+        [Then(@"a 200-header-message should be returned")]
+        public void ThenA200_Header_MessageShouldBeReturned()
         {
             ScenarioContext.Current.Pending();
         }
