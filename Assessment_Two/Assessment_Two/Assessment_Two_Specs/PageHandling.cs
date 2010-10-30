@@ -1,4 +1,5 @@
 using System;
+using Assessment_Two_Logic.Model;
 
 using TechTalk.SpecFlow;
 
