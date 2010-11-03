@@ -1,6 +1,8 @@
 using System;
 using System.Net;
 using System.Threading;
+using Assessment_Two_Logic.Interfaces;
+
 namespace Assessment_Two_Logic.Model
 {
     /// <summary>
@@ -38,10 +40,9 @@ namespace Assessment_Two_Logic.Model
             get { return request; }
             set { request = value; }
         }
-        /// <summary>
-        /// 
-        /// </summary>
+       
         private WebResponse response;
+        private Presenter.PagePresenter pagePresenter;
 
         /// <summary>
         /// Gets or sets the response.
@@ -56,6 +57,31 @@ namespace Assessment_Two_Logic.Model
 		public PageHandler ()
 		{
 		}
+
+        private INotifiable _NotifyMember;
+        public INotifiable NotifyMember
+        {
+            get
+            {
+                return _NotifyMember;
+            }
+            set
+            {
+                _NotifyMember = value;
+            }
+        }
+
+        public PageHandler(String url)
+        {
+            this.RequestUrl = url;
+        }
+
+        public PageHandler(INotifiable notifiable, string requestUrl)
+        {
+            this.NotifyMember = notifiable;
+            this.RequestUrl = requestUrl;
+
+        }
 
         public void RequestPage()
         { 
@@ -77,7 +103,7 @@ namespace Assessment_Two_Logic.Model
             var target = (Func < WebResponse >) cookie.AsyncState;
             WebResponse test = target.EndInvoke(cookie);
             // Todo Notify caller that fetch is finished ?
-            Console.WriteLine("Writing from callback: {0}", test.ToString());
+            this.NotifyMember.Notify();
         }
     }
 }

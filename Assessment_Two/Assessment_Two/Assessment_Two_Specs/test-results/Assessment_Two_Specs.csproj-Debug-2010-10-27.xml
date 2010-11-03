@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <UnitTestResult>
+      <TestDate>2010-10-27T22:42:37</TestDate>
+      <Status>Ignored</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>0</TotalSuccess>
+      <TotalIgnored>1</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2010-10-27T22:43:08</TestDate>
+      <Status>Ignored</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>0</TotalSuccess>
+      <TotalIgnored>1</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2010-10-27T22:53:58</TestDate>
+      <Status>Ignored</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>0</TotalSuccess>
+      <TotalIgnored>1</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2010-10-27T22:57:37</TestDate>
+      <Status>Ignored</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>0</TotalSuccess>
+      <TotalIgnored>1</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+  </Results>
+  <Tests>
+    <TestRecord Name="Assessment_Two_Specs">
+      <Results>
+        <UnitTestResult>
+          <TestDate>2010-10-27T22:42:37</TestDate>
+          <Status>Ignored</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>0</TotalSuccess>
+          <TotalIgnored>1</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2010-10-27T22:43:08</TestDate>
+          <Status>Ignored</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>0</TotalSuccess>
+          <TotalIgnored>1</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2010-10-27T22:53:58</TestDate>
+          <Status>Ignored</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>0</TotalSuccess>
+          <TotalIgnored>1</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2010-10-27T22:57:37</TestDate>
+          <Status>Ignored</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>0</TotalSuccess>
+          <TotalIgnored>1</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+      </Results>
+      <Tests>
+        <TestRecord Name="AdditionFeature">
+          <Results>
+            <UnitTestResult>
+              <TestDate>2010-10-27T22:42:37</TestDate>
+              <Status>Ignored</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>0</TotalSuccess>
+              <TotalIgnored>1</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+            <UnitTestResult>
+              <TestDate>2010-10-27T22:43:08</TestDate>
+              <Status>Ignored</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>0</TotalSuccess>
+              <TotalIgnored>1</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+          </Results>
+          <Tests>
+            <TestRecord Name="AddTwoNumbers">
+              <Results>
+                <UnitTestResult>
+                  <TestDate>2010-10-27T22:42:37</TestDate>
+                  <Status>Ignored</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>0</TotalSuccess>
+                  <TotalIgnored>1</TotalIgnored>
+                  <Time />
+                  <Message>No matching step definition found for one or more steps.
+[Binding]
+public class StepDefinitions
+{
+    [Given(@"I have entered 50 into the calculator")]
+    public void GivenIHaveEntered50IntoTheCalculator()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [Given(@"I have entered 70 into the calculator")]
+    public void GivenIHaveEntered70IntoTheCalculator()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [Then(@"the result should be 120 on the screen")]
+    public void ThenTheResultShouldBe120OnTheScreen()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [When(@"I press add")]
+    public void WhenIPressAdd()
+    {
+        ScenarioContext.Current.Pending();
+    }
+}
+</Message>
+                  <StackTrace>at NUnit.Framework.Assert.Ignore (string,object[]) &lt;IL 0x00030, 0x00061&gt;
+at (wrapper dynamic-method) System.Runtime.CompilerServices.ExecutionScope.lambda_method (System.Runtime.CompilerServices.ExecutionScope,string,object[]) &lt;IL 0x0000c, 0x00013&gt;
+at TechTalk.SpecFlow.UnitTestProvider.NUnitRuntimeProvider.TestInconclusive (string) &lt;IL 0x0005f, 0x000d5&gt;
+at TechTalk.SpecFlow.ErrorHandling.ErrorProvider.ThrowPendingError (TechTalk.SpecFlow.TestStatus,string) &lt;IL 0x00024, 0x00038&gt;
+at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors () &lt;IL 0x00189, 0x00447&gt;
+at Assessment_Two_Specs.AdditionFeature.AddTwoNumbers () [0x0005c] in /Users/florian/Documents/Code/Git/hw_spas10/Assessment_Two/Assessment_Two/Assessment_Two_Specs/PageHandling.feature:13
+at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke (System.Reflection.MonoMethod*,object,object[],System.Exception&amp;) &lt;0x00003&gt;
+at System.Reflection.MonoMethod.Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo) &lt;IL 0x000d6, 0x00124&gt;
+</StackTrace>
+                  <ConsoleOutput>Given I have entered 50 into the calculator
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Given(@"I have entered 50 into the calculator")]
+        public void GivenIHaveEntered50IntoTheCalculator()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+And I have entered 70 into the calculator
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Given(@"I have entered 70 into the calculator")]
+        public void GivenIHaveEntered70IntoTheCalculator()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+When I press add
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [When(@"I press add")]
+        public void WhenIPressAdd()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+Then the result should be 120 on the screen
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Then(@"the result should be 120 on the screen")]
+        public void ThenTheResultShouldBe120OnTheScreen()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+</ConsoleOutput>
+                  <ConsoleError />
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2010-10-27T22:43:08</TestDate>
+                  <Status>Ignored</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>0</TotalSuccess>
+                  <TotalIgnored>1</TotalIgnored>
+                  <Time />
+                  <Message>No matching step definition found for one or more steps.
+[Binding]
+public class StepDefinitions
+{
+    [Given(@"I have entered 50 into the calculator")]
+    public void GivenIHaveEntered50IntoTheCalculator()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [Given(@"I have entered 70 into the calculator")]
+    public void GivenIHaveEntered70IntoTheCalculator()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [Then(@"the result should be 120 on the screen")]
+    public void ThenTheResultShouldBe120OnTheScreen()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [When(@"I press add")]
+    public void WhenIPressAdd()
+    {
+        ScenarioContext.Current.Pending();
+    }
+}
+</Message>
+                  <StackTrace>at NUnit.Framework.Assert.Ignore (string,object[]) &lt;IL 0x00030, 0x00061&gt;
+at (wrapper dynamic-method) System.Runtime.CompilerServices.ExecutionScope.lambda_method (System.Runtime.CompilerServices.ExecutionScope,string,object[]) &lt;IL 0x0000c, 0x00013&gt;
+at TechTalk.SpecFlow.UnitTestProvider.NUnitRuntimeProvider.TestInconclusive (string) &lt;IL 0x0005f, 0x000d5&gt;
+at TechTalk.SpecFlow.ErrorHandling.ErrorProvider.ThrowPendingError (TechTalk.SpecFlow.TestStatus,string) &lt;IL 0x00024, 0x00038&gt;
+at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors () &lt;IL 0x00189, 0x00447&gt;
+at Assessment_Two_Specs.AdditionFeature.AddTwoNumbers () [0x0005c] in /Users/florian/Documents/Code/Git/hw_spas10/Assessment_Two/Assessment_Two/Assessment_Two_Specs/PageHandling.feature:13
+at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke (System.Reflection.MonoMethod*,object,object[],System.Exception&amp;) &lt;0x00003&gt;
+at System.Reflection.MonoMethod.Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo) &lt;IL 0x000d6, 0x00124&gt;
+</StackTrace>
+                  <ConsoleOutput>Given I have entered 50 into the calculator
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Given(@"I have entered 50 into the calculator")]
+        public void GivenIHaveEntered50IntoTheCalculator()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+And I have entered 70 into the calculator
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Given(@"I have entered 70 into the calculator")]
+        public void GivenIHaveEntered70IntoTheCalculator()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+When I press add
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [When(@"I press add")]
+        public void WhenIPressAdd()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+Then the result should be 120 on the screen
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Then(@"the result should be 120 on the screen")]
+        public void ThenTheResultShouldBe120OnTheScreen()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+</ConsoleOutput>
+                  <ConsoleError />
+                </UnitTestResult>
+              </Results>
+            </TestRecord>
+          </Tests>
+        </TestRecord>
+        <TestRecord Name="RequestSendingFeature">
+          <Results>
+            <UnitTestResult>
+              <TestDate>2010-10-27T22:53:58</TestDate>
+              <Status>Ignored</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>0</TotalSuccess>
+              <TotalIgnored>1</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+            <UnitTestResult>
+              <TestDate>2010-10-27T22:57:37</TestDate>
+              <Status>Ignored</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>0</TotalSuccess>
+              <TotalIgnored>1</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+          </Results>
+          <Tests>
+            <TestRecord Name="NavigateToGoogleWebpage">
+              <Results>
+                <UnitTestResult>
+                  <TestDate>2010-10-27T22:53:58</TestDate>
+                  <Status>Ignored</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>0</TotalSuccess>
+                  <TotalIgnored>1</TotalIgnored>
+                  <Time />
+                  <Message>No matching step definition found for one or more steps.
+[Binding]
+public class StepDefinitions
+{
+    [Given(@"I have entered http://www\.google\.co\.uk/")]
+    public void GivenIHaveEnteredHttpWww_Google_Co_Uk()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [Then(@"then valid html should be returned")]
+    public void ThenThenValidHtmlShouldBeReturned()
+    {
+        ScenarioContext.Current.Pending();
+    }
+    
+    [When(@"I press go")]
+    public void WhenIPressGo()
+    {
+        ScenarioContext.Current.Pending();
+    }
+}
+</Message>
+                  <StackTrace>at NUnit.Framework.Assert.Ignore (string,object[]) &lt;IL 0x00030, 0x00061&gt;
+at (wrapper dynamic-method) System.Runtime.CompilerServices.ExecutionScope.lambda_method (System.Runtime.CompilerServices.ExecutionScope,string,object[]) &lt;IL 0x0000c, 0x00013&gt;
+at TechTalk.SpecFlow.UnitTestProvider.NUnitRuntimeProvider.TestInconclusive (string) &lt;IL 0x0005f, 0x000d5&gt;
+at TechTalk.SpecFlow.ErrorHandling.ErrorProvider.ThrowPendingError (TechTalk.SpecFlow.TestStatus,string) &lt;IL 0x00024, 0x00038&gt;
+at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors () &lt;IL 0x00189, 0x00447&gt;
+at Assessment_Two_Specs.RequestSendingFeature.NavigateToGoogleWebpage () [0x0004d] in /Users/florian/Documents/Code/Git/hw_spas10/Assessment_Two/Assessment_Two/Assessment_Two_Specs/PageHandling.feature:12
+at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke (System.Reflection.MonoMethod*,object,object[],System.Exception&amp;) &lt;0x00003&gt;
+at System.Reflection.MonoMethod.Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo) &lt;IL 0x000d6, 0x00124&gt;
+</StackTrace>
+                  <ConsoleOutput>Given I have entered http://www.google.co.uk/
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Given(@"I have entered http://www\.google\.co\.uk/")]
+        public void GivenIHaveEnteredHttpWww_Google_Co_Uk()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+When I press go
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [When(@"I press go")]
+        public void WhenIPressGo()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+Then then valid html should be returned
+-&gt; No matching step definition found for the step. Use the following code to create one:
+    [Binding]
+    public class StepDefinitions
+    {
+        [Then(@"then valid html should be returned")]
+        public void ThenThenValidHtmlShouldBeReturned()
+        {
+            ScenarioContext.Current.Pending();
+        }
+    }
+
+</ConsoleOutput>
+                  <ConsoleError />
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2010-10-27T22:57:37</TestDate>
+                  <Status>Ignored</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>0</TotalSuccess>
+                  <TotalIgnored>1</TotalIgnored>
+                  <Time />
+                  <Message>One or more step definitions are not implemented yet.
+  PageHandling.GivenIHaveEnteredHttpWww_Google_Co_Uk()</Message>
+                  <StackTrace>at NUnit.Framework.Assert.Ignore (string,object[]) &lt;IL 0x00030, 0x00061&gt;
+at (wrapper dynamic-method) System.Runtime.CompilerServices.ExecutionScope.lambda_method (System.Runtime.CompilerServices.ExecutionScope,string,object[]) &lt;IL 0x0000c, 0x00013&gt;
+at TechTalk.SpecFlow.UnitTestProvider.NUnitRuntimeProvider.TestInconclusive (string) &lt;IL 0x0005f, 0x000d5&gt;
+at TechTalk.SpecFlow.ErrorHandling.ErrorProvider.ThrowPendingError (TechTalk.SpecFlow.TestStatus,string) &lt;IL 0x00024, 0x00038&gt;
+at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors () &lt;IL 0x000f5, 0x002c7&gt;
+at Assessment_Two_Specs.RequestSendingFeature.NavigateToGoogleWebpage () [0x0004d] in /Users/florian/Documents/Code/Git/hw_spas10/Assessment_Two/Assessment_Two/Assessment_Two_Specs/PageHandling.feature:12
+at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke (System.Reflection.MonoMethod*,object,object[],System.Exception&amp;) &lt;0x00003&gt;
+at System.Reflection.MonoMethod.Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo) &lt;IL 0x000d6, 0x00124&gt;
+</StackTrace>
+                  <ConsoleOutput>Given I have entered http://www.google.co.uk/
+-&gt; pending: PageHandling.GivenIHaveEnteredHttpWww_Google_Co_Uk()
+When I press go
+-&gt; skipped because of previous errors
+Then then valid html should be returned
+-&gt; skipped because of previous errors
+</ConsoleOutput>
+                  <ConsoleError />
+                </UnitTestResult>
+              </Results>
+            </TestRecord>
+          </Tests>
+        </TestRecord>
+      </Tests>
+    </TestRecord>
+  </Tests>
+</TestRecord>

@@ -4,6 +4,7 @@ using Assessment_Two_Logic.Model;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
 using System.Net;
+using System.Diagnostics;
 
 namespace Assessment_Two_Specs
 {

@@ -7,6 +7,6 @@ namespace Assessment_Two_Logic.Interfaces
 {
     public interface IWebpageView
     {
-        public String Url { get; set; }
+        String Url { get; set; }
     }
 }

@@ -1,24 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assessment_Two_Specs/PageHandling.cs" ctype="Workbench">
-    <Files>
-      <File FileName="Assessment_Two_Specs/PageHandling.feature" Line="24" Column="46" />
-      <File FileName="Assessment_Two_Specs/PageHandling.feature.cs" Line="1" Column="81" />
-      <File FileName="Assessment_Two_Specs/PageHandling.cs" Line="15" Column="25" />
-      <File FileName="Assessment_Two_Logic/Model/PageHandler.cs" Line="2" Column="37" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assessment_Two_Logic" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Interfaces" expanded="True" />
             <Node name="Model" expanded="True" />
           </Node>
           <Node name="Assessment_Two_Specs" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="External Assemblies" expanded="True" />
-            <Node name="PageHandling.cs" selected="True" />
-            <Node name="PageHandling.feature" expanded="True" />
+            <Node name="PageHandling.feature" expanded="True" selected="True" />
           </Node>
+          <Node name="TestThreaded" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

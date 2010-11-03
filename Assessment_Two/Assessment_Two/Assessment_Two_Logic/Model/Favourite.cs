@@ -51,5 +51,11 @@ namespace Assessment_Two_Logic.Model
             this._Name = name;
             this._Url = url;
         }
+        
+		public void EditFavourite(String newUrl, String newName)
+		{
+			this.Name = newName;
+			this._Url = newUrl;
+		}
     }
 }
