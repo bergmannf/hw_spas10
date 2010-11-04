@@ -33,6 +33,17 @@ namespace Assessment_Two_Logic.Model
         }
 
         /// <summary>
+        /// Adds the item.
+        /// The associated time will be the current time on the executing machine.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        public void AddItem(String url)
+        {
+            DateTime time = DateTime.UtcNow;
+            this.AddItem(time, url);
+        }
+
+        /// <summary>
         /// Adds the item to the history.
         /// </summary>
         /// <param name="time">The time of the visit.</param>

@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Threading;
 using Assessment_Two_Logic.Interfaces;
+using System.IO;
 
 namespace Assessment_Two_Logic.Model
 {
@@ -42,7 +43,6 @@ namespace Assessment_Two_Logic.Model
         }
        
         private WebResponse response;
-        private Presenter.PagePresenter pagePresenter;
 
         /// <summary>
         /// Gets or sets the response.
@@ -53,10 +53,6 @@ namespace Assessment_Two_Logic.Model
             get { return response; }
             set { response = value; }
         }
-
-		public PageHandler ()
-		{
-		}
 
         private INotifiable _NotifyMember;
         public INotifiable NotifyMember
@@ -71,39 +67,40 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageHandler"/> class.
+        /// </summary>
+		public PageHandler ()
+		{
+		}
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageHandler"/> class.
+        /// </summary>
+        /// <param name="url">The URL.</param>
         public PageHandler(String url)
         {
             this.RequestUrl = url;
         }
 
-        public PageHandler(INotifiable notifiable, string requestUrl)
-        {
-            this.NotifyMember = notifiable;
-            this.RequestUrl = requestUrl;
-
-        }
-
-        public void RequestPage()
-        { 
-            Func<WebResponse> method = FetchUrl;
-            method.BeginInvoke(Done, method);
-        }
-
-        private WebResponse FetchUrl()
+        /// <summary>
+        /// Fetches the URL.
+        /// </summary>
+        /// <returns>The webresponse object.</returns>
+        public SimpleWebResponse FetchUrl()
         {
             this.Request = WebRequest.Create(this.RequestUrl);
             this.Request.Proxy = null;
             this.Response = this.Request.GetResponse();
-            return this.Response;
-        }
 
+            String htmlCode = "";
+            StreamReader sr = new StreamReader(this.Response.GetResponseStream());
+            
+            htmlCode = sr.ReadToEnd();
 
+            SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, htmlCode);
 
-        public void Done(IAsyncResult cookie) {
-            var target = (Func < WebResponse >) cookie.AsyncState;
-            WebResponse test = target.EndInvoke(cookie);
-            // Todo Notify caller that fetch is finished ?
-            this.NotifyMember.Notify();
+            return swr;
         }
     }
 }

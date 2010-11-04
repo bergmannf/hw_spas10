@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Assessment_Two_Logic.Interfaces
 {
-    class IFavouritesView
+    public interface IHistoryView : IView
     {
-        public String Name { get; set; }
-        public String Url { get; set; }
     }
 }

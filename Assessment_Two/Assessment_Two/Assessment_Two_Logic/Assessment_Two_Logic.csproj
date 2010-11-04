@@ -36,13 +36,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Interfaces\IFavouritesView.cs" />
+    <Compile Include="Interfaces\IHistoryView.cs" />
     <Compile Include="Interfaces\INotifiable.cs" />
+    <Compile Include="Interfaces\IFavouriteView.cs" />
+    <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IWebpageView.cs" />
+    <Compile Include="Model\ErrorMessage.cs" />
+    <Compile Include="Model\ErrorMessageCollection.cs" />
     <Compile Include="Model\Favourite.cs" />
     <Compile Include="Model\History.cs" />
     <Compile Include="Model\PageHandler.cs" />
+    <Compile Include="Presenter\HistoryPresenter.cs" />
     <Compile Include="Presenter\PagePresenter.cs" />
+    <Compile Include="Model\SimpleWebResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

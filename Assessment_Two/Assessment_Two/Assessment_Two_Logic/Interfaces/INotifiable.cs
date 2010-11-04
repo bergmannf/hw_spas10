@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Assessment_Two_Logic.Interfaces
 {
-    interface INotifiable
+    public interface INotifiable
     {
-        public void Notify()
-        {
-        }
+        void Notify();
     }
 }

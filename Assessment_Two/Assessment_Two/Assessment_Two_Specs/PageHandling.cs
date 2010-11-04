@@ -24,7 +24,7 @@ namespace Assessment_Two_Specs
         [When(@"I request the page")]
         public void WhenIRequestThePage()
         {
-            pageHandler.RequestPage();
+            pageHandler.FetchUrl();
         }
 
         [Then(@"a 200-OK status code should be returned")]
