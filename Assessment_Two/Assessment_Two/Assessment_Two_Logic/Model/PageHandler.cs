@@ -3,6 +3,7 @@ using System.Net;
 using System.Threading;
 using Assessment_Two_Logic.Interfaces;
 using System.IO;
+using NLog;
 
 namespace Assessment_Two_Logic.Model
 {
@@ -12,6 +13,8 @@ namespace Assessment_Two_Logic.Model
     /// </summary>
 	public class PageHandler
 	{
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         /// <summary>
         /// Stores the url to be aquired by this handler.
         /// </summary>
@@ -90,15 +93,22 @@ namespace Assessment_Two_Logic.Model
         public SimpleWebResponse FetchUrl()
         {
             this.Request = WebRequest.Create(this.RequestUrl);
-            this.Request.Proxy = null;
-            this.Response = this.Request.GetResponse();
-
+            try
+            {
+                this.Response = this.Request.GetResponse();
+            }
+            catch (Exception)
+            {
+                logger.Error("Exception when creating request for url: {0}", this.RequestUrl);
+                
+                throw;
+            }
             String htmlCode = "";
             StreamReader sr = new StreamReader(this.Response.GetResponseStream());
             
             htmlCode = sr.ReadToEnd();
 
-            SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, htmlCode);
+            SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, this.RequestUrl, htmlCode);
 
             return swr;
         }

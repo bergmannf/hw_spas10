@@ -108,6 +108,7 @@ namespace Assessment_Two
                     MethodInvoker uiDelegate = delegate
                     {
                         page.Controls[0].Text = response.Html;
+                        page.Text = response.Title;
                     };
                     UpdateUI(uiDelegate);
                 }
