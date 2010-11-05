@@ -47,14 +47,13 @@
             this.addressLabel = new System.Windows.Forms.ToolStripLabel();
             this.urlTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.goToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.addFavouriteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.addTabToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deleteTabToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.webSitesTabControl = new System.Windows.Forms.TabControl();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -188,7 +187,7 @@
             this.addressLabel,
             this.urlTextBox,
             this.goToolStripButton,
-            this.addFavouriteToolStripButton,
+            this.toolStripButton3,
             this.toolStripSeparator2,
             this.addTabToolStripButton,
             this.deleteTabToolStripButton});
@@ -220,15 +219,14 @@
             this.goToolStripButton.ToolTipText = "Navigate to entered Url.";
             this.goToolStripButton.Click += new System.EventHandler(this.goToolStripButton_Click);
             // 
-            // addFavouriteToolStripButton
+            // toolStripButton3
             // 
-            this.addFavouriteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addFavouriteToolStripButton.Image = global::Assessment_Two.Properties.Resources.bookmark_add;
-            this.addFavouriteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addFavouriteToolStripButton.Name = "addFavouriteToolStripButton";
-            this.addFavouriteToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.addFavouriteToolStripButton.Text = "Add Favourite";
-            this.addFavouriteToolStripButton.Click += new System.EventHandler(this.addFavouriteToolStripButton_Click);
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Assessment_Two.Properties.Resources.bookmark_add;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Add Favourite";
             // 
             // toolStripSeparator2
             // 
@@ -295,13 +293,6 @@
             this.webSitesTabControl.Size = new System.Drawing.Size(486, 226);
             this.webSitesTabControl.TabIndex = 4;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(552, 285);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 16);
-            this.progressBar1.TabIndex = 4;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,7 +337,7 @@
         private System.Windows.Forms.ToolStripButton addTabToolStripButton;
         private System.Windows.Forms.ToolStripButton deleteTabToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton addFavouriteToolStripButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem favouritesToolStripMenuItem2;

@@ -136,5 +136,11 @@ namespace Assessment_Two
         {
 
         }
+        private void addFavouriteToolStripButton_Click(object sender, EventArgs e)
+        {
+            FavouriteWindow fw = new FavouriteWindow();
+            fw.Url = this.urlTextBox.Text;
+            fw.ShowDialog();
+        }
     }
 }

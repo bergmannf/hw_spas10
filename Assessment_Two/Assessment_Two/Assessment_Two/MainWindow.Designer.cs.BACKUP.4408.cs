@@ -95,7 +95,11 @@
             this.historyToolStripMenuItem2});
             this.exportToolStripMenuItem1.Image = global::Assessment_Two.Properties.Resources.disk_black;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+<<<<<<< HEAD
             this.exportToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+=======
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             this.exportToolStripMenuItem1.Text = "Export";
             // 
             // favouritesToolStripMenuItem2
@@ -115,32 +119,52 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+<<<<<<< HEAD
             this.toolStripSeparator3.Size = new System.Drawing.Size(113, 6);
+=======
+            this.toolStripSeparator3.Size = new System.Drawing.Size(121, 6);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.printer;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+<<<<<<< HEAD
             this.printToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+=======
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             this.printToolStripMenuItem.Text = "Print";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.wrench_orange;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+<<<<<<< HEAD
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+=======
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+<<<<<<< HEAD
             this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
+=======
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.door_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+<<<<<<< HEAD
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+=======
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -307,7 +331,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 304);
+<<<<<<< HEAD
             this.Controls.Add(this.splitContainer1);
+=======
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.webSitesTabControl);
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -352,9 +381,14 @@
         private System.Windows.Forms.ToolStripMenuItem favouritesToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl webSitesTabControl;
         private System.Windows.Forms.TreeView treeView1;
+=======
+        private System.Windows.Forms.TabControl webSitesTabControl;
+        private System.Windows.Forms.ProgressBar progressBar1;
+>>>>>>> 752efa3fdc28623dcabc3592755226cc370a9f38
     }
 }
 
