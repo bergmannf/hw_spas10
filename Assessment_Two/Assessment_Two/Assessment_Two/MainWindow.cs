@@ -126,5 +126,12 @@ namespace Assessment_Two
             this.webSitesTabControl.SelectedTab.Name = url;
             this._PagePresenter.RequestWebpage();
         }
+
+        private void addFavouriteToolStripButton_Click(object sender, EventArgs e)
+        {
+            FavouriteWindow fw = new FavouriteWindow();
+            fw.Url = this.urlTextBox.Text;
+            fw.ShowDialog();
+        }
     }
 }

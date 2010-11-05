@@ -47,11 +47,12 @@
             this.addressLabel = new System.Windows.Forms.ToolStripLabel();
             this.urlTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.goToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.addFavouriteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.addTabToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deleteTabToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.webSitesTabControl = new System.Windows.Forms.TabControl();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             this.historyToolStripMenuItem2});
             this.exportToolStripMenuItem1.Image = global::Assessment_Two.Properties.Resources.disk_black;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.exportToolStripMenuItem1.Text = "Export";
             // 
             // favouritesToolStripMenuItem2
@@ -108,32 +109,32 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(121, 6);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.printer;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.wrench_orange;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.door_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -180,7 +181,7 @@
             this.addressLabel,
             this.urlTextBox,
             this.goToolStripButton,
-            this.toolStripButton3,
+            this.addFavouriteToolStripButton,
             this.toolStripSeparator2,
             this.addTabToolStripButton,
             this.deleteTabToolStripButton});
@@ -212,14 +213,15 @@
             this.goToolStripButton.ToolTipText = "Navigate to entered Url.";
             this.goToolStripButton.Click += new System.EventHandler(this.goToolStripButton_Click);
             // 
-            // toolStripButton3
+            // addFavouriteToolStripButton
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::Assessment_Two.Properties.Resources.bookmark_add;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Add Favourite";
+            this.addFavouriteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addFavouriteToolStripButton.Image = global::Assessment_Two.Properties.Resources.bookmark_add;
+            this.addFavouriteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addFavouriteToolStripButton.Name = "addFavouriteToolStripButton";
+            this.addFavouriteToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.addFavouriteToolStripButton.Text = "Add Favourite";
+            this.addFavouriteToolStripButton.Click += new System.EventHandler(this.addFavouriteToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -257,11 +259,19 @@
             this.webSitesTabControl.Size = new System.Drawing.Size(639, 226);
             this.webSitesTabControl.TabIndex = 3;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(552, 285);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 16);
+            this.progressBar1.TabIndex = 4;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 304);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.webSitesTabControl);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
@@ -297,13 +307,14 @@
         private System.Windows.Forms.ToolStripButton addTabToolStripButton;
         private System.Windows.Forms.ToolStripButton deleteTabToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton addFavouriteToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem favouritesToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.TabControl webSitesTabControl;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

@@ -9,6 +9,6 @@ namespace Assessment_Two_Logic.Interfaces
     public interface IFavouriteView : IView
     {
         String Url { get; set; }
-        String Name { get; set; }
+        String FavName { get; set; }
     }
 }

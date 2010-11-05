@@ -50,6 +50,7 @@
     <Compile Include="Model\Favourite.cs" />
     <Compile Include="Model\History.cs" />
     <Compile Include="Model\PageHandler.cs" />
+    <Compile Include="Presenter\FavouritePresenter.cs" />
     <Compile Include="Presenter\HistoryPresenter.cs" />
     <Compile Include="Presenter\PagePresenter.cs" />
     <Compile Include="Model\SimpleWebResponse.cs" />
