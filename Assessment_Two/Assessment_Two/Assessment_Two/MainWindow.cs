@@ -12,19 +12,24 @@ using Assessment_Two_Logic.Presenter;
 
 namespace Assessment_Two
 {
-    public partial class MainWindow : ThreadingView, IWebpageView
+    public partial class MainWindow : ThreadingView, IWebpageView, IHistoryView
     {
         private int _NumberOfTabs;
 
         private PagePresenter _PagePresenter;
+        private HistoryPresenter _HistoryPresenter;
 
         public MainWindow()
         {
             InitializeComponent();
             this._NumberOfTabs = 0;
             this.CreateTab();
+            // ToDo: Seperate logic
+            this.splitContainer1.Panel1Collapsed = true;
+            this.splitContainer1.Panel1.Hide();
 
             this._PagePresenter = new PagePresenter(this);
+            this._HistoryPresenter = new HistoryPresenter(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,7 +122,7 @@ namespace Assessment_Two
 
         public void DisplayErrors(ErrorMessageCollection errors)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(errors.ToString());
         }
 
         private void goToolStripButton_Click(object sender, EventArgs e)
@@ -125,6 +130,11 @@ namespace Assessment_Two
             String url = this.urlTextBox.Text;
             this.webSitesTabControl.SelectedTab.Name = url;
             this._PagePresenter.RequestWebpage();
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

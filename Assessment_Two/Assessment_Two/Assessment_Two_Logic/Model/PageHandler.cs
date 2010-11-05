@@ -4,6 +4,7 @@ using System.Threading;
 using Assessment_Two_Logic.Interfaces;
 using System.IO;
 using NLog;
+using System.Text.RegularExpressions;
 
 namespace Assessment_Two_Logic.Model
 {
@@ -11,8 +12,9 @@ namespace Assessment_Two_Logic.Model
     /// Allows the fetching of urls in a thread.
     /// Will notify the caller via "ThreadFinished" callback method.
     /// </summary>
-	public class PageHandler
-	{
+    public class PageHandler
+    {
+        private const string HTTP_REGEXP = @"^http\:\/\/[\w\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?$";
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace Assessment_Two_Logic.Model
             get { return request; }
             set { request = value; }
         }
-       
+
         private WebResponse response;
 
         /// <summary>
@@ -73,9 +75,9 @@ namespace Assessment_Two_Logic.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PageHandler"/> class.
         /// </summary>
-		public PageHandler ()
-		{
-		}
+        public PageHandler()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PageHandler"/> class.
@@ -92,25 +94,54 @@ namespace Assessment_Two_Logic.Model
         /// <returns>The webresponse object.</returns>
         public SimpleWebResponse FetchUrl()
         {
-            this.Request = WebRequest.Create(this.RequestUrl);
-            try
+            if (IsValidUrl(this.RequestUrl))
             {
-                this.Response = this.Request.GetResponse();
+                try
+                {
+                    String htmlCode = "";
+                    try
+                    {
+                        this.Request = WebRequest.Create(this.RequestUrl);
+                        this.Response = this.Request.GetResponse();
+                    }
+                    catch (WebException e)
+                    {
+                        logger.Error("WebException ({0}) occured when fetching the url: {1}", e.Message, this.RequestUrl);
+                        this.Response = e.Response;
+                    }
+                    // ToDo: Display a custom error message?
+                    StreamReader sr = new StreamReader(this.Response.GetResponseStream());
+                    htmlCode = sr.ReadToEnd();
+                    SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, this.RequestUrl, htmlCode);
+
+                    return swr;
+                }
+                catch (Exception e)
+                {
+                    logger.Error("Exception ({1}) occured, when creating request for url: {0}", this.RequestUrl, e.Message);
+                    // Todo: handle error and pass error collection?
+                    throw new ArgumentException(String.Format("The Url: {0} could not be fetched.", this.RequestUrl));
+                }
             }
-            catch (Exception)
+            else
             {
-                logger.Error("Exception when creating request for url: {0}", this.RequestUrl);
-                
-                throw;
+                throw new ArgumentException(String.Format("The provided url did not match the specified format for html-urls: {0}", this.RequestUrl));
             }
-            String htmlCode = "";
-            StreamReader sr = new StreamReader(this.Response.GetResponseStream());
-            
-            htmlCode = sr.ReadToEnd();
+        }
 
-            SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, this.RequestUrl, htmlCode);
-
-            return swr;
+        /// <summary>
+        /// Determines whether [the specified URL] is in a valid format.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <returns>
+        /// 	<c>true</c> if [is valid URL] [the specified URL]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsValidUrl(String url)
+        {
+            bool isValidUrl = false;
+            Regex regexp = new Regex(HTTP_REGEXP);
+            isValidUrl = regexp.IsMatch(url);
+            return isValidUrl;
         }
     }
 }

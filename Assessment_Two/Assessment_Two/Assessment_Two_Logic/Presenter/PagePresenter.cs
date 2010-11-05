@@ -24,19 +24,40 @@ namespace Assessment_Two_Logic.Presenter
         public void RequestWebpage()
         {
             String requestUrl = this._WebPageView.Url;
-            // ToDo: Check for valid url via regexp
-            PageHandler pageHandler = new PageHandler(requestUrl);
-            // ToDo: Add Page to History
-            Func<SimpleWebResponse> method = pageHandler.FetchUrl;
-            method.BeginInvoke(Done, method);
+            bool validUrl = PageHandler.IsValidUrl(requestUrl);
+            if (validUrl)
+            {
+                PageHandler pageHandler = new PageHandler(requestUrl);
+                // ToDo: Add Page to History
+                Func<SimpleWebResponse> method = pageHandler.FetchUrl;
+                method.BeginInvoke(Done, method);
+            }
+            else
+            {
+                this.DisplayError("The provided url is not valid.");
+            }
         }
 
+        /// <summary>
+        /// Callback when a thread is finished with processing.
+        /// </summary>
+        /// <param name="result">The result of the threaded call.</param>
         public void Done(IAsyncResult result)
         {
-            var target = (Func<SimpleWebResponse>)result.AsyncState;
-            SimpleWebResponse response = target.EndInvoke(result);
-            // ToDo: Update GUI on UI Thread!
-            this._WebPageView.DisplayWebPage(response);
+            lock (this)
+            {
+                var target = (Func<SimpleWebResponse>)result.AsyncState;
+                SimpleWebResponse response = target.EndInvoke(result);
+                this._WebPageView.DisplayWebPage(response);
+            }
+        }
+
+        private void DisplayError(string p)
+        {
+            ErrorMessage em = new ErrorMessage(p);
+            ErrorMessageCollection emc = new ErrorMessageCollection();
+            emc.Add(em);
+            this._WebPageView.DisplayErrors(emc);
         }
     }
 }

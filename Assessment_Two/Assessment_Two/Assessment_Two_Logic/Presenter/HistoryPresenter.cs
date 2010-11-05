@@ -7,7 +7,7 @@ using Assessment_Two_Logic.Interfaces;
 
 namespace Assessment_Two_Logic.Presenter
 {
-    class HistoryPresenter
+    public class HistoryPresenter
     {
         public History _History;
 
