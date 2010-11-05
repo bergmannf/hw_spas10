@@ -9,7 +9,7 @@ namespace Assessment_Two_Logic.Model
     /// <summary>
     /// Stores the history of visited webpages with their associated date.
     /// </summary>
-    class History
+    public class History
     {
         private static Object historyLock = new Object();
 

@@ -17,7 +17,7 @@ namespace Assessment_Two_Logic.Presenter
 
         public void AddFavourite()
         {
-            String favName = this._FavouriteView.Name;
+            String favName = this._FavouriteView.FavName;
             String favUrl = this._FavouriteView.Url;
         }
     }

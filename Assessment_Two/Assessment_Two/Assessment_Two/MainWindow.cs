@@ -142,5 +142,10 @@ namespace Assessment_Two
             fw.Url = this.urlTextBox.Text;
             fw.ShowDialog();
         }
+
+        public void DisplayHistory(History history)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

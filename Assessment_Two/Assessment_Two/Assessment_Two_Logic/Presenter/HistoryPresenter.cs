@@ -16,7 +16,7 @@ namespace Assessment_Two_Logic.Presenter
         public HistoryPresenter(IHistoryView view)
         {
             this._HistoryView = view;
-            this._History = LoadHistory();
+            // this._History = LoadHistory();
         }
 
         /// <summary>

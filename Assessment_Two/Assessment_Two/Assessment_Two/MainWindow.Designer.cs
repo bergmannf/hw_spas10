@@ -54,7 +54,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.webSitesTabControl = new System.Windows.Forms.TabControl();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -294,13 +293,6 @@
             this.webSitesTabControl.SelectedIndex = 0;
             this.webSitesTabControl.Size = new System.Drawing.Size(486, 226);
             this.webSitesTabControl.TabIndex = 4;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(552, 285);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 16);
-            this.progressBar1.TabIndex = 4;
             // 
             // MainWindow
             // 
