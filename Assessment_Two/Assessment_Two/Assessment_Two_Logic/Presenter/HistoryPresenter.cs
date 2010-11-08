@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using Assessment_Two_Logic.Model;
 using Assessment_Two_Logic.Interfaces;
 
@@ -9,23 +10,39 @@ namespace Assessment_Two_Logic.Presenter
 {
     public class HistoryPresenter
     {
-        public History _History;
+        public HistoryHandler _HistoryHandler;
 
         public IHistoryView _HistoryView;
 
         public HistoryPresenter(IHistoryView view)
         {
             this._HistoryView = view;
-            // this._History = LoadHistory();
+            this._HistoryHandler = HistoryHandler.Instance;
+            this._HistoryHandler.ChangeEvent += new HistoryHandler.ChangeHandler(this.Update);
+
+            String appFolger = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            String history = "History.xml";
+            this._HistoryHandler.SetFilePath(Path.Combine(appFolger, history));
+            this._HistoryHandler.LoadHistory();
+        }
+        
+        public void Update(object subject)
+        {
+            if (subject is HistoryHandler)
+            {
+                HistoryHandler histhandler = subject as HistoryHandler;
+                this._HistoryView.DisplayHistory(histhandler.History);
+            }
         }
 
-        /// <summary>
-        /// Loads the history.
-        /// </summary>
-        /// <returns>Loaded history or empty history if no history was loaded.</returns>
-        private History LoadHistory()
+        public void SetHistoryPath(String path)
         {
-            throw new NotImplementedException();
+            this._HistoryHandler.SetFilePath(path);
+        }
+
+        public void SaveHistory()
+        {
+            this._HistoryHandler.SaveHistory();
         }
     }
 }

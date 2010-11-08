@@ -11,10 +11,12 @@ namespace Assessment_Two_Logic.Presenter
     public class PagePresenter
     {
         private IWebpageView _WebPageView;
+        private HistoryHandler _HistoryHandler;
 
         public PagePresenter(IWebpageView view)
         {
             this._WebPageView = view;
+            this._HistoryHandler = HistoryHandler.Instance;
         }
 
         /// <summary>
@@ -28,7 +30,7 @@ namespace Assessment_Two_Logic.Presenter
             if (validUrl)
             {
                 PageHandler pageHandler = new PageHandler(requestUrl);
-                // ToDo: Add Page to History
+                this._HistoryHandler.AddEntry(requestUrl);
                 Func<SimpleWebResponse> method = pageHandler.FetchUrl;
                 method.BeginInvoke(Done, method);
             }
@@ -58,6 +60,11 @@ namespace Assessment_Two_Logic.Presenter
             ErrorMessageCollection emc = new ErrorMessageCollection();
             emc.Add(em);
             this._WebPageView.DisplayErrors(emc);
+        }
+
+        public void PrintPage()
+        {
+            throw new NotImplementedException();
         }
     }
 }

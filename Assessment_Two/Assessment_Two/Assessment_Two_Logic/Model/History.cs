@@ -11,51 +11,31 @@ namespace Assessment_Two_Logic.Model
     /// </summary>
     public class History
     {
-        private static Object historyLock = new Object();
-
-        private static volatile History _Instance;
-
-        public static History Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    lock (historyLock)
-                    {
-                        if (_Instance == null)
-                        {
-                            _Instance = new History();
-                        }
-                    }
-                }
-                return _Instance;
-            }
-        }
-
-        private Dictionary<DateTime, String> _VisitList;
+        private SerializableDictionary<DateTime, String> _VisitList;
 
         /// <summary>
         /// Gets the visit list.
         /// </summary>
         /// <value>The visit list.</value>
-        public Dictionary<DateTime, String> VisitList
+        public SerializableDictionary<DateTime, String> VisitList
         {
             get
             {
                 return _VisitList;
+            }
+            set
+            {
+                this._VisitList = value;
             }
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="History"/> class.
         /// </summary>
-        private History()
+        public History()
         {
-            this._VisitList = new Dictionary<DateTime, string>();
+            this._VisitList = new SerializableDictionary<DateTime, string>();
         }
-
-
 
         /// <summary>
         /// Adds the item.
@@ -84,6 +64,26 @@ namespace Assessment_Two_Logic.Model
         public void ClearHistory()
         {
             this._VisitList.Clear();
+        }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            return this._VisitList.Count == 0;
+        }
+
+        /// <summary>
+        /// Adds the item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        internal void AddItem(KeyValuePair<DateTime, string> item)
+        {
+            this.VisitList.Add(item.Key, item.Value);
         }
     }
 }

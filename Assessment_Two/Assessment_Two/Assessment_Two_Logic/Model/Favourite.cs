@@ -8,7 +8,7 @@ namespace Assessment_Two_Logic.Model
     /// <summary>
     /// Stores a favourite with a display name.
     /// </summary>
-    class Favourite
+    public class Favourite
     {
         private String _Url;
 
@@ -29,6 +29,10 @@ namespace Assessment_Two_Logic.Model
         }
 
         private String _Name;
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public String Name
         {
             get
@@ -44,6 +48,12 @@ namespace Assessment_Two_Logic.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Favourite"/> class.
         /// </summary>
+        public Favourite()
+        { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Favourite"/> class.
+        /// </summary>
         /// <param name="url">The URL.</param>
         /// <param name="name">The name.</param>
         public Favourite(String url, String name)
@@ -51,11 +61,21 @@ namespace Assessment_Two_Logic.Model
             this._Name = name;
             this._Url = url;
         }
-        
+
+        /// <summary>
+        /// Edits the favourite.
+        /// </summary>
+        /// <param name="newUrl">The new URL.</param>
+        /// <param name="newName">The new name.</param>
 		public void EditFavourite(String newUrl, String newName)
 		{
 			this.Name = newName;
 			this._Url = newUrl;
 		}
+
+        public override string ToString()
+        {
+            return this.Name + " - " + this.Url;
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.urlTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -68,14 +68,15 @@
             this.urlTextBox.Size = new System.Drawing.Size(214, 20);
             this.urlTextBox.TabIndex = 3;
             // 
-            // button1
+            // cancelButton
             // 
-            this.button1.Location = new System.Drawing.Point(239, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(239, 75);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 4;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // okButton
             // 
@@ -85,19 +86,20 @@
             this.okButton.TabIndex = 5;
             this.okButton.Text = "Ok";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // Favourite
+            // FavouriteWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 109);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.urlTextBox);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
-            this.Name = "Favourite";
+            this.Name = "FavouriteWindow";
             this.Text = "Favourite";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,7 +112,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.TextBox urlTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
     }
 }

@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Assessment_Two_Logic.Interfaces;
+using System.IO;
+using System.Xml.Serialization;
+
+namespace Assessment_Two_Logic.Model
+{
+    class XmlSerialiser<T> : ISerialiser<T>
+    {
+        private String _FilePath;
+
+        public string FilePath
+        {
+            get
+            {
+                return this._FilePath;
+            }
+            set
+            {
+                this._FilePath = value;
+            }
+        }
+
+        public XmlSerialiser()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XmlSerialiser&lt;T&gt;"/> class.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        public XmlSerialiser(string filePath)
+        {
+            this.FilePath = filePath;
+        }
+    
+        public void Write(T t)
+        {
+            if (!String.IsNullOrEmpty(this.FilePath))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                TextWriter writer = new StreamWriter(this._FilePath);
+                serializer.Serialize(writer, t);
+                writer.Close();  
+            }
+            else
+            {
+                throw new NoFilePathSetException("No file path set to save the elements to.");
+            }
+        }
+
+        public T Read()
+        {
+            if (!String.IsNullOrEmpty(this.FilePath))
+            {
+                T t;
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                TextReader reader = new StreamReader(this._FilePath);
+                t = (T)serializer.Deserialize(reader);
+                reader.Close();
+                return t;
+            }
+            else
+            {
+                throw new NoFilePathSetException("No file path set to read the elements from.");
+            }
+        }
+
+    }
+}

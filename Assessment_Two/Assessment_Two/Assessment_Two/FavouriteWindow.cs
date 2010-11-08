@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Assessment_Two_Logic.Interfaces;
 using Assessment_Two_Logic.Presenter;
+using Assessment_Two_Logic.Model;
 
 namespace Assessment_Two
 {
@@ -15,9 +16,14 @@ namespace Assessment_Two
     {
         private FavouritePresenter _FavouritePresenter;
 
+        private Favourite _Favourite;
+
+        public bool IsEdit { get; set; }
+
         public FavouriteWindow()
         {
             InitializeComponent();
+            this.IsEdit = false;
             this._FavouritePresenter = new FavouritePresenter(this);
         }
 
@@ -37,12 +43,6 @@ namespace Assessment_Two
             }
         }
 
-        public void DisplayErrors(Assessment_Two_Logic.Model.ErrorMessageCollection errors)
-        {
-            throw new NotImplementedException();
-        }
-
-
         public string FavName
         {
             get
@@ -58,5 +58,43 @@ namespace Assessment_Two
                 UpdateUI(uiDelegate);
             }
         }
+
+        public Assessment_Two_Logic.Model.Favourite Favourite
+        {
+            get
+            {
+                return this._Favourite;
+            }
+            set
+            {
+                this._Favourite = value;
+            }
+        }
+
+        public void DisplayErrors(Assessment_Two_Logic.Model.ErrorMessageCollection errors)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            if (!IsEdit)
+            {
+                this._FavouritePresenter.AddFavourite();
+            }
+            else
+            {
+                this._FavouritePresenter.EditFavourite();
+            }
+            // ToDo: Only dispose if changes work.
+            this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        
     }
 }

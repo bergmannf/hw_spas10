@@ -59,19 +59,6 @@ namespace Assessment_Two_Logic.Model
             set { response = value; }
         }
 
-        private INotifiable _NotifyMember;
-        public INotifiable NotifyMember
-        {
-            get
-            {
-                return _NotifyMember;
-            }
-            set
-            {
-                _NotifyMember = value;
-            }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="PageHandler"/> class.
         /// </summary>
