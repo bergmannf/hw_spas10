@@ -7,12 +7,25 @@ using Assessment_Two_Logic.Model;
 
 namespace Assessment_Two_Logic.Presenter
 {
+    /// <summary>
+    /// Presenter to show, add and edit a single favourite object.
+    /// </summary>
     public class FavouritePresenter
     {
+        /// <summary>
+        /// Reference to the view.
+        /// </summary>
         private IFavouriteView _FavouriteView;
 
+        /// <summary>
+        /// Reference to the favourite handler.
+        /// </summary>
         private FavouriteHandler _FavouriteHandler;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FavouritePresenter"/> class.
+        /// </summary>
+        /// <param name="view">The view.</param>
         public FavouritePresenter(IFavouriteView view)
         {
             this._FavouriteView = view;
@@ -20,6 +33,9 @@ namespace Assessment_Two_Logic.Presenter
             
         }
 
+        /// <summary>
+        /// Adds the favourite.
+        /// </summary>
         public void AddFavourite()
         {
             String favName = this._FavouriteView.FavName;
@@ -27,6 +43,9 @@ namespace Assessment_Two_Logic.Presenter
             this._FavouriteHandler.AddEntry(favName, favUrl);
         }
 
+        /// <summary>
+        /// Edits the favourite.
+        /// </summary>
         public void EditFavourite()
         {
             Favourite fav = this._FavouriteView.Favourite;

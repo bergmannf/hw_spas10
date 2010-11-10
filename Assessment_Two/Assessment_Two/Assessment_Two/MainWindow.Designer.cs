@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.favouritesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,8 +61,9 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webSitesTabControl = new System.Windows.Forms.TabControl();
             this.printDialog = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -93,8 +91,6 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem1,
-            this.toolStripSeparator3,
             this.printToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.toolStripSeparator1,
@@ -102,35 +98,6 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exportToolStripMenuItem1
-            // 
-            this.exportToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.favouritesToolStripMenuItem2,
-            this.historyToolStripMenuItem2});
-            this.exportToolStripMenuItem1.Image = global::Assessment_Two.Properties.Resources.disk_black;
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
-            // 
-            // favouritesToolStripMenuItem2
-            // 
-            this.favouritesToolStripMenuItem2.Image = global::Assessment_Two.Properties.Resources.bookmark;
-            this.favouritesToolStripMenuItem2.Name = "favouritesToolStripMenuItem2";
-            this.favouritesToolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
-            this.favouritesToolStripMenuItem2.Text = "Favourites";
-            // 
-            // historyToolStripMenuItem2
-            // 
-            this.historyToolStripMenuItem2.Image = global::Assessment_Two.Properties.Resources.calendar;
-            this.historyToolStripMenuItem2.Name = "historyToolStripMenuItem2";
-            this.historyToolStripMenuItem2.Size = new System.Drawing.Size(127, 22);
-            this.historyToolStripMenuItem2.Text = "History";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(113, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -305,7 +272,7 @@
             this.sideTabControl.Multiline = true;
             this.sideTabControl.Name = "sideTabControl";
             this.sideTabControl.SelectedIndex = 0;
-            this.sideTabControl.Size = new System.Drawing.Size(138, 230);
+            this.sideTabControl.Size = new System.Drawing.Size(138, 223);
             this.sideTabControl.TabIndex = 0;
             // 
             // historyPage
@@ -315,7 +282,7 @@
             this.historyPage.Location = new System.Drawing.Point(23, 4);
             this.historyPage.Name = "historyPage";
             this.historyPage.Padding = new System.Windows.Forms.Padding(3);
-            this.historyPage.Size = new System.Drawing.Size(111, 222);
+            this.historyPage.Size = new System.Drawing.Size(111, 215);
             this.historyPage.TabIndex = 0;
             this.historyPage.Text = "History";
             this.historyPage.UseVisualStyleBackColor = true;
@@ -325,7 +292,7 @@
             this.historyTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historyTreeView.Location = new System.Drawing.Point(3, 3);
             this.historyTreeView.Name = "historyTreeView";
-            this.historyTreeView.Size = new System.Drawing.Size(105, 216);
+            this.historyTreeView.Size = new System.Drawing.Size(105, 209);
             this.historyTreeView.TabIndex = 1;
             this.historyTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseClick);
             // 
@@ -392,25 +359,35 @@
             this.webSitesTabControl.Location = new System.Drawing.Point(3, 6);
             this.webSitesTabControl.Name = "webSitesTabControl";
             this.webSitesTabControl.SelectedIndex = 0;
-            this.webSitesTabControl.Size = new System.Drawing.Size(486, 226);
+            this.webSitesTabControl.Size = new System.Drawing.Size(486, 219);
             this.webSitesTabControl.TabIndex = 4;
+            this.webSitesTabControl.SelectedIndexChanged += new System.EventHandler(this.webSitesTabControl_SelectedIndexChanged);
             // 
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
             // 
-            // printDocument1
+            // printDocument
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(549, 27);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 20);
+            this.progressBar1.TabIndex = 5;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 304);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "Browsi - The awfully inadequate browser";
@@ -452,10 +429,6 @@
         private System.Windows.Forms.ToolStripButton deleteTabToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton addFavouriteToolStripButton;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem favouritesToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl webSitesTabControl;
@@ -469,8 +442,9 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

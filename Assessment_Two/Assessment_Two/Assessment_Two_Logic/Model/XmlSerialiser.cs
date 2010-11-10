@@ -8,6 +8,10 @@ using System.Xml.Serialization;
 
 namespace Assessment_Two_Logic.Model
 {
+    /// <summary>
+    /// An XmlSerialiser.
+    /// </summary>
+    /// <typeparam name="T">The type that can be serialised via this Serialiser.</typeparam>
     class XmlSerialiser<T> : ISerialiser<T>
     {
         private String _FilePath;
@@ -24,6 +28,9 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XmlSerialiser&lt;T&gt;"/> class.
+        /// </summary>
         public XmlSerialiser()
         {
         }
@@ -36,7 +43,11 @@ namespace Assessment_Two_Logic.Model
         {
             this.FilePath = filePath;
         }
-    
+
+        /// <summary>
+        /// Writes the specified t to the filepath.
+        /// </summary>
+        /// <param name="t">The t.</param>
         public void Write(T t)
         {
             if (!String.IsNullOrEmpty(this.FilePath))
@@ -52,6 +63,10 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
+        /// <summary>
+        /// Reads a specified t from the filepath.
+        /// </summary>
+        /// <returns>The t read.</returns>
         public T Read()
         {
             if (!String.IsNullOrEmpty(this.FilePath))

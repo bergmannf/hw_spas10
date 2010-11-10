@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Assessment_Two_Logic.Model.ErrorMessage" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAEAAAAAAAAAFAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Model\ErrorMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.ErrorMessageCollection" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ErrorMessageCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.Favourite" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAEAAAAIAQAAAQAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\Favourite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.FavouriteHandler" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Assessment_Two_Logic.Model.FavouriteHandler.ChangeHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\FavouriteHandler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAgAQACAISAAAEQQAAAAQAAEBAQAAgAAAAAAA=</HashCode>
+      <FileName>Model\FavouriteHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Favourites" />
+      <Field Name="_Serializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.History" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAAEAAAAAAAAgAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\History.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_VisitList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.HistoryHandler" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Assessment_Two_Logic.Model.HistoryHandler.ChangeHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\HistoryHandler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IAIAgAAAAAAACAASAAAEAAAAAAAAAEBAQAAiAAACAAA=</HashCode>
+      <FileName>Model\HistoryHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_History" />
+      <Field Name="_Serializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.PageHandler" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgAAABAAEACAABAAACAAABAgAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PageHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.SerializableDictionary&lt;TKey, TValue&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Model\SerializableDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.SimpleWebResponse" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAABAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\SimpleWebResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Model.XmlSerialiser&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAEAAAA=</HashCode>
+      <FileName>Model\XmlSerialiser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Assessment_Two_Logic.Presenter.FavouritePresenter" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAACAAQAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Presenter\FavouritePresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_FavouriteHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Presenter.FavouritesPresenter" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAIAAQACAAgAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Presenter\FavouritesPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_FavouriteHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Presenter.HistoryPresenter" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACACA=</HashCode>
+      <FileName>Presenter\HistoryPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_HistoryHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Presenter.PagePresenter" Collapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUBAAAAAAAAAAAAAAAAAAAAAUAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presenter\PagePresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_HistoryHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assessment_Two_Logic.Presenter.PrintPresenter" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAAAAAAAEAgA=</HashCode>
+      <FileName>Presenter\PrintPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Assessment_Two_Logic.Interfaces.ISerialiser&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAEAAAA=</HashCode>
+      <FileName>Interfaces\ISerialiser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

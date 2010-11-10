@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NLog;
+using Assessment_Two_Logic.Interfaces;
 
 namespace Assessment_Two_Logic.Model
 {
@@ -43,7 +44,7 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
-        private XmlSerialiser<History> _Serializer;
+        private ISerialiser<History> _Serializer;
         private History _History;
 
         /// <summary>
@@ -159,6 +160,9 @@ namespace Assessment_Two_Logic.Model
             this._Serializer.FilePath = oldPath;
         }
 
+        /// <summary>
+        /// Notifies the observers.
+        /// </summary>
         private void Notify()
         {
             if (ChangeEvent != null)

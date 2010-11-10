@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NLog;
+using Assessment_Two_Logic.Interfaces;
 
 namespace Assessment_Two_Logic.Model
 {
@@ -43,7 +44,7 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
-        private XmlSerialiser<List<Favourite>> _Serializer;
+        private ISerialiser<List<Favourite>> _Serializer;
         private List<Favourite> _Favourites;
 
         /// <summary>
@@ -58,12 +59,19 @@ namespace Assessment_Two_Logic.Model
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FavouriteHandler"/> class.
+        /// </summary>
         private FavouriteHandler()
         {
             this._Serializer = new XmlSerialiser<List<Favourite>>();
             this._Favourites = new List<Favourite>();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FavouriteHandler"/> class.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
         private FavouriteHandler(String filePath)
         {
             this._Serializer = new XmlSerialiser<List<Favourite>>(filePath);

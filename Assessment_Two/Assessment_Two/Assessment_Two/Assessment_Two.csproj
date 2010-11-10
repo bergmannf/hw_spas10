@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="External Assemblies\NLog.dll" />
+    <None Include="Resources\Time Machine.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

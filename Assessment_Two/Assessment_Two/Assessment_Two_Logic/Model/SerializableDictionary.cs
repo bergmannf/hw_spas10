@@ -5,6 +5,11 @@ using System.Xml.Serialization;
 
 namespace Assessment_Two_Logic.Model
 {
+    /// <summary>
+    /// Class to represent a serializable dictionary.
+    /// </summary>
+    /// <typeparam name="TKey">The type of the key.</typeparam>
+    /// <typeparam name="TValue">The type of the value.</typeparam>
     [XmlRoot("dictionary")]
     public class SerializableDictionary<TKey, TValue>
         : Dictionary<TKey, TValue>, IXmlSerializable

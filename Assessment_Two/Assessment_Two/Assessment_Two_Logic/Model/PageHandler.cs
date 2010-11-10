@@ -96,7 +96,6 @@ namespace Assessment_Two_Logic.Model
                         logger.Error("WebException ({0}) occured when fetching the url: {1}", e.Message, this.RequestUrl);
                         this.Response = e.Response;
                     }
-                    // ToDo: Display a custom error message?
                     StreamReader sr = new StreamReader(this.Response.GetResponseStream());
                     htmlCode = sr.ReadToEnd();
                     SimpleWebResponse swr = new SimpleWebResponse(this.RequestUrl, this.RequestUrl, htmlCode);
@@ -106,7 +105,6 @@ namespace Assessment_Two_Logic.Model
                 catch (Exception e)
                 {
                     logger.Error("Exception ({1}) occured, when creating request for url: {0}", this.RequestUrl, e.Message);
-                    // Todo: handle error and pass error collection?
                     throw new ArgumentException(String.Format("The Url: {0} could not be fetched.", this.RequestUrl));
                 }
             }

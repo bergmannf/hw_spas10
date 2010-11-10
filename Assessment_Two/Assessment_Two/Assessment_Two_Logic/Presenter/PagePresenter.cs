@@ -8,11 +8,24 @@ using System.Net;
 
 namespace Assessment_Two_Logic.Presenter
 {
+    /// <summary>
+    /// Used to request webpages in an asynchronous fashion.
+    /// </summary>
     public class PagePresenter
     {
+        /// <summary>
+        /// References the associated view.
+        /// </summary>
         private IWebpageView _WebPageView;
+        /// <summary>
+        /// References the history handler.
+        /// </summary>
         private HistoryHandler _HistoryHandler;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagePresenter"/> class.
+        /// </summary>
+        /// <param name="view">The view.</param>
         public PagePresenter(IWebpageView view)
         {
             this._WebPageView = view;
@@ -54,17 +67,16 @@ namespace Assessment_Two_Logic.Presenter
             }
         }
 
+        /// <summary>
+        /// Displays the error.
+        /// </summary>
+        /// <param name="p">The String to create an error from.</param>
         private void DisplayError(string p)
         {
             ErrorMessage em = new ErrorMessage(p);
             ErrorMessageCollection emc = new ErrorMessageCollection();
             emc.Add(em);
             this._WebPageView.DisplayErrors(emc);
-        }
-
-        public void PrintPage()
-        {
-            throw new NotImplementedException();
         }
     }
 }

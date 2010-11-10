@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +45,7 @@
     <Compile Include="Interfaces\IFavouritesView.cs" />
     <Compile Include="Interfaces\IHistoryView.cs" />
     <Compile Include="Interfaces\IFavouriteView.cs" />
+    <Compile Include="Interfaces\IPrintView.cs" />
     <Compile Include="Interfaces\ISerialiser.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IWebpageView.cs" />
@@ -62,11 +64,13 @@
     <Compile Include="Presenter\HistoryPresenter.cs" />
     <Compile Include="Presenter\PagePresenter.cs" />
     <Compile Include="Model\SimpleWebResponse.cs" />
+    <Compile Include="Presenter\PrintPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="External Assemblies\NLog.dll" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

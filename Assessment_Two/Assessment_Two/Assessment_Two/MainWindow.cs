@@ -13,7 +13,7 @@ using Assessment_Two.Properties;
 
 namespace Assessment_Two
 {
-    public partial class MainWindow : ThreadingView, IWebpageView, IHistoryView, IFavouritesView
+    public partial class MainWindow : ThreadingView, IWebpageView, IHistoryView, IFavouritesView, IPrintView
     {
         String _StringToPrint;
 
@@ -22,6 +22,7 @@ namespace Assessment_Two
         private PagePresenter _PagePresenter;
         private HistoryPresenter _HistoryPresenter;
         private FavouritesPresenter _FavouritesPresenter;
+        private PrintPresenter _PrintPresenter;
 
         public MainWindow()
         {
@@ -36,8 +37,9 @@ namespace Assessment_Two
             this._PagePresenter = new PagePresenter(this);
             this._HistoryPresenter = new HistoryPresenter(this);
             this._FavouritesPresenter = new FavouritesPresenter(this);
+            this._PrintPresenter = new PrintPresenter(this);
 
-             LoadHomePage();
+            LoadHomePage();
         }
 
         private void LoadHomePage()
@@ -131,6 +133,21 @@ namespace Assessment_Two
             {
                 this.favouriteListBox.Items.Add(fav);
             }
+        }
+
+        public string Print
+        {
+            get { return this.SiteText; }
+        }
+
+        public Font CurrentFont
+        {
+            get
+            {
+                Font font = this.Font;
+                return font;
+            }
+
         }
         #endregion
 
@@ -248,36 +265,14 @@ namespace Assessment_Two
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             printDialog = new PrintDialog();
-            printDialog.Document = printDocument1;
+            printDialog.Document = printDocument;
             DialogResult result = printDialog.ShowDialog();
-            this._StringToPrint = this.SiteText;
+            this._PrintPresenter.SetPrintString();
             if (result == DialogResult.OK)
             {
                 // ToDo: Make this call Async?
-                printDocument1.Print();
+                printDocument.Print();
             }
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            int charactersOnPage = 0;
-            int linesPerPage = 0;
-
-            // Sets the value of charactersOnPage to the number of characters 
-            // of stringToPrint that will fit within the bounds of the page.
-            e.Graphics.MeasureString(this._StringToPrint, this.Font,
-                e.MarginBounds.Size, StringFormat.GenericTypographic,
-                out charactersOnPage, out linesPerPage);
-
-            // Draws the string within the bounds of the page
-            e.Graphics.DrawString(this._StringToPrint, this.Font, Brushes.Black,
-                e.MarginBounds, StringFormat.GenericTypographic);
-
-            // Remove the portion of the string that has been printed.
-            this._StringToPrint = this._StringToPrint.Substring(charactersOnPage);
-
-            // Check to see if more pages are to be printed.
-            e.HasMorePages = (this._StringToPrint.Length > 0);
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -295,6 +290,28 @@ namespace Assessment_Two
         {
             this.Save();
             this.Dispose();
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            this._PrintPresenter.Print(e);
+        }
+
+        private void webSitesTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (webSitesTabControl.SelectedTab != null)
+            {
+                String newUrl = webSitesTabControl.SelectedTab.Name;
+                if (!newUrl.StartsWith("http://"))
+                {
+                    this.urlTextBox.Text = "http://";
+                }
+                else
+                {
+                    this.urlTextBox.Text = newUrl;
+                }
+
+            }
         }
         #endregion
 
@@ -399,5 +416,7 @@ namespace Assessment_Two
             this._FavouritesPresenter.SaveFavourites();
             this._HistoryPresenter.SaveHistory();
         }
+
+        
     }
 }

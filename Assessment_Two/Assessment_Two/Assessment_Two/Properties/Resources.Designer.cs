@@ -179,6 +179,13 @@ namespace Assessment_Two.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Time_Machine {
+            get {
+                object obj = ResourceManager.GetObject("Time Machine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap wrench_orange {
             get {
                 object obj = ResourceManager.GetObject("wrench_orange", resourceCulture);

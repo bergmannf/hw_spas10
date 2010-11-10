@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FavouriteWindow));
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
@@ -99,6 +100,7 @@
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FavouriteWindow";
             this.Text = "Favourite";
             this.ResumeLayout(false);

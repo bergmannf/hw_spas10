@@ -6,7 +6,7 @@ using System.Text;
 namespace Assessment_Two_Logic.Model
 {
     /// <summary>
-    /// 
+    /// Exception to notify the caller that no filepath was set.
     /// </summary>
     class NoFilePathSetException : Exception
     {
