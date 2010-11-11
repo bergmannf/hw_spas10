@@ -199,20 +199,99 @@ This way the \ac{GUI}-thread will alter the component.
 
 \subsection{Observer-pattern}
 
-As already mentioned in \autoref{subsec:separate_change} the observer pattern is used to keep the different presenter up-to-date.
+As already mentioned in \autoref{subsec:separate_change} the observer pattern is used to keep the different presenters up-to-date.
 Namely this approach concerns the \texttt{Favourite-} and \texttt{HistoryHandlers} and their respective presenters.
 
 However the implementation was not performed utilizing multiple classes as described in \textcite{gamma1994}, but by utilizing \texttt{.NET} specific concepts like delegates.
 
 Therefore the handlers declare a delegate that the observers can use.
-Moreover an event is declared that will chain the multiple methods of the observers so that every observer will be notified of the changes.
-These subscribed methods will then be called, as soon as a notification-worthy event occurs.
+Moreover an event needs to be declared that will chain the multiple methods of the observers, so that every observer will be notified of occuring changes.
 
+The concrete implementation-stubs look like this:
+
+\begin{lstlisting}[caption=Declaration of delegate and event.]
+public delegate void ChangeHandler(object subject);
+public event ChangeHandler ChangeEvent;
+\end{lstlisting}
+
+When a change occurs the \texttt{Notify()}-method will be called that notifies all observers of the change:
+
+\begin{lstlisting}[caption=Notifying observers.]
+private void Notify()
+{
+      if (ChangeEvent != null)
+      {
+           ChangeEvent(this);
+      }
+}
+\end{lstlisting}
+
+The observers can then handle the change in their subscribed method.
+
+To subscribe, the following chaining to the event is sufficient:
+
+\begin{lstlisting}[caption=Registering as an observer.]
+this._HistoryHandler.ChangeEvent += new HistoryHandler.ChangeHandler(this.Update);
+\end{lstlisting}
+
+After that the \texttt{Update()}-method can handle all changes:
+
+\begin{lstlisting}
+public void Update(object subject)
+{
+      if (subject is HistoryHandler)
+      {
+          HistoryHandler histhandler = subject as HistoryHandler;
+          this._HistoryView.DisplayHistory(histhandler.History);
+      }
+}
+\end{lstlisting}
 % TODO Fancy overview.
 
 \subsection{Singleton-pattern}
 
+Another pattern that was used in the \texttt{Handler}-classes was the \texttt{Singleton}-pattern.
 
+The pattern was employed due to the fact that two different presenters access each handler and both presenter need to modify the same data.
+
+However, the implementation of the singleton is the standard one found in many object-oriented languages:
+
+\begin{lstlisting}
+private static HistoryHandler _Instance;
+
+/// <summary>
+/// Gets the instance.
+/// </summary>
+/// <value>The instance.</value>
+public static HistoryHandler Instance
+{
+            get
+            {
+                if (_Instance == null)
+                {
+                    lock (lockObject)
+                    {
+                        if (_Instance == null)
+                        {
+                            _Instance = new HistoryHandler();
+                        }
+                    }
+                }
+                return _Instance;
+            }
+        }
+\end{lstlisting}
 
 \subsection{Serialisation}
 
+The last thing to be pointed out is the implementation of the persistence-functionality.
+
+The two classes responsible to persist the data (\texttt{FavouriteHandler} and \texttt{HistoryHandler}) refer to the persisting class only via its interface (\texttt{ISerialiser<T>}) making use of polymorphism. This way the implementation can easily be swapped out to support a different kind of serialisation.
+
+In the delivered application the persisting of the history and the favourites is performed via the \ac{XML}-format. Should another format be used it suffices to create a new class that implements the \texttt{ISerialiser<T>}-interface and provide the new mechanism for serialisation.
+
+Then it is enough to instantiate an instance of this new class in the two handlers.
+
+Due to the fact that the current implementation utilises \texttt{Generics} one class can be used for multiple classes.
+
+However, while implementing the application certain limitations of the \texttt{.NET}-framework made it necessary to ``implement"\footnote{The used implementation was taken from \url{http://weblogs.asp.net/pwelter34/archive/2006/05/03/444961.aspx} - as stated in the comments this implementation was tested against 30 test-cases and due to this fact preferred to a self-implemented one.} a new \texttt{SerializableDictionary}-class, as the dictionaries provided by the .NET framework are not serialisable to an \ac{XML}-representation.

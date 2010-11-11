@@ -5,6 +5,7 @@ using System.Text;
 using Assessment_Two_Logic.Interfaces;
 using Assessment_Two_Logic.Model;
 using System.Net;
+using NLog;
 
 namespace Assessment_Two_Logic.Presenter
 {
@@ -13,6 +14,8 @@ namespace Assessment_Two_Logic.Presenter
     /// </summary>
     public class PagePresenter
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         /// <summary>
         /// References the associated view.
         /// </summary>
@@ -61,9 +64,18 @@ namespace Assessment_Two_Logic.Presenter
         {
             lock (this)
             {
-                var target = (Func<SimpleWebResponse>)result.AsyncState;
-                SimpleWebResponse response = target.EndInvoke(result);
-                this._WebPageView.DisplayWebPage(response);
+                try
+                {
+                    var target = (Func<SimpleWebResponse>)result.AsyncState;
+                    SimpleWebResponse response = target.EndInvoke(result);
+                    this._WebPageView.DisplayWebPage(response);
+                }
+                catch (Exception e)
+                {
+                    logger.Error(String.Format("An error occured when fetching a url. {0}", e.Message));
+                    this.DisplayError(e.Message);
+                }
+                
             }
         }
 

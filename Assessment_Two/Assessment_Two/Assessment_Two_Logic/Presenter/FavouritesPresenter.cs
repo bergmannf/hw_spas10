@@ -56,8 +56,15 @@ namespace Assessment_Two_Logic.Presenter
         /// </summary>
         public void DeleteFavourite()
         {
-            Favourite fav = this._FavouritesView.Favourite;
-            this._FavouriteHandler.DeleteFavourite(fav);
+            try
+            {
+                Favourite fav = this._FavouritesView.Favourite;
+                this._FavouriteHandler.DeleteFavourite(fav);
+            }
+            catch (ArgumentException e)
+            {
+                this.DisplayError(e.Message);
+            }
         }
 
         /// <summary>
@@ -74,7 +81,26 @@ namespace Assessment_Two_Logic.Presenter
         /// </summary>
         public void SaveFavourites()
         {
-            this._FavouriteHandler.SaveFavourite();
+            try
+            {
+                this._FavouriteHandler.SaveFavourite();
+            }
+            catch (NoFilePathSetException e)
+            {
+                this.DisplayError(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Displays the error.
+        /// </summary>
+        /// <param name="p">The String to create an error from.</param>
+        private void DisplayError(string p)
+        {
+            ErrorMessage em = new ErrorMessage(p);
+            ErrorMessageCollection emc = new ErrorMessageCollection();
+            emc.Add(em);
+            this._FavouritesView.DisplayErrors(emc);
         }
     }
 }

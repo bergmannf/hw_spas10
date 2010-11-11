@@ -8,7 +8,7 @@ namespace Assessment_Two_Logic.Model
     /// <summary>
     /// Exception to notify the caller that no filepath was set.
     /// </summary>
-    class NoFilePathSetException : Exception
+    public class NoFilePathSetException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NoFilePathSetException"/> class.

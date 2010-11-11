@@ -97,15 +97,28 @@ namespace Assessment_Two_Logic.Model
         /// <param name="newUrl">The new URL.</param>
         public void EditFavourite(Favourite fav, String newName, String newUrl)
         {
-            foreach (Favourite favourite in this.Favourites)
+            if (fav != null)
             {
-                if (favourite.Equals(fav))
+                Boolean favouritePresent = false;
+                foreach (Favourite favourite in this.Favourites)
                 {
-                    favourite.Name = newName;
-                    favourite.Url = newUrl;
+                    if (favourite.Equals(fav))
+                    {
+                        favourite.Name = newName;
+                        favourite.Url = newUrl;
+                        favouritePresent = true;
+                    }
                 }
+                if (!favouritePresent)
+                {
+                    throw new ArgumentException("The favourite that should be changed was not found.");
+                }
+                this.Notify();
             }
-            this.Notify();
+            else
+            {
+                throw new ArgumentNullException("The provided favourite-reference was null");
+            }
         }
 
         /// <summary>
@@ -114,8 +127,15 @@ namespace Assessment_Two_Logic.Model
         /// <param name="fav">The fav.</param>
         public void DeleteFavourite(Favourite fav)
         {
-            this.Favourites.Remove(fav);
-            this.Notify();
+            if (fav != null)
+            {
+                this.Favourites.Remove(fav);
+                this.Notify();
+            }
+            else
+            {
+                throw new ArgumentNullException("The provided favourite-reference was null");
+            }
         }
 
         /// <summary>

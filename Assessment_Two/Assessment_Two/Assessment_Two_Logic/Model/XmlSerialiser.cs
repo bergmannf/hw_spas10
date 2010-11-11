@@ -12,7 +12,7 @@ namespace Assessment_Two_Logic.Model
     /// An XmlSerialiser.
     /// </summary>
     /// <typeparam name="T">The type that can be serialised via this Serialiser.</typeparam>
-    class XmlSerialiser<T> : ISerialiser<T>
+    public class XmlSerialiser<T> : ISerialiser<T>
     {
         private String _FilePath;
 

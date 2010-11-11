@@ -55,7 +55,14 @@ namespace Assessment_Two_Logic.Model
         /// <param name="url">The URL.</param>
         public void AddItem(DateTime time, String url)
         {
-            this._VisitList.Add(time, url);
+            if (PageHandler.IsValidUrl(url))
+            {
+                this._VisitList.Add(time, url);
+            }
+            else
+            {
+                throw new ArgumentException("The provided url does not resemble a valid format.");
+            }
         }
 
         /// <summary>

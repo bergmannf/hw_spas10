@@ -24,7 +24,14 @@ namespace Assessment_Two_Logic.Model
             }
             set
             {
-                _Url = value;
+                if (PageHandler.IsValidUrl(value))
+                {
+                    _Url = value;
+                }
+                else
+                {
+                    throw new ArgumentException("The favourite-url does not match a valid format.");
+                }
             }
         }
 
@@ -41,7 +48,14 @@ namespace Assessment_Two_Logic.Model
             }
             set
             {
-                _Name = value;
+                if (!String.IsNullOrEmpty(value))
+                {
+                    _Name = value;
+                }
+                else
+                {
+                    throw new ArgumentException("The favourite-name is not in a valid format");
+                }
             }
         }
 
@@ -58,8 +72,8 @@ namespace Assessment_Two_Logic.Model
         /// <param name="name">The name.</param>
         public Favourite(String url, String name)
         {
-            this._Name = name;
-            this._Url = url;
+            this.Name = name;
+            this.Url = url;
         }
 
         /// <summary>
@@ -67,11 +81,11 @@ namespace Assessment_Two_Logic.Model
         /// </summary>
         /// <param name="newUrl">The new URL.</param>
         /// <param name="newName">The new name.</param>
-		public void EditFavourite(String newUrl, String newName)
-		{
-			this.Name = newName;
-			this._Url = newUrl;
-		}
+        public void EditFavourite(String newUrl, String newName)
+        {
+            this.Name = newName;
+            this.Url = newUrl;
+        }
 
         /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.

@@ -38,9 +38,16 @@ namespace Assessment_Two_Logic.Presenter
         /// </summary>
         public void AddFavourite()
         {
-            String favName = this._FavouriteView.FavName;
-            String favUrl = this._FavouriteView.Url;
-            this._FavouriteHandler.AddEntry(favName, favUrl);
+            try
+            {
+                String favName = this._FavouriteView.FavName;
+                String favUrl = this._FavouriteView.Url;
+                this._FavouriteHandler.AddEntry(favName, favUrl);
+            }
+            catch (ArgumentException e)
+            {
+                this.DisplayError(e.Message);   
+            }
         }
 
         /// <summary>
@@ -48,10 +55,29 @@ namespace Assessment_Two_Logic.Presenter
         /// </summary>
         public void EditFavourite()
         {
-            Favourite fav = this._FavouriteView.Favourite;
-            String favName = this._FavouriteView.FavName;
-            String favUrl = this._FavouriteView.Url;
-            this._FavouriteHandler.EditFavourite(fav, favName, favUrl);
+            try
+            {
+                Favourite fav = this._FavouriteView.Favourite;
+                String favName = this._FavouriteView.FavName;
+                String favUrl = this._FavouriteView.Url;
+                this._FavouriteHandler.EditFavourite(fav, favName, favUrl);
+            }
+            catch (ArgumentException e)
+            {
+                this.DisplayError(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Displays the error.
+        /// </summary>
+        /// <param name="p">The String to create an error from.</param>
+        private void DisplayError(string p)
+        {
+            ErrorMessage em = new ErrorMessage(p);
+            ErrorMessageCollection emc = new ErrorMessageCollection();
+            emc.Add(em);
+            this._FavouriteView.DisplayErrors(emc);
         }
     }
 }

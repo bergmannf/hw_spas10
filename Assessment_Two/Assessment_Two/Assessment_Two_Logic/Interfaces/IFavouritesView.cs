@@ -9,7 +9,7 @@ namespace Assessment_Two_Logic.Interfaces
     /// <summary>
     /// Interface to allow a favourites-presenter to communicate with the view. 
     /// </summary>
-    public interface IFavouritesView
+    public interface IFavouritesView : IView
     {
 
         /// <summary>
