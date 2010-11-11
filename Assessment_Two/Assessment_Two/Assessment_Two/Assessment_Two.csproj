@@ -93,6 +93,7 @@
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="External Assemblies\NLog.dll" />
+    <None Include="Resources\calendar_delete.png" />
     <None Include="Resources\Time Machine.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

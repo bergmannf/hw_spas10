@@ -38,6 +38,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.favouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -139,11 +139,21 @@
             // 
             // historyToolStripMenuItem
             // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearToolStripMenuItem});
             this.historyToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.calendar;
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.calendar_delete;
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // favouritesToolStripMenuItem
             // 
@@ -302,7 +312,7 @@
             this.favouritesPage.Location = new System.Drawing.Point(23, 4);
             this.favouritesPage.Name = "favouritesPage";
             this.favouritesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.favouritesPage.Size = new System.Drawing.Size(111, 222);
+            this.favouritesPage.Size = new System.Drawing.Size(111, 215);
             this.favouritesPage.TabIndex = 1;
             this.favouritesPage.Text = "Favourites";
             this.favouritesPage.UseVisualStyleBackColor = true;
@@ -314,7 +324,7 @@
             this.favouriteListBox.FormattingEnabled = true;
             this.favouriteListBox.Location = new System.Drawing.Point(3, 3);
             this.favouriteListBox.Name = "favouriteListBox";
-            this.favouriteListBox.Size = new System.Drawing.Size(105, 216);
+            this.favouriteListBox.Size = new System.Drawing.Size(105, 209);
             this.favouriteListBox.TabIndex = 0;
             this.favouriteListBox.SelectedIndexChanged += new System.EventHandler(this.favouriteListBox_SelectedIndexChanged);
             // 
@@ -325,29 +335,32 @@
             this.editToolStripMenuItem1,
             this.deleteToolStripMenuItem});
             this.favouriteContextMenu.Name = "contextMenuStrip1";
-            this.favouriteContextMenu.Size = new System.Drawing.Size(108, 70);
+            this.favouriteContextMenu.Size = new System.Drawing.Size(153, 92);
+            this.favouriteContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.favouriteContextMenu_Opening);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.bookmark_add;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem1
             // 
+            this.editToolStripMenuItem1.Enabled = false;
             this.editToolStripMenuItem1.Image = global::Assessment_Two.Properties.Resources.bookmark_edit;
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.Enabled = false;
             this.deleteToolStripMenuItem.Image = global::Assessment_Two.Properties.Resources.bookmark_delete;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -371,19 +384,11 @@
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(549, 27);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 20);
-            this.progressBar1.TabIndex = 5;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 304);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
@@ -444,7 +449,7 @@
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
     }
 }
 

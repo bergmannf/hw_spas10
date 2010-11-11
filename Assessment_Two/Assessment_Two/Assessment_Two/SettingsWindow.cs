@@ -10,7 +10,7 @@ using Assessment_Two.Properties;
 
 namespace Assessment_Two
 {
-    public partial class SettingsWindow : Form
+    public partial class SettingsWindow : ThreadingView
     {
         public SettingsWindow()
         {

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assessment_Two.FavouriteWindow" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCBAAACQAAABAAgGAACACCAAIEAAACEAQACAAAAA=</HashCode>
+      <FileName>FavouriteWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Assessment_Two.MainWindow" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RU+EQpmwECoCEADAA4GSESACcEgAIYgKSmAgkZSOYDA=</HashCode>
+      <FileName>MainWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Assessment_Two.SettingsWindow" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAACQAAJAgAACAAAACAAAAEAAAAAAQAAAAAAA=</HashCode>
+      <FileName>SettingsWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assessment_Two.ThreadingView" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThreadingView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

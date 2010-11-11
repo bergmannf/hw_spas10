@@ -38,9 +38,9 @@ namespace Assessment_Two_Logic.Presenter
 
         private void SetUpHandler()
         {
-            String appFolger = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            String appFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             String history = "History.xml";
-            this._HistoryHandler.SetFilePath(Path.Combine(appFolger, history));
+            this._HistoryHandler.SetFilePath(Path.Combine(appFolder, history));
             this._HistoryHandler.LoadHistory();
         }
 
@@ -64,6 +64,14 @@ namespace Assessment_Two_Logic.Presenter
         public void SaveHistory()
         {
             this._HistoryHandler.SaveHistory();
+        }
+
+        /// <summary>
+        /// Clears the history.
+        /// </summary>
+        public void ClearHistory()
+        {
+            this._HistoryHandler.ClearHistory();
         }
     }
 }

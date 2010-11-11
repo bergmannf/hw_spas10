@@ -116,6 +116,13 @@ namespace Assessment_Two.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap calendar_delete {
+            get {
+                object obj = ResourceManager.GetObject("calendar_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap disk_black {
             get {
                 object obj = ResourceManager.GetObject("disk_black", resourceCulture);

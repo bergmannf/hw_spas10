@@ -99,9 +99,18 @@
 \usepackage{wrapfig}
 \usepackage{csquotes}
 \usepackage{ltxtable}
-\newcommand{\viewRoot}{../Assessment_One/}
-\newcommand{\logicRoot}{../Application_Logic/}
-\newcommand{\testRoot}{../NUnit_Tests}
+
+\newcommand{\sourceRoot}{../Assessment_Two/}
+\newcommand{\myPackage}{}
+\newcommand{\myJPackage}{}
+\newcommand{\sourcePackage}[2]{\subsection*{Project: #2}\renewcommand{\myPackage}{#1}\renewcommand{\myJPackage}{#2}}
+
+\newcommand{\viewRoot}{../Assessment_Two/Assessment_Two/}
+\newcommand{\interfacesRoot}{../Assessment_Two/Application_Logic/Interfaces/}
+\newcommand{\modelRoot}{../Assessment_Two/Application_Logic/Model/}
+\newcommand{\presenterRoot}{../Assessment_Two/Application_Logic/Presenter/}
+\newcommand{\testRoot}{../Assessment_Two/NUnit_Tests}
+\newcommand{\sourceClass}[1]{\lstinputlisting[caption=#1]{\sourceRoot\myPackage/#1}}
 
 
 %*******************************************************

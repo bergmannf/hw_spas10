@@ -31,9 +31,9 @@ namespace Assessment_Two_Logic.Presenter
 
         private void SetUpHandler()
         {
-            String appFolger = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            String appFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             String history = "Favourites.xml";
-            this._FavouriteHandler.SetFilePath(Path.Combine(appFolger, history));
+            this._FavouriteHandler.SetFilePath(Path.Combine(appFolder, history));
             this._FavouriteHandler.LoadFavourite();
         }
 

@@ -22,7 +22,7 @@ namespace Assessment_Two_Logic.Interfaces
         /// Gets or sets the site text.
         /// </summary>
         /// <value>The site text.</value>
-        String SiteText { get; set; }
+        String SiteText { get; }
 
         /// <summary>
         /// Displays the web page.

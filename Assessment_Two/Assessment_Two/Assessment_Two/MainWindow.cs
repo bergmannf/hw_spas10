@@ -18,6 +18,7 @@ namespace Assessment_Two
         String _StringToPrint;
 
         private int _NumberOfTabs;
+        private int _ReuestedPages;
 
         private PagePresenter _PagePresenter;
         private HistoryPresenter _HistoryPresenter;
@@ -29,10 +30,9 @@ namespace Assessment_Two
             InitializeComponent();
             this._NumberOfTabs = 0;
             this.CreateTab();
-            // ToDo: Seperate logic
+
             this.splitContainer1.Panel1Collapsed = true;
             this.splitContainer1.Panel1.Hide();
-            // ToDo: Load Settings and create handlers;
 
             this._PagePresenter = new PagePresenter(this);
             this._HistoryPresenter = new HistoryPresenter(this);
@@ -80,10 +80,6 @@ namespace Assessment_Two
             {
                 TabPage page = this.webSitesTabControl.SelectedTab;
                 return page.Controls[0].Text;
-            }
-            set
-            {
-                throw new NotImplementedException();
             }
         }
 
@@ -149,6 +145,22 @@ namespace Assessment_Two
             }
 
         }
+
+        public void DisplayWebPage(SimpleWebResponse response)
+        {
+            foreach (TabPage page in this.webSitesTabControl.TabPages)
+            {
+                if (page.Name.Equals(response.Url))
+                {
+                    MethodInvoker uiDelegate = delegate
+                    {
+                        page.Controls[0].Text = response.Html;
+                        page.Text = response.Title;
+                    };
+                    UpdateUI(uiDelegate);
+                }
+            }
+        }
         #endregion
 
         #region Eventhandler
@@ -202,13 +214,11 @@ namespace Assessment_Two
             {
                 if (tn.Level == 1)
                 {
-                    this.urlTextBox.Text = tn.Text;
-                    this.webSitesTabControl.SelectedTab.Name = tn.Text;
-                    this._PagePresenter.RequestWebpage();
+                    RequestPage(tn.Text);
                 }
             }
         }
-
+        
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.AddFavourite();
@@ -251,9 +261,7 @@ namespace Assessment_Two
             if (item != null)
             {
                 Favourite fav = item as Favourite;
-                this.urlTextBox.Text = fav.Url;
-                this.webSitesTabControl.SelectedTab.Name = fav.Url;
-                this._PagePresenter.RequestWebpage();
+                this.RequestPage(fav.Url);
             }
         }
 
@@ -315,21 +323,7 @@ namespace Assessment_Two
         }
         #endregion
 
-        public void DisplayWebPage(SimpleWebResponse response)
-        {
-            foreach (TabPage page in this.webSitesTabControl.TabPages)
-            {
-                if (page.Name.Equals(response.Url))
-                {
-                    MethodInvoker uiDelegate = delegate
-                    {
-                        page.Controls[0].Text = response.Html;
-                        page.Text = response.Title;
-                    };
-                    UpdateUI(uiDelegate);
-                }
-            }
-        }
+        
 
         private void CreateTab()
         {
@@ -417,6 +411,35 @@ namespace Assessment_Two
             this._HistoryPresenter.SaveHistory();
         }
 
-        
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this._HistoryPresenter.ClearHistory();
+        }
+
+        private void favouriteContextMenu_Opening(object sender, CancelEventArgs e)
+        {
+            Object favourite = favouriteListBox.SelectedItem;
+            if (favourite != null)
+            {
+                this.EnableContextButtons(true);
+            }
+            else
+            {
+                this.EnableContextButtons(false);
+            }
+        }
+
+        private void EnableContextButtons(bool p)
+        {
+            this.editToolStripMenuItem1.Enabled = p;
+            this.deleteToolStripMenuItem.Enabled = p;
+        }
+
+        private void RequestPage(String text)
+        {
+            this.urlTextBox.Text = text;
+            this.webSitesTabControl.SelectedTab.Name = text;
+            this._PagePresenter.RequestWebpage();
+        }
     }
 }

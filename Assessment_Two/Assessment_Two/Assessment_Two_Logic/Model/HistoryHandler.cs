@@ -170,5 +170,14 @@ namespace Assessment_Two_Logic.Model
                 ChangeEvent(this);
             }
         }
+
+        /// <summary>
+        /// Clears the history.
+        /// </summary>
+        internal void ClearHistory()
+        {
+            this.History.ClearHistory();
+            this.Notify();
+        }
     }
 }
