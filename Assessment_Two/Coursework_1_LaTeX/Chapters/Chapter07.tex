@@ -2,3 +2,18 @@
 \chapter{Conclusions}\label{ch:conclusions} % $\mathbb{ZNR}$
 %************************************************
 
+To conclude this report a short summary of the achieved goals (apart from fulfilling the requirements) should be provided:
+
+The application's design tries to be robust, yet adaptable if changes need to be made.
+To ensure the achieving of these goals, patterns were used where it seemed appropriate.
+
+Moreover the loose coupling should help in the achieving of these goals as well.
+
+The approach to provide a well-designed application from a software engineering point-of-view may  have prevented the addition of many convenience features. However, it seemed more important to deliver an easily adaptable program: exchanging the \ac{GUI} or the persistence mechanism should be fairly easy.
+The presenters are already in place thus that only the \ac{GUI} classes need to be modified
+If the persistence mechanism should be changed the only thing that needs to be provided is a new implementation that adheres to the \texttt{ISerialiser<T>} interface.
+
+However concerning the persistence, there is one major flaw in the application: the fact that the \texttt{ApplicationSettings} need to be persisted in the WinForms-project. 
+The development of a small framework to allow a similar mechanism in other projects might prevent this circumstance in future projects.
+
+Overall the application should fulfil the requirements, which seems to be the most important goal to achieve in the first place.

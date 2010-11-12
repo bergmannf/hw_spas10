@@ -1,0 +1,29 @@
+\begin{longtable}{X X X X}
+\hline Under Test & Input & Output \\
+\hline 
+\hline MainWindow & Invalid-\ac{URL} & ErrorMessage \\
+\hline MainWindow & Valid-\ac{URL} & Display \ac{HTML} \\
+\hline MainWindow & Valid-address but resource not found (404) & Display \ac{HTML} \\
+\hline MainWindow & Add-Bookmark & Display add bookmark window \\
+\hline MainWindow & Show history & Display history window \\
+\hline MainWindow & Show favourites & Display favourites window \\
+\hline MainWindow & Show settings & Display settings window \\
+\hline MainWindow & Click favourite-\ac{URL} & Request favourite-\ac{URL} \\
+\hline MainWindow & Double-click history-\ac{URL} & Request history-\ac{URL} \\
+\hline MainWindow & Click clear history & Delete history \\
+\hline MainWindow & Request multiple pages & Display \ac{HTML} \\
+\hline MainWindow & Request multiple pages with some wrong & Display \ac{HTML} for valid, error message for invalid \ac{URL}s \\
+\hline MainWindow & Click print button & Display print-dialog \\
+\hline
+\hline AddFavouriteWindow & Click cancel & Close window without change \\
+\hline AddFavouriteWindow & Add bookmark with valid input & Add bookmark close window \\
+\hline AddFavouriteWindow & Add bookmark invalid values & Display error message, dispose without change \\
+\hline
+\hline SettingsWindow & Click cancel & Close window without change \\
+\hline SettingsWindow & Add homepage with valid \ac{URL} & Change homepage and close window \\
+\hline SettingsWindow & Add homepage with invalid \ac{URL} & Display error message and close window without change \\
+\hline
+\hline Printing & Click cancel & Close window without printing \\
+\hline Printing & Click ok & Print current tab's \ac{HTML} \\
+\caption{Performed tests.}
+\end{longtable}

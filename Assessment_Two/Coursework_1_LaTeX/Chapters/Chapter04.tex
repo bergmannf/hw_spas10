@@ -2,7 +2,7 @@
 \chapter{User Guide}\label{ch:user_guide} % $\mathbb{ZNR}$
 %************************************************
 
-The application provides five functions:
+This chapter will describe how to access the five functionalities provided by the application via its \ac{GUI}:
 
 \begin{itemize}
 \item Requesting and displaying web-pages.
@@ -11,8 +11,6 @@ The application provides five functions:
 \item Managing a user-defined home-page.
 \item Allow printing of the currently displayed web-page.
 \end{itemize}
-
-These functions shall be explained in this chapter.
 
 \section{Requesting a web-page}
 \label{sec:request_web_page}
@@ -35,7 +33,7 @@ The format of the entered address will be verified. It must match the following 
 http://[www.]address.domain[/url-path]
 \end{lstlisting}
 
-Should the entered address not match the given format, the program will notify the user about the error by displaying a message-box:
+Should the entered address not match the format of a valid web-address, the program will notify the user about the error by displaying a message-box:
 
 \begin{figure}[H]
 \begin{center}
@@ -80,7 +78,7 @@ This will display a panel in the main window of the application that shows the \
 
 As can be seen the history is ordered in a tree-structure that groups together addresses that were visited on the same day.
 
-To visit one of the pages the user just clicks one of the links in the tree and the application will open the requested page in the current tab.
+To visit one of the pages the user just double-clicks one of the links in the tree and the application will open the requested page in the current tab.
 
 As the history is prone to become quite huge it is possible to clear it. To perform this action the user selects the \texttt{ClearHistory}-option (\raisebox{-1mm}{\includegraphics{gfx/calendar_delete.png}}) from the \texttt{MenuBar}. This operation can be found under \texttt{Edit $\rightarrow$ History $\rightarrow$ Clear}.
 
@@ -147,4 +145,15 @@ The last function the user can perform is to print a web-page.
 
 Therefore the tab that should be printed needs to be selected and then the \texttt{Print}-button (\raisebox{-1mm}{\includegraphics{gfx/printer.png}}) needs to be clicked (\texttt{File $\rightarrow$ Print}).
 
-This will display a printing-dialog that allows the user to tweak desired settings. Clicking the \texttt{OK}-button will the print the \ac{HTML} of the current tab.
+This will display a print-dialog that allows the user to tweak desired settings:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1]{gfx/print_dialog.png}
+\caption{Common windows print-dialog.}
+\label{fig:print_dialog}
+\end{center}
+\end{figure}
+
+Clicking the \texttt{OK}-button will the print the \ac{HTML} of the current tab.
+

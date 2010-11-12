@@ -13,6 +13,11 @@ using Assessment_Two.Properties;
 
 namespace Assessment_Two
 {
+    /// <summary>
+    /// Main window of the application.
+    /// Displays the web pages, the history, the favourites.
+    /// Allow adding of favourites, printing, changing of the homepage.
+    /// </summary>
     public partial class MainWindow : ThreadingView, IWebpageView, IHistoryView, IFavouritesView, IPrintView
     {
         String _StringToPrint;
@@ -25,6 +30,9 @@ namespace Assessment_Two
         private FavouritesPresenter _FavouritesPresenter;
         private PrintPresenter _PrintPresenter;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +50,9 @@ namespace Assessment_Two
             LoadHomePage();
         }
 
+        /// <summary>
+        /// Loads the home page.
+        /// </summary>
         private void LoadHomePage()
         {
             Settings settings = Settings.Default;
@@ -53,6 +64,10 @@ namespace Assessment_Two
                 TabPage tp = webSitesTabControl.SelectedTab;
                 tp.Name = homePage;
                 this._PagePresenter.RequestWebpage();
+            }
+            else
+            {
+                this.urlTextBox.Text = "http://";
             }
         }
 
@@ -241,6 +256,7 @@ namespace Assessment_Two
             if (!IsPanelVisible())
             {
                 ChangePanelVisibility();
+                this.DisplayFavouritesPage();
             }
             else
             {
@@ -321,95 +337,6 @@ namespace Assessment_Two
 
             }
         }
-        #endregion
-
-        
-
-        private void CreateTab()
-        {
-            this._NumberOfTabs++;
-            String nameOfNewTab = "tabPage" + this._NumberOfTabs;
-            String nameOfTextBox = "webPage" + this._NumberOfTabs + "RichTextBox";
-            this.webSitesTabControl.SuspendLayout();
-            TabPage tb = new TabPage();
-            this.webSitesTabControl.TabPages.Add(tb);
-            tb.Name = nameOfNewTab;
-
-            RichTextBox rtb = new RichTextBox();
-            rtb.Location = new Point(3, 3);
-            rtb.Name = nameOfTextBox;
-            rtb.Dock = DockStyle.Fill;
-
-            tb.Controls.Add(rtb);
-            this.webSitesTabControl.ResumeLayout();
-        }
-
-        private void DeleteTab()
-        {
-            TabPage currentTab = this.webSitesTabControl.SelectedTab;
-            if (currentTab != null)
-            {
-                this.webSitesTabControl.TabPages.Remove(currentTab);
-                this._NumberOfTabs--;
-            }
-            if (this._NumberOfTabs.Equals(0))
-            {
-                this.CreateTab();
-            }
-        }
-
-        private bool IsHistoryTabVisible()
-        {
-            bool visible = false;
-            if (this.sideTabControl.SelectedTab == this.sideTabControl.TabPages[0])
-            {
-                visible = true;
-            }
-            return visible;
-        }
-
-        private bool IsPanelVisible()
-        {
-            return !this.splitContainer1.Panel1Collapsed;
-        }
-
-        private void DisplayHistoryPage()
-        {
-            this.sideTabControl.SelectedTab = this.sideTabControl.TabPages[0];
-        }
-
-        private void ChangePanelVisibility()
-        {
-            Boolean isInvisible = this.splitContainer1.Panel1Collapsed;
-            if (isInvisible)
-            {
-                this.splitContainer1.Panel1Collapsed = false;
-                this.splitContainer1.Panel1.Show();
-            }
-            else
-            {
-                this.splitContainer1.Panel1Collapsed = true;
-                this.splitContainer1.Panel1.Hide();
-            }
-        }
-
-        private void AddFavourite()
-        {
-            FavouriteWindow fw = new FavouriteWindow();
-            fw.Url = this.urlTextBox.Text;
-            fw.ShowDialog();
-        }
-
-        private void DisplayFavouritesPage()
-        {
-            this.sideTabControl.SelectedTab = this.sideTabControl.TabPages[1];
-        }
-
-        private void Save()
-        {
-            this._FavouritesPresenter.SaveFavourites();
-            this._HistoryPresenter.SaveHistory();
-        }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -429,12 +356,146 @@ namespace Assessment_Two
             }
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+            ab.ShowDialog();
+        }
+        #endregion
+
+        /// <summary>
+        /// Creates the tab.
+        /// </summary>
+        private void CreateTab()
+        {
+            this._NumberOfTabs++;
+            String nameOfNewTab = "tabPage" + this._NumberOfTabs;
+            String nameOfTextBox = "webPage" + this._NumberOfTabs + "RichTextBox";
+            this.webSitesTabControl.SuspendLayout();
+            TabPage tb = new TabPage();
+            this.webSitesTabControl.TabPages.Add(tb);
+            tb.Name = nameOfNewTab;
+
+            RichTextBox rtb = new RichTextBox();
+            rtb.Location = new Point(3, 3);
+            rtb.Name = nameOfTextBox;
+            rtb.Dock = DockStyle.Fill;
+
+            tb.Controls.Add(rtb);
+            this.webSitesTabControl.ResumeLayout();
+        }
+
+        /// <summary>
+        /// Deletes the tab.
+        /// </summary>
+        private void DeleteTab()
+        {
+            TabPage currentTab = this.webSitesTabControl.SelectedTab;
+            if (currentTab != null)
+            {
+                this.webSitesTabControl.TabPages.Remove(currentTab);
+                this._NumberOfTabs--;
+            }
+            if (this._NumberOfTabs.Equals(0))
+            {
+                this.CreateTab();
+            }
+        }
+
+        /// <summary>
+        /// Determines whether history tab is visible.
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if [is history tab visible]; otherwise, <c>false</c>.
+        /// </returns>
+        private bool IsHistoryTabVisible()
+        {
+            bool visible = false;
+            if (this.sideTabControl.SelectedTab == this.sideTabControl.TabPages[0])
+            {
+                visible = true;
+            }
+            return visible;
+        }
+
+        /// <summary>
+        /// Determines whether panel is visible.
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if [is panel visible]; otherwise, <c>false</c>.
+        /// </returns>
+        private bool IsPanelVisible()
+        {
+            return !this.splitContainer1.Panel1Collapsed;
+        }
+
+        /// <summary>
+        /// Displays the history page.
+        /// </summary>
+        private void DisplayHistoryPage()
+        {
+            this.sideTabControl.SelectedTab = this.sideTabControl.TabPages[0];
+        }
+
+        /// <summary>
+        /// Changes the panel visibility.
+        /// </summary>
+        private void ChangePanelVisibility()
+        {
+            Boolean isInvisible = this.splitContainer1.Panel1Collapsed;
+            if (isInvisible)
+            {
+                this.splitContainer1.Panel1Collapsed = false;
+                this.splitContainer1.Panel1.Show();
+            }
+            else
+            {
+                this.splitContainer1.Panel1Collapsed = true;
+                this.splitContainer1.Panel1.Hide();
+            }
+        }
+
+        /// <summary>
+        /// Adds the favourite.
+        /// </summary>
+        private void AddFavourite()
+        {
+            FavouriteWindow fw = new FavouriteWindow();
+            fw.Url = this.urlTextBox.Text;
+            fw.ShowDialog();
+        }
+
+        /// <summary>
+        /// Displays the favourites page.
+        /// </summary>
+        private void DisplayFavouritesPage()
+        {
+            this.sideTabControl.SelectedTab = this.sideTabControl.TabPages[1];
+        }
+
+        /// <summary>
+        /// Saves this instance.
+        /// </summary>
+        private void Save()
+        {
+            this._FavouritesPresenter.SaveFavourites();
+            this._HistoryPresenter.SaveHistory();
+        }
+
+        /// <summary>
+        /// Enables the context buttons.
+        /// </summary>
+        /// <param name="p">if set to <c>true</c> [p].</param>
         private void EnableContextButtons(bool p)
         {
             this.editToolStripMenuItem1.Enabled = p;
             this.deleteToolStripMenuItem.Enabled = p;
         }
 
+        /// <summary>
+        /// Requests the page.
+        /// </summary>
+        /// <param name="text">The text.</param>
         private void RequestPage(String text)
         {
             this.urlTextBox.Text = text;

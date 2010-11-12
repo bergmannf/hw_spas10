@@ -1,0 +1,176 @@
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler}{
+\section{Assessment\_\-Two\_\-Logic.Model.PageHandler Class Reference}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler}\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+}
+
+
+Allows the fetching of urls in a thread. Will notify the caller via \char`\"{}ThreadFinished\char`\"{} callback method.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_a7e12c7bb3c60b9ac95a8c182341336cc}{PageHandler} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler}{PageHandler} class. \item\end{DoxyCompactList}\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_ac74ee6474db99f546d2b2731e94ab3ca}{PageHandler} (String url)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler}{PageHandler} class. \item\end{DoxyCompactList}\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_simple_web_response}{SimpleWebResponse} \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_a2ecc8f38e336b6c0969056230622990a}{FetchUrl} ()
+\begin{DoxyCompactList}\small\item\em Fetches the URL. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_a1ae180eb20f29f8eff8d0528c50b4851}{IsValidUrl} (String url)
+\begin{DoxyCompactList}\small\item\em Determines whether \mbox{[}the specified URL\mbox{]} is in a valid format. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_abda47f97c5e49c05084145e753f4db2c}{RequestUrl}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the request URL. \item\end{DoxyCompactList}\item 
+WebRequest \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_a792c28137ad90ab3cec4b3750eb370d3}{Request}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the request. \item\end{DoxyCompactList}\item 
+WebResponse \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler_af33fd9af06dc471208ceec9f6a090249}{Response}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the response. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows the fetching of urls in a thread. Will notify the caller via \char`\"{}ThreadFinished\char`\"{} callback method. 
+
+Definition at line 15 of file PageHandler.cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_a7e12c7bb3c60b9ac95a8c182341336cc}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!PageHandler@{PageHandler}}
+\index{PageHandler@{PageHandler}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{PageHandler}]{\setlength{\rightskip}{0pt plus 5cm}Assessment\_\-Two\_\-Logic.Model.PageHandler.PageHandler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_a7e12c7bb3c60b9ac95a8c182341336cc}
+
+
+Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler}{PageHandler} class. 
+
+
+
+Definition at line 65 of file PageHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_ac74ee6474db99f546d2b2731e94ab3ca}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!PageHandler@{PageHandler}}
+\index{PageHandler@{PageHandler}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{PageHandler}]{\setlength{\rightskip}{0pt plus 5cm}Assessment\_\-Two\_\-Logic.Model.PageHandler.PageHandler (
+\begin{DoxyParamCaption}
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_ac74ee6474db99f546d2b2731e94ab3ca}
+
+
+Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_page_handler}{PageHandler} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file PageHandler.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_a2ecc8f38e336b6c0969056230622990a}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!FetchUrl@{FetchUrl}}
+\index{FetchUrl@{FetchUrl}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{FetchUrl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SimpleWebResponse} Assessment\_\-Two\_\-Logic.Model.PageHandler.FetchUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_a2ecc8f38e336b6c0969056230622990a}
+
+
+Fetches the URL. 
+
+\begin{DoxyReturn}{Returns}
+The webresponse object.
+\end{DoxyReturn}
+
+
+Definition at line 82 of file PageHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_a1ae180eb20f29f8eff8d0528c50b4851}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!IsValidUrl@{IsValidUrl}}
+\index{IsValidUrl@{IsValidUrl}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{IsValidUrl}]{\setlength{\rightskip}{0pt plus 5cm}static bool Assessment\_\-Two\_\-Logic.Model.PageHandler.IsValidUrl (
+\begin{DoxyParamCaption}
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_a1ae180eb20f29f8eff8d0528c50b4851}
+
+
+Determines whether \mbox{[}the specified URL\mbox{]} is in a valid format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if \mbox{[}is valid URL\mbox{]} \mbox{[}the specified URL\mbox{]}; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file PageHandler.cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_a792c28137ad90ab3cec4b3750eb370d3}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!Request@{Request}}
+\index{Request@{Request}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{Request}]{\setlength{\rightskip}{0pt plus 5cm}WebRequest Assessment\_\-Two\_\-Logic.Model.PageHandler.Request\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_a792c28137ad90ab3cec4b3750eb370d3}
+
+
+Gets or sets the request. 
+
+The request.
+
+Definition at line 45 of file PageHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_abda47f97c5e49c05084145e753f4db2c}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!RequestUrl@{RequestUrl}}
+\index{RequestUrl@{RequestUrl}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{RequestUrl}]{\setlength{\rightskip}{0pt plus 5cm}String Assessment\_\-Two\_\-Logic.Model.PageHandler.RequestUrl\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_abda47f97c5e49c05084145e753f4db2c}
+
+
+Gets or sets the request URL. 
+
+The request URL.
+
+Definition at line 30 of file PageHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_page_handler_af33fd9af06dc471208ceec9f6a090249}{
+\index{Assessment\_\-Two\_\-Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}!Response@{Response}}
+\index{Response@{Response}!Assessment_Two_Logic::Model::PageHandler@{Assessment\_\-Two\_\-Logic::Model::PageHandler}}
+\subsubsection[{Response}]{\setlength{\rightskip}{0pt plus 5cm}WebResponse Assessment\_\-Two\_\-Logic.Model.PageHandler.Response\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_page_handler_af33fd9af06dc471208ceec9f6a090249}
+
+
+Gets or sets the response. 
+
+The response.
+
+Definition at line 57 of file PageHandler.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Assessment\_\-Two\_\-Logic/Model/PageHandler.cs\end{DoxyCompactItemize}

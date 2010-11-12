@@ -2,7 +2,7 @@
 \chapter{Introduction}\label{ch:introduction}
 %************************************************
 
-This chapter will provide an overview over the document and recapture the specified requirements that were requested.
+This chapter will provide an overview over the document and recapture the requested requirements.
 
 \section{Document overview}
 \label{sec:document_overview}
@@ -13,11 +13,11 @@ The document is divided into seven chapters that will describe different aspects
 
 \autoref{ch:requirements} will give a short outline of the requirements that were fulfilled, as well as mention added functionality that was not requested.
 
-\autoref{ch:design} will provide a high level overview over the system's architecture and its sub modules.
+\autoref{ch:design} will provide a high level overview over the system's architecture and its sub-modules.
 
 \autoref{ch:user_guide} is a short user guide that will describe the usage of the program by leading the reader through a selected choice of use cases to accomplish certain tasks.
 
-\autoref{ch:developer_guide} will be based upon \autoref{ch:design} and provide an in-depth explanation of certain details of the implementation.
+\autoref{ch:developer_guide} will be based upon \autoref{ch:design} and provide an in-depth explanation implementation-details.
 
 \autoref{ch:testing} will outline how testing was performed and which cases have been covered.
 
@@ -28,26 +28,25 @@ The document is divided into seven chapters that will describe different aspects
 
 The remit will summarize the requirements provided in the document \textit{Systems Programming \& Scripting (2010/2011) Assessment Two} and list all assumptions made in respect to a certain requirement.
 
-For later reference in \autoref{ch:requirements} the requirements will be divided into seven groups:
-\ac{WR}, \ac{HPR}, \ac{FR}, \ac{HR}, \ac{PR}, \ac{GR}, \ac{AR}
+For later reference throughout the document, the requirements will be divided into seven groups (\ac{WR}, \ac{HPR}, \ac{FR}, \ac{HR}, \ac{PR}, \ac{GR}, \ac{AR}) and a unique identifier will be assigned to each requirement.
 
 \begin{description}
-\item[WR01:] Send \ac{HTTP} request message for typed \ac{URL}s.
-\item[WR02:] Receive \ac{HTTP} responses for send requests.
+\item[WR01:] Send \ac{HTTP} request messages for \ac{URL}s typed in by the user.
+\item[WR02:] Receive \ac{HTTP} responses for the send requests.
 \item[WR03:] Display received \ac{HTML}-code.
-\item[WR04:] Display \ac{HTML} for \texttt{200}, \texttt{400}, \texttt{403} and \texttt{404} headers.
-\item[HR01:] Allow creation and editing of a homepage-\ac{URL}.
+\item[WR04:] Display the \ac{HTML}-code, when the received message is either a \texttt{200}, \texttt{400}, \texttt{403} or \texttt{404} status-code.
+\item[HR01:] Allow setting and editing of a homepage-\ac{URL}.
 \item[HR02:] Load homepage on application start-up.
-\item[FR01:] Allow adding, deleting and editing of a \ac{URL} to a list of favourites.
+\item[FR01:] Allow adding and deleting of a \ac{URL} to a list of favourites. Allow editing of favourites present on the list.
 \item[FR02:] Allow the specification of a name for a favourite.
 \item[FR03:] Request a favourite's \ac{URL} when the favourite is activated.
 \item[FR04:] Load all favourites on application start-up.
 \item[HR01:] All pages that are requested shall be saved in a history.
 \item[HR02:] Request a \ac{URL} when an entry in the history is activated.
 \item[HR03:] Load history on application start-up.
-\item[PR01:] Allow printing of displayed web page.
-\item[GR01:] Provide a \ac{GUI} for the requirements.
-\item[GR02:] Use menus, buttons, short cuts to increase \textit{accessibility}\footnote{Assumption: accessibility can be enhanced by using a standard layout common in Windows environments.}.
-\item[AR01:] Utilize multi-threading to keep application responsive.
+\item[PR01:] Allow printing of the currently displayed web page.
+\item[GR01:] Provide a \ac{GUI} for the actions specified in the requirements.
+\item[GR02:] Use menus, buttons and short cuts to increase \textit{accessibility}\footnote{Assumption: accessibility can be enhanced by using a standard layout common in Windows environments.}.
+\item[AR01:] Utilize multi-threading to keep the application responsive.
 \item[AR02:] Allow requesting of multiple web pages simultaneously.
 \end{description}

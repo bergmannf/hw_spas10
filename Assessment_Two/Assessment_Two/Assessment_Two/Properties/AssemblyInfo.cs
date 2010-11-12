@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("Assessment_Two")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Browsi - The awfully inadequate browser")]
+[assembly: AssemblyDescription("Assessment Two of the Systems Programming and Scripting Course 2010/2011 of the Heriot-Watt University")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Assessment_Two")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
+[assembly: AssemblyCompany("Heriot-Watt SPS Software")]
+[assembly: AssemblyProduct("Browsi - The awfully inadequate browser")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

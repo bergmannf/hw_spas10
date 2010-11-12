@@ -1,0 +1,140 @@
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history}{
+\section{Assessment\_\-Two\_\-Logic.Model.History Class Reference}
+\label{class_assessment___two___logic_1_1_model_1_1_history}\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+}
+
+
+Stores the history of visited webpages with their associated date.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_history_a6b4fb7bb182a57c1451b14b98b1a1417}{History} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_history}{History} class. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_a549b8b65ee161e4f6ccb4f60b5e8d0e7}{AddItem} (String url)
+\begin{DoxyCompactList}\small\item\em Adds the item. The associated time will be the current time on the executing machine. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_a9a8fe5be5a80c9be9924281829f6adbe}{AddItem} (DateTime time, String url)
+\begin{DoxyCompactList}\small\item\em Adds the item to the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_a4bb45b54bb2ee0714547b164ac3b020b}{ClearHistory} ()
+\begin{DoxyCompactList}\small\item\em Clears the history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_serializable_dictionary-g}{SerializableDictionary}$<$ DateTime, String $>$ \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_a158f0607ae529f0ac4116309ac460603}{VisitList}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the visit list. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the history of visited webpages with their associated date. 
+
+Definition at line 12 of file History.cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_a6b4fb7bb182a57c1451b14b98b1a1417}{
+\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}!History@{History}}
+\index{History@{History}!Assessment_Two_Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+\subsubsection[{History}]{\setlength{\rightskip}{0pt plus 5cm}Assessment\_\-Two\_\-Logic.Model.History.History (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_a6b4fb7bb182a57c1451b14b98b1a1417}
+
+
+Initializes a new instance of the \hyperlink{class_assessment___two___logic_1_1_model_1_1_history}{History} class. 
+
+
+
+Definition at line 35 of file History.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_a549b8b65ee161e4f6ccb4f60b5e8d0e7}{
+\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!Assessment_Two_Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+\subsubsection[{AddItem}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.History.AddItem (
+\begin{DoxyParamCaption}
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_a549b8b65ee161e4f6ccb4f60b5e8d0e7}
+
+
+Adds the item. The associated time will be the current time on the executing machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file History.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_a9a8fe5be5a80c9be9924281829f6adbe}{
+\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!Assessment_Two_Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+\subsubsection[{AddItem}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.History.AddItem (
+\begin{DoxyParamCaption}
+\item[{DateTime}]{ time, }
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_a9a8fe5be5a80c9be9924281829f6adbe}
+
+
+Adds the item to the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time of the visit.\\
+\hline
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file History.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_a4bb45b54bb2ee0714547b164ac3b020b}{
+\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}!ClearHistory@{ClearHistory}}
+\index{ClearHistory@{ClearHistory}!Assessment_Two_Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+\subsubsection[{ClearHistory}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.History.ClearHistory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_a4bb45b54bb2ee0714547b164ac3b020b}
+
+
+Clears the history. 
+
+
+
+Definition at line 71 of file History.cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_a158f0607ae529f0ac4116309ac460603}{
+\index{Assessment\_\-Two\_\-Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}!VisitList@{VisitList}}
+\index{VisitList@{VisitList}!Assessment_Two_Logic::Model::History@{Assessment\_\-Two\_\-Logic::Model::History}}
+\subsubsection[{VisitList}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SerializableDictionary}$<$DateTime, String$>$ Assessment\_\-Two\_\-Logic.Model.History.VisitList\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_a158f0607ae529f0ac4116309ac460603}
+
+
+Gets the visit list. 
+
+The visit list.
+
+Definition at line 21 of file History.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Assessment\_\-Two\_\-Logic/Model/History.cs\end{DoxyCompactItemize}

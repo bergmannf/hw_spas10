@@ -18,9 +18,19 @@ To run the test-cases the \href{http://www.nunit.org/}{NUnit}-framework (\url{ht
 
 The test-cases cover the passing of different types of parameters.
 
-A short list shall be provided:
+A short list of tests shall be provided to give a short overview:
 
-
+\LTXtable{\textwidth}{Chapters/Chapter06_TestTable}
 
 \section{Acceptance-tests}
 \label{sec:acceptance_tests}
+
+After testing the base classes the main testing was performed by running the application and entering different kinds of input:
+
+Tests included the correct display of error-messages if a field containing a \ac{URL} was filled in incorrectly or if values were not provided that were needed (e.g. omitting a name for a favourite).
+
+A list of performed tests:
+
+\LTXtable{\textwidth}{Chapters/Chapter06_AccTestTable}
+
+Even though this can not guarantee that the application is error free, it provides a good measure that it \textit{should} work reliably in most cases.

@@ -1,0 +1,265 @@
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler}{
+\section{Assessment\_\-Two\_\-Logic.Model.FavouriteHandler Class Reference}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler}\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+}
+
+
+Provides singleton access to favourites. Allows adding, editing, deleting, saving and loading of favourites.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a573fd45ff788c9c02dd3ef709fe3bd0f}{
+delegate void {\bfseries ChangeHandler} (object subject)}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a573fd45ff788c9c02dd3ef709fe3bd0f}
+
+\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_af1c331e6d4db63300367d153b0aff80b}{AddEntry} (String name, String url)
+\begin{DoxyCompactList}\small\item\em Adds the entry. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aac294d4484f32a31e950366a2ca7df60}{EditFavourite} (\hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite}{Favourite} fav, String newName, String newUrl)
+\begin{DoxyCompactList}\small\item\em Edits the favourite. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a403150401b89a8c601ddb0bd8214c211}{DeleteFavourite} (\hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite}{Favourite} fav)
+\begin{DoxyCompactList}\small\item\em Deletes the favourite. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aa2a0d3c296ccd08464966454b4cdd143}{SetFilePath} (String path)
+\begin{DoxyCompactList}\small\item\em Sets the file path. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a3ac17e67bfbb19f2a9062c1c63bbbe0c}{LoadFavourite} ()
+\begin{DoxyCompactList}\small\item\em Loads the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a6bf55d9652d9f55c56280c1edfdc68f5}{LoadFavourite} (String filePath)
+\begin{DoxyCompactList}\small\item\em Loads the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a043ce191da02f4ac9780efd484747f98}{SaveFavourite} ()
+\begin{DoxyCompactList}\small\item\em Saves the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a4c255d62b5b4843e43f27c0515e42db4}{SaveFavourite} (String path)
+\begin{DoxyCompactList}\small\item\em Saves the history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler}{FavouriteHandler} \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a26cef8791fc8ec1e782f27ca800eef8b}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the instance. \item\end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite}{Favourite} $>$ \hyperlink{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a66aa982f81b5981d93f7793fee25d6c1}{Favourites}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a04fca0eacde2eee4c85cb218c1268f2a}{
+ChangeHandler {\bfseries ChangeEvent}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a04fca0eacde2eee4c85cb218c1268f2a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides singleton access to favourites. Allows adding, editing, deleting, saving and loading of favourites. 
+
+Definition at line 14 of file FavouriteHandler.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_af1c331e6d4db63300367d153b0aff80b}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!AddEntry@{AddEntry}}
+\index{AddEntry@{AddEntry}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{AddEntry}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.AddEntry (
+\begin{DoxyParamCaption}
+\item[{String}]{ name, }
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_af1c331e6d4db63300367d153b0aff80b}
+
+
+Adds the entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a403150401b89a8c601ddb0bd8214c211}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!DeleteFavourite@{DeleteFavourite}}
+\index{DeleteFavourite@{DeleteFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{DeleteFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.DeleteFavourite (
+\begin{DoxyParamCaption}
+\item[{{\bf Favourite}}]{ fav}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a403150401b89a8c601ddb0bd8214c211}
+
+
+Deletes the favourite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fav} & The fav.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aac294d4484f32a31e950366a2ca7df60}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!EditFavourite@{EditFavourite}}
+\index{EditFavourite@{EditFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{EditFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.EditFavourite (
+\begin{DoxyParamCaption}
+\item[{{\bf Favourite}}]{ fav, }
+\item[{String}]{ newName, }
+\item[{String}]{ newUrl}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aac294d4484f32a31e950366a2ca7df60}
+
+
+Edits the favourite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fav} & The fav.\\
+\hline
+{\em newName} & The new name.\\
+\hline
+{\em newUrl} & The new URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a3ac17e67bfbb19f2a9062c1c63bbbe0c}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!LoadFavourite@{LoadFavourite}}
+\index{LoadFavourite@{LoadFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{LoadFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.LoadFavourite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a3ac17e67bfbb19f2a9062c1c63bbbe0c}
+
+
+Loads the history. 
+
+
+
+Definition at line 157 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a6bf55d9652d9f55c56280c1edfdc68f5}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!LoadFavourite@{LoadFavourite}}
+\index{LoadFavourite@{LoadFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{LoadFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.LoadFavourite (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a6bf55d9652d9f55c56280c1edfdc68f5}
+
+
+Loads the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a4c255d62b5b4843e43f27c0515e42db4}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!SaveFavourite@{SaveFavourite}}
+\index{SaveFavourite@{SaveFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{SaveFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.SaveFavourite (
+\begin{DoxyParamCaption}
+\item[{String}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a4c255d62b5b4843e43f27c0515e42db4}
+
+
+Saves the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a043ce191da02f4ac9780efd484747f98}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!SaveFavourite@{SaveFavourite}}
+\index{SaveFavourite@{SaveFavourite}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{SaveFavourite}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.SaveFavourite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a043ce191da02f4ac9780efd484747f98}
+
+
+Saves the history. 
+
+
+
+Definition at line 188 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aa2a0d3c296ccd08464966454b4cdd143}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!SetFilePath@{SetFilePath}}
+\index{SetFilePath@{SetFilePath}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{SetFilePath}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.SetFilePath (
+\begin{DoxyParamCaption}
+\item[{String}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_aa2a0d3c296ccd08464966454b4cdd143}
+
+
+Sets the file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file FavouriteHandler.cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a66aa982f81b5981d93f7793fee25d6c1}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!Favourites@{Favourites}}
+\index{Favourites@{Favourites}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{Favourites}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Favourite}$>$ Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.Favourites\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a66aa982f81b5981d93f7793fee25d6c1}
+
+
+Gets the history. 
+
+The history.
+
+Definition at line 59 of file FavouriteHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a26cef8791fc8ec1e782f27ca800eef8b}{
+\index{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}!Instance@{Instance}}
+\index{Instance@{Instance}!Assessment_Two_Logic::Model::FavouriteHandler@{Assessment\_\-Two\_\-Logic::Model::FavouriteHandler}}
+\subsubsection[{Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FavouriteHandler} Assessment\_\-Two\_\-Logic.Model.FavouriteHandler.Instance\hspace{0.3cm}{\ttfamily  \mbox{[}static, get\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_favourite_handler_a26cef8791fc8ec1e782f27ca800eef8b}
+
+
+Gets the instance. 
+
+The instance.
+
+Definition at line 34 of file FavouriteHandler.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Assessment\_\-Two\_\-Logic/Model/FavouriteHandler.cs\end{DoxyCompactItemize}

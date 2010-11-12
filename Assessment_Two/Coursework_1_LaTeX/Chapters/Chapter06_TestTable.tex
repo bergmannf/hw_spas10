@@ -1,23 +1,29 @@
-\begin{longtable}{X X X}
-\hline Under Test & Input & Output \\ 
+\begin{longtable}{X X X X}
+\hline Class Under Test & Method & Input & Output \\
+\hline 
+\hline FavouriteHandler & EditFavourite & null & ArgumentNull-Exception \\
+\hline FavouriteHandler & EditFavourite & Favourite that is not present & Argument-Exception \\
+\hline FavouriteHandler & DeleteFavourite & null & ArgumentNull-Exception \\
+\hline FavouriteHandler & DeleteFavourite & Favourite that is not present & Argument-Exception \\
+\hline FavouriteHandler & AddFavourite & - & List contains one more element \\
+\hline FavouriteHandler & AddFavourite - Delete Favourite & Add Favourite and delete same & List size is unchanged \\
+\hline FavouriteHandler & EditFavourite & Add Favourite and edit same & Favourite is changed \\
 \hline
-\hline Stock Item & Invalid StockCode & ArgumentException \\ 
-\hline Stock Item & Invalid Current Stock & ArgumentException \\ 
-\hline Stock Item & Invalid Required Stock & ArgumentException \\ 
-\hline Stock Item & Invalid Parsing & FormatException \\ 
-\hline Stock Item & Invalid Cost & ArgumentException \\ 
-\hline Bank Account & Invalid Balance & ArgumentException \\ 
-\hline Bank Account & Invalid Withdraw (Value too small)& ArgumentException \\
-\hline Bank Account & Invalid Withdraw (Value too high)& NotEnoughFundsException \\
-\hline Bank Account & Invalid Deposit (Value too small) & ArgumentException \\
-\hline Bank Account & Invalid Transfer (Value too small) & ArgumentException \\
-\hline Bank Account & Invalid Transfer (Value too high)& NotEnoughFundsException \\
-\hline Bank Account & Too little funds for transfer & NotEnoughFundsException \\
-\hline Bank Account & Invalid Parsing & FormatException \\
-\hline AppDataManager & Remove invalid item & ArgumentException \\
-\hline AppDataManager & Perform Order & Correct sequence of statements \\
-\hline AppDataManager & Order with too little funds & NotEnoughFundsException \\
-\hline File Handler & Save without file path & NoFilePathSetException \\
-\hline File Handler & Load without file path & NoFilePathSetException \\
+\hline Favourite & Create & Valid arguments & Favourite is created \\
+\hline Favourite & Create & Illegal-\ac{URL} & Argument-Exception \\
+\hline Favourite & Create & Null-\ac{URL} & Argument-Exception \\
+\hline Favourite & Create & Empty-String-Name & Argument-Exception \\
+\hline Favourite & Create & Null-Name & Argument-Exception \\
+\hline
+\hline History & Create & Valid arguments & History is created \\
+\hline History & Create & Invalid-\ac{URL} & Argument-Exception \\
+\hline
+\hline \ac{XML}Serialiser & Write & No Filepath & NoFilePathSet-Exception \\
+\hline \ac{XML}Serialiser & Read & No Filepath & NoFilePathSet-Exception \\
+\hline
+\hline PageHandler & Fetch\ac{URL} & Valid-\ac{URL} & Html-Code. Status Code 200 \\
+\hline PageHandler & Fetch\ac{URL} & Valid-\ac{URL} but not found & Html-Code. Status Code 404\footnote{As no certain way exists to generate messages that provoke 400 or 403 status codes, these could not be tested in a unit test.} \\
+\hline PageHandler & IsValid\ac{URL} & Valid-\ac{URL} & True \\
+\hline PageHandler & IsValid\ac{URL} & Invalid-\ac{URL} & False \\
 \caption{Performed tests.}
-\end{longtable} 
+\end{longtable}

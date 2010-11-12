@@ -7,6 +7,10 @@ using Assessment_Two_Logic.Interfaces;
 
 namespace Assessment_Two_Logic.Model
 {
+    /// <summary>
+    /// Provides singleton access to favourites.
+    /// Allows adding, editing, deleting, saving and loading of favourites.
+    /// </summary>
     public class FavouriteHandler
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();  

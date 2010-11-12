@@ -37,17 +37,17 @@ Func<SimpleWebResponse> method = pageHandler.FetchUrl;
 method.BeginInvoke(Done, method);
 \end{lstlisting}
 
-When the \texttt{Done()}-method is invoked, the presenter calls the view's \texttt{DisplayWebpage()}-method that prints the received \ac{HTML}-code\footnote{See \autoref{sec:implementation_view} to see details for the necessary view-implementation.}.
+When the \texttt{Done()}-method is invoked, the presenter calls the view's \texttt{DisplayWebpage()}-method that prints the received \ac{HTML}-code\footnote{See \autoref{subsubsec:view} to see details of the necessary view-implementation.}.
 
 \subsection{Homepage-Requirements}
 
-The homepage is saved as a simple string. This leads to the possibility to save it via the \texttt{ApplicationSettings} - a facility provided by the \texttt{.NET} framework.
+The homepage is saved as a simple string. This leads to the possibility to save it via the \texttt{ApplicationSettings}\footnote{See \href{MSDN}{http://msdn.microsoft.com/en-us/library/k4s6c3a0.aspx} (\url{http://msdn.microsoft.com/en-us/library/k4s6c3a0.aspx}) for more information} - a facility provided by the \texttt{.NET} framework.
 
 The only problem in this implementation is the fact that only the \texttt{WinForms} project is allowed to access the application-settings\footnote{It would be possible to provide a reference to the \ac{GUI}-project in the logic-project. However this would lead to a dependency between the logic-project and the \ac{GUI} - a circumstance that should be prevented by utilizing the \ac{MVP}-pattern. Due to this fact the \ac{GUI} writes the application settings and the logic stays independent from the \ac{GUI}.}.
 
 Due to this reason the code to write the string is located in the \texttt{SettingsWindow}:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Saving the homepage-settings.]
 private void SaveSettings(String homePage)
         {
             Settings settings = Settings.Default;
@@ -62,9 +62,9 @@ The requirements \texttt{FR01} and \texttt{FR02} were implemented in the \texttt
 
 Apart from handling the adding (\texttt{AddEntry()}), deleting (\texttt{DeleteFavourite()}) and editing (\texttt{EditFavourite()}) of favourites, the \texttt{FavouriteHandler} also handles the saving (\texttt{SaveFavourite()}) and loading (\texttt{LoadFavourites()}) of favourites.
 
-Requirement \texttt{FR04} is fulfilled by the  \texttt{FavouritePresenter}: upon creation the presenter determines the file-path for the favourite file and sets it in the \texttt{FavouriteHandler}:
+Requirement \texttt{FR04} is fulfilled by the  \texttt{FavouritePresenter}: upon creation, the presenter determines the file-path for the favourite file and sets it in the \texttt{FavouriteHandler}:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Setting up the favourite handler's filepath.]
 private void SetUpHandler()
         {
             String appFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -74,7 +74,7 @@ private void SetUpHandler()
         }
 \end{lstlisting}
 
-This approach was chosen to keep the \texttt{FavouriteHandler} reusable, whereas the presenter can be considered application-specific.
+This approach was chosen to keep the \texttt{FavouriteHandler} reusable, whereas the presenter is already closely tied to a concrete implementation, being responsible for handling the information flow.
 
 Requirement \texttt{FR03} was implemented in the \ac{GUI}: when the user clicks an element in the favourite-list, the element is determined and the url of the favourite is written into the \ac{URL}-text-field. After this has happened, a standard \ac{URL}-request is issued and the \ac{URL} will be displayed in the active tab.
 
@@ -84,7 +84,7 @@ The implementation of the history-requirements is similar to the those of the fa
 
 The main-classes are \texttt{History} and \texttt{HistoryHandler}, whereas the loading on start-up is provided by the \texttt{HistoryPresenter}.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Setting up the history handler's filepath.]
 private void SetUpHandler()
         {
             String appFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -104,7 +104,7 @@ The \texttt{PrintPresenter}'s \texttt{Print()}-method will be called for every p
 
 The method will determine the size of the String that shall be printed and set the \texttt{HasMorePages}-property to true if the String would not fit onto one page:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Printing.]
 public void Print(System.Drawing.Printing.PrintPageEventArgs e)
         {
             
@@ -144,6 +144,7 @@ Due to this fact no more implementation-details about the requirements \texttt{G
 Apart from just providing an overview over the requirements and their corresponding implementation, this section will provide an overview over certain areas of code that might be hard to understand without further explanation, but are not directly linked to a certain requirement.
 
 \subsection{View}
+\label{subsubsec:view}
 
 All \ac{GUI} classes have a common ancestor: the class \texttt{ThreadingView}:
 
@@ -157,7 +158,7 @@ All \ac{GUI} classes have a common ancestor: the class \texttt{ThreadingView}:
 
 Due to this approach all classes are able to use the \texttt{UpdateUI()}-method of this class when another thread wants to alter a \ac{GUI}-control:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Updating the \ac{GUI} from the \ac{GUI}-thread.]
 protected void UpdateUI(MethodInvoker uiDelegate)
         {
             if (InvokeRequired)
@@ -177,7 +178,7 @@ Via \texttt{InvokeRequired} it is possible to check if another thread tries to m
 In the current application this behaviour might occur when the page-request-thread calls the \texttt{PagePresenter's} \texttt{done()} method and the presenter tries to force the view to display the web-page.
 To prevent an exception from ocurring the code to update the \ac{GUI}-component is called like this:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Displaying the web-page from the \ac{GUI}-thread.]
 public void DisplayWebPage(SimpleWebResponse response)
         {
             foreach (TabPage page in this.webSitesTabControl.TabPages)
@@ -236,7 +237,7 @@ this._HistoryHandler.ChangeEvent += new HistoryHandler.ChangeHandler(this.Update
 
 After that the \texttt{Update()}-method can handle all changes:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Handling changes in the observer.]
 public void Update(object subject)
 {
       if (subject is HistoryHandler)
@@ -256,7 +257,7 @@ The pattern was employed due to the fact that two different presenters access ea
 
 However, the implementation of the singleton is the standard one found in many object-oriented languages:
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Thread-safe lazy-initialization.]
 private static HistoryHandler _Instance;
 
 /// <summary>
@@ -283,6 +284,7 @@ public static HistoryHandler Instance
 \end{lstlisting}
 
 \subsection{Serialisation}
+\label{subsubsec:serialisation}
 
 The last thing to be pointed out is the implementation of the persistence-functionality.
 

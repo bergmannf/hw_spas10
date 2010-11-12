@@ -1,0 +1,237 @@
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler}{
+\section{Assessment\_\-Two\_\-Logic.Model.HistoryHandler Class Reference}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler}\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+}
+
+
+Provides singleton access to a history. Allows adding, editing, deleting, saving and loading a history.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_ad176deacdc56461600bdd42a7eb5256e}{
+delegate void {\bfseries ChangeHandler} (object subject)}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_ad176deacdc56461600bdd42a7eb5256e}
+
+\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_a0a13a50de993d05c8bd9e158deb5cced}{AddEntry} (String url)
+\begin{DoxyCompactList}\small\item\em Adds the entry. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_af60b3706e59ff617286816a3054bdf5a}{AddEntry} (DateTime time, String url)
+\begin{DoxyCompactList}\small\item\em Adds the entry. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_a547077e4f1fdd12e9d034e2078ec8136}{SetFilePath} (String path)
+\begin{DoxyCompactList}\small\item\em Sets the file path. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_ab30f5aa9575a7996272b943dcbfdc8d5}{LoadHistory} ()
+\begin{DoxyCompactList}\small\item\em Loads the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_a5d20f4908a83201091737c2df1a86eda}{LoadHistory} (String filePath)
+\begin{DoxyCompactList}\small\item\em Loads the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_a0427bc9671a3154229cc564271a51089}{SaveHistory} ()
+\begin{DoxyCompactList}\small\item\em Saves the history. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_ac198e67cd38d0b248b7917fdd5a9006c}{SaveHistory} (String path)
+\begin{DoxyCompactList}\small\item\em Saves the history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler}{HistoryHandler} \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_a299097380605ceea09d4fb12ee4f9295}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the instance. \item\end{DoxyCompactList}\item 
+\hyperlink{class_assessment___two___logic_1_1_model_1_1_history}{History} \hyperlink{class_assessment___two___logic_1_1_model_1_1_history_handler_ad0d038e7cdd96dfded12b1186d2cbd3e}{History}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the history. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a09e2c3b597cb9f0a46871b60e4833cee}{
+ChangeHandler {\bfseries ChangeEvent}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a09e2c3b597cb9f0a46871b60e4833cee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides singleton access to a history. Allows adding, editing, deleting, saving and loading a history. 
+
+Definition at line 14 of file HistoryHandler.cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a0a13a50de993d05c8bd9e158deb5cced}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!AddEntry@{AddEntry}}
+\index{AddEntry@{AddEntry}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{AddEntry}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.AddEntry (
+\begin{DoxyParamCaption}
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a0a13a50de993d05c8bd9e158deb5cced}
+
+
+Adds the entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_af60b3706e59ff617286816a3054bdf5a}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!AddEntry@{AddEntry}}
+\index{AddEntry@{AddEntry}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{AddEntry}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.AddEntry (
+\begin{DoxyParamCaption}
+\item[{DateTime}]{ time, }
+\item[{String}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_af60b3706e59ff617286816a3054bdf5a}
+
+
+Adds the entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time.\\
+\hline
+{\em url} & The URL.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_ab30f5aa9575a7996272b943dcbfdc8d5}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!LoadHistory@{LoadHistory}}
+\index{LoadHistory@{LoadHistory}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{LoadHistory}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.LoadHistory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_ab30f5aa9575a7996272b943dcbfdc8d5}
+
+
+Loads the history. 
+
+
+
+Definition at line 111 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a5d20f4908a83201091737c2df1a86eda}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!LoadHistory@{LoadHistory}}
+\index{LoadHistory@{LoadHistory}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{LoadHistory}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.LoadHistory (
+\begin{DoxyParamCaption}
+\item[{String}]{ filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a5d20f4908a83201091737c2df1a86eda}
+
+
+Loads the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filePath} & The file path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_ac198e67cd38d0b248b7917fdd5a9006c}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!SaveHistory@{SaveHistory}}
+\index{SaveHistory@{SaveHistory}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{SaveHistory}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.SaveHistory (
+\begin{DoxyParamCaption}
+\item[{String}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_ac198e67cd38d0b248b7917fdd5a9006c}
+
+
+Saves the history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a0427bc9671a3154229cc564271a51089}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!SaveHistory@{SaveHistory}}
+\index{SaveHistory@{SaveHistory}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{SaveHistory}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.SaveHistory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a0427bc9671a3154229cc564271a51089}
+
+
+Saves the history. 
+
+
+
+Definition at line 150 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a547077e4f1fdd12e9d034e2078ec8136}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!SetFilePath@{SetFilePath}}
+\index{SetFilePath@{SetFilePath}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{SetFilePath}]{\setlength{\rightskip}{0pt plus 5cm}void Assessment\_\-Two\_\-Logic.Model.HistoryHandler.SetFilePath (
+\begin{DoxyParamCaption}
+\item[{String}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a547077e4f1fdd12e9d034e2078ec8136}
+
+
+Sets the file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file HistoryHandler.cs.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_ad0d038e7cdd96dfded12b1186d2cbd3e}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!History@{History}}
+\index{History@{History}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{History}]{\setlength{\rightskip}{0pt plus 5cm}{\bf History} Assessment\_\-Two\_\-Logic.Model.HistoryHandler.History\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_ad0d038e7cdd96dfded12b1186d2cbd3e}
+
+
+Gets the history. 
+
+The history.
+
+Definition at line 59 of file HistoryHandler.cs.
+
+\hypertarget{class_assessment___two___logic_1_1_model_1_1_history_handler_a299097380605ceea09d4fb12ee4f9295}{
+\index{Assessment\_\-Two\_\-Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}!Instance@{Instance}}
+\index{Instance@{Instance}!Assessment_Two_Logic::Model::HistoryHandler@{Assessment\_\-Two\_\-Logic::Model::HistoryHandler}}
+\subsubsection[{Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HistoryHandler} Assessment\_\-Two\_\-Logic.Model.HistoryHandler.Instance\hspace{0.3cm}{\ttfamily  \mbox{[}static, get\mbox{]}}}}
+\label{class_assessment___two___logic_1_1_model_1_1_history_handler_a299097380605ceea09d4fb12ee4f9295}
+
+
+Gets the instance. 
+
+The instance.
+
+Definition at line 34 of file HistoryHandler.cs.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Assessment\_\-Two\_\-Logic/Model/HistoryHandler.cs\end{DoxyCompactItemize}
