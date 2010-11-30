@@ -15,8 +15,8 @@ class ShoppingCart implements MyCollection
 	}
 
 	/**
-	 *
-	 *
+	 * Adds an item to the shopping cart.
+	 * 
 	 * @param <type> $article_number The article number of the article that shall be added to the cart.
 	 * @param <type> $quantity The quantity that shall be added to the cart.
 	 */
@@ -37,7 +37,7 @@ class ShoppingCart implements MyCollection
 				unset($this->items[$article_number]);
 			}
 			else {
-				throw new Exception("Can not remove more quantity than is present");
+				throw new Exception("Can not remove more items than are present");
 			}
 		}
 	}
