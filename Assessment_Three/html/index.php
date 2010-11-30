@@ -9,7 +9,8 @@ and open the template in the editor.
         <title>Homepage</title>
     </head>
     <body>
-        <?php
-        ?>
+<?php
+
+?>
     </body>
 </html>
