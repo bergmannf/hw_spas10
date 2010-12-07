@@ -26,6 +26,10 @@ class ShoppingCart implements MyCollection
 	}
 
 	/**
+	 * Removes a number of items from the shopping cart
+	 *
+	 * @param $article_number The article number of the article that shall be removed from the cart.
+	 * @param $quantity The quantity that shall be removed from the cart.
 	 */
 	public function remove_item($article_number, $quantity)
 	{
