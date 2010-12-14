@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Assessment_Two_Logic</RootNamespace>
     <AssemblyName>Assessment_Two_Logic</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,9 +32,9 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+    <Reference Include="NLog3.5, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>External Assemblies\NLog.dll</HintPath>
+      <HintPath>External Assemblies\NLog3.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="External Assemblies\NLog.dll" />
+    <Content Include="External Assemblies\NLog3.5.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

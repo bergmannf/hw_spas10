@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assessment_Two</RootNamespace>
     <AssemblyName>Assessment_Two</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\Florian Bergmann\Desktop\Assessment_Two\</PublishUrl>
@@ -63,9 +64,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+    <Reference Include="NLog3.5, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>External Assemblies\NLog.dll</HintPath>
+      <HintPath>External Assemblies\NLog3.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -211,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="External Assemblies\NLog.dll" />
+    <Content Include="External Assemblies\NLog3.5.dll" />
     <None Include="Resources\calendar_delete.png" />
     <None Include="Resources\Time Machine.png" />
   </ItemGroup>

@@ -123,6 +123,13 @@ namespace Assessment_Two.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap clock {
+            get {
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap disk_black {
             get {
                 object obj = ResourceManager.GetObject("disk_black", resourceCulture);
@@ -188,7 +195,7 @@ namespace Assessment_Two.Properties {
         
         internal static System.Drawing.Bitmap Time_Machine {
             get {
-                object obj = ResourceManager.GetObject("Time Machine", resourceCulture);
+                object obj = ResourceManager.GetObject("Time_Machine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
