@@ -1,6 +1,6 @@
 <?php
 
-require_once 'shopping_cart.php';
+require_once 'shopping_cart.inc.php';
 
 $login_errors = array();
 

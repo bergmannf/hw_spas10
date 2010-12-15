@@ -8,7 +8,7 @@ class ShoppingCart {
 	private $items;
 
 	function __construct() {
-		$items = array();
+		$this->items = array();
 	}
 
 	/**
@@ -16,12 +16,20 @@ class ShoppingCart {
 	 * @param <type> $item
 	 */
 	function add_item($item) {
-		$itemId = $item->itemId();
+		$itemId = $item->itemId;
 		if (array_key_exists($itemId, $this->items)) {
-			$currentQuantity = $this->items[$itemId]->quantity();
-			$this->items[$itemId] = currentQuantity + $item->quantity();
+			unset($this->items[$itemId]);
+		}
+		$this->items[$itemId] = $item;
+	}
+
+	function add_item_increase_quantity($item) {
+		$itemId = $item->itemId;
+		if (array_key_exists($itemId, $this->items)) {
+			$currentQuantity = $this->items[$itemId]->quantity;
+			$this->items[$itemId]->quantity = $currentQuantity + $item->quantity;
 		} else {
-			$this->items[$itemId] = $item;
+			$this->add_item($item);
 		}
 	}
 
@@ -30,11 +38,10 @@ class ShoppingCart {
 	 * @param <type> $item
 	 */
 	function remove_item($item) {
-		$itemId = $item->itemId();
+		$itemId = $item->itemId;
 		if (array_key_exists($itemId, $searcharray)) {
 			unset($this->items[$itemId]);
-		}
-		else {
+		} else {
 			throw new Exception("Element $item not found in shopping cart.");
 		}
 	}
@@ -43,9 +50,10 @@ class ShoppingCart {
 	 *
 	 * @return <type>
 	 */
-	function get_items(){
+	function get_items() {
 		return $this->items;
 	}
 
 }
+
 ?>

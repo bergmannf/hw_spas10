@@ -2,6 +2,7 @@
 require './includes/config.inc.php';
 $page_title = 'Register';
 include './includes/header.php';
+include './includes/sidebar.php';
 
 require MYSQL;
 require './includes/form_functions.inc.php';

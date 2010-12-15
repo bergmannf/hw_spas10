@@ -8,7 +8,7 @@ define('MYSQL', './includes/database.inc.php');
 
 include_once('user.php');
 include_once('item.php');
-include_once('shopping_cart.php');
+include_once('shopping_cart.inc.php');
 
 session_start();
 

@@ -20,7 +20,7 @@
 	$pages = array(
 	    'Home' => 'index.php',
 	    'Products' => 'products.php',
-	    'Shopping Cart' => 'shoppingcart.php',
+	    'Shopping Cart' => 'shopping_cart.php',
 	    'About' => 'about.php',
 	    'Register' => 'register.php'
 	);
