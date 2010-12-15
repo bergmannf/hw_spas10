@@ -88,4 +88,22 @@ function search_items($query, $category=null) {
 	return $items;
 }
 
+function get_product_by_id($productId) {
+	global $dbc;
+	$item;
+	$query = "SELECT I_ID, I_TITLE, A_FNAME, A_LNAME, I_PUBLISHER, I_SUBJECT, I_COST, I_STOCK FROM items, authors WHERE items.I_A_ID = authors.A_ID AND items.I_ID = '$productId'";
+	$result = mysqli_query($dbc, $query);
+	$row = $result->fetch_row();
+	$itemId = $row[0];
+	$quantity = 0;
+	$title = $row[1];
+	$authorId = $row[2] . ' ' . $row[3];
+	$publisher = $row[4];
+	$subject = $row[5];
+	$cost = $row[6];
+	$stock = $row[7];
+	$item = new Item($itemId, $quantity, $title, $authorId, $publisher, $subject, $cost, $stock);
+	return $item;
+}
+
 ?>

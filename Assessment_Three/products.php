@@ -56,7 +56,7 @@ $search_errors = array();
 					<?php echo $value->cost ?>
 				</td>
 				<td>
-					<?php echo '<a href="productdetails.php?id=' . $value->itemId . '">Details</a>'; ?>
+					<?php echo '<a href="product_details.php?id=' . $value->itemId . '">Details</a>'; ?>
 				</td>
 			</tr>
 			<?php
