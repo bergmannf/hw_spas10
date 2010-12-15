@@ -5,9 +5,10 @@ include_once 'user.php';
 define('DB_USER', 'fhb2');
 define('DB_PASSWORD', 'fhb2');
 define('DB_HOST', 'localhost');
+define('DB_PORT', 8889);
 define('DB_NAME', 'fhb2');
 
-$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
 
 function escape_data($data) {
 	global $dbc;

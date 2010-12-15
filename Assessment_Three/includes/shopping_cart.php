@@ -15,7 +15,7 @@ class ShoppingCart {
 	 *
 	 * @param <type> $item
 	 */
-	function addItem($item) {
+	function add_item($item) {
 		$itemId = $item->itemId();
 		if (array_key_exists($itemId, $this->items)) {
 			$currentQuantity = $this->items[$itemId]->quantity();
@@ -29,7 +29,7 @@ class ShoppingCart {
 	 *
 	 * @param <type> $item
 	 */
-	function removeItem($item) {
+	function remove_item($item) {
 		$itemId = $item->itemId();
 		if (array_key_exists($itemId, $searcharray)) {
 			unset($this->items[$itemId]);
@@ -37,6 +37,14 @@ class ShoppingCart {
 		else {
 			throw new Exception("Element $item not found in shopping cart.");
 		}
+	}
+
+	/**
+	 *
+	 * @return <type>
+	 */
+	function get_items(){
+		return $this->items;
 	}
 
 }
