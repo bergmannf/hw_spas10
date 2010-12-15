@@ -6,6 +6,10 @@ define('BASE_URI', '/Assessment_Three');
 define('BASE_URL', 'localhost/Assessment_Three/');
 define('MYSQL', './includes/database.inc.php');
 
+include_once('user.php');
+include_once('item.php');
+include_once('shopping_cart.php');
+
 session_start();
 
 function error_handler($e_number, $e_message, $e_file, $e_line, $e_vars) {
@@ -30,7 +34,7 @@ set_error_handler('error_handler');
  * @param <type> $destination The redirection url.
  * @param <type> $protocol The protocol to use to redirect the user.
  */
-function redirect_invalid_user($check = 'user_id', $destination = 'index.php', $protocol = 'http://') {
+function redirect_invalid_user($check = 'user', $destination = 'index.php', $protocol = 'http://') {
 	if (!isset($_SESSION[$check])) {
 		$url = $protocol . BASE_URL . $destination;
 		header("Location:$url");

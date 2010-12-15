@@ -8,13 +8,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 if (!empty($username)) {
 	if (!empty($password)) {
-		$username = mysqli_escape_string($dbc, $username);
-		$password = mysqli_escape_string($dbc, $username);
-		$query = "SELECT C_USERNAME FROM customers WHERE C_USERNAME = '$username' AND C_PASSWORD = '" . get_password_hash($password) . "'";
-		$result = mysqli_query($dbc, $query);
-		if (mysqli_num_rows($result) == 1) {
-			$row = mysqli_fetch_row($result);
-			$_SESSION['user_id'] = $row[0];
+		$result = get_users_by_username_and_password($username, $password);
+		if (count($result) == 1) {
+			$user = $result[0];
+			$_SESSION['user'] = $user;
 			$_SESSION['cart'] = new ShoppingCart();
 		} else {
 			$login_errors['login'] = 'The username and password do not match';

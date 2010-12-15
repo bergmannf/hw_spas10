@@ -2,18 +2,19 @@
 	<ul>
 		<li>
 			<h4>Account</h4>
-			<?php if (isset($_SESSION['user_id'])) {
+			<?php if (isset($_SESSION['user'])) {
 			?>
 				<div class="title">
 					<h4>Manage your account</h4>
 				</div>
 				<ul>
 					<li>
-						<a href="details.php" title="Show your account details">Account details</a>
+						<a href="customer_details.php" title="Show your account details">Account details</a>
 					</li>
-					<li>
+					<!-- TODO: add change password function
+     <li>
 						<a href="change_password.php" title="Change password">Change password</a>
-					</li>
+					</li>-->
 					<li>
 						<a href="logout.php" title="Logout">Logout</a>
 					</li>
