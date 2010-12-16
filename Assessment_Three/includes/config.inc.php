@@ -3,6 +3,7 @@
 $live = false;
 
 define('BASE_URI', '/Assessment_Three');
+// TODO: Change before deployment
 define('BASE_URL', 'localhost/Assessment_Three/');
 define('MYSQL', './includes/database.inc.php');
 
@@ -36,7 +37,7 @@ set_error_handler('error_handler');
  */
 function redirect_invalid_user($check = 'user', $destination = 'index.php', $protocol = 'http://') {
 	if (!isset($_SESSION[$check])) {
-		$url = $protocol . BASE_URL . $destination;
+		$url = $protocol . BASE_URL . $destination . '?invalid=true';
 		header("Location:$url");
 		exit();
 	}

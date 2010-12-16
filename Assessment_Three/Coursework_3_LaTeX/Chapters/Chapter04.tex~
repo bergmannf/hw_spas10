@@ -1,0 +1,66 @@
+%************************************************
+\chapter{User Guide}\label{ch:user_guide} % $\mathbb{ZNR}$
+%************************************************
+
+In this chapter the most common use-cases of the program will be explained. These include:
+
+\begin{enumerate}
+\item Managing (adding, deleting, editing) a stock item or bank account.
+\item Placing an order.
+\item Importing and exporting data.
+\end{enumerate}
+
+\section{Manage stock items and bank accounts}
+\label{sec:manage_stock_item}
+
+Upon starting the application the main window will be displayed.
+The main window hosts all necessary controls for the first three use cases.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{gfx/main_window.png}
+\caption{Main Window}
+\label{fig:main_window}
+\end{center}
+\end{figure}
+
+To add a stock item or a bank account a click on the appropriate button is necessary:
+ 
+% content section
+\begin{wrapfigure}{l}{5cm} % "l" or "r" for the side on the page. And the width parameter for the width of the image space.
+\centering
+\includegraphics[scale=1]{gfx/add_stock_item.png}
+\caption{Add a stock item.}
+\label{fig:add_si}
+\end{wrapfigure}
+
+Icon to add a new stock item to the application: the item will be inserted into the stock item list with dummy values.
+
+\begin{wrapfigure}{l}{5cm} % "l" or "r" for the side on the page. And the width parameter for the width of the image space.
+\centering
+\includegraphics[scale=1]{gfx/add_bank_account.png}
+\caption{Add a bank account.}
+\label{fig:add_ba}
+\end{wrapfigure}
+
+Icon to add a new bank account to the application: the account will be inserted into the bank account list with dummy values.
+
+After inserting a new stock item or bank account, the item can be chosen in the appropriate list (on the left-hand side of the application). By clicking an item, the appropriate panel will be show up, where the values can be edited.
+
+Editing needs to be completed by clicking the \textit{apply}-button. If any incorrect values were entered, the application will inform the user about the occured mistakes.
+
+To manage a bank account there are two more possible commands the user can issue: apart from changing the values, it is possible to deposit or withdraw money from the bank account. Therefore the user simply has to enter a number in the correct field and press the accompanying button.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=1.0]{gfx/bank_account_actions.png}
+\caption{Depositing and withdrawing money}
+\label{fig:ba_actions}
+\end{center}
+\end{figure}
+
+\section{Placing an order}
+\label{sec:placing_order}
+
+\section{Importing \& exporting data}
+\label{sec:import_export}

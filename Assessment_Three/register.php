@@ -5,35 +5,42 @@ include './includes/header.php';
 include './includes/sidebar.php';
 
 require MYSQL;
-require './includes/form_functions.inc.php';
+require_once './includes/form_functions.inc.php';
 
 $reg_errors = array();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$first_name = $_POST['first_name'];
-	$first_name = mysqli_escape_string($dbc, $first_name);
+	if (empty ($first_name)) {
+		$reg_errors['first_name'] = 'Please enter a first name.';
+	}
 
 	$last_name = $_POST['last_name'];
-	$last_name = mysqli_escape_string($dbc, $last_name);
+	if (empty ($last_name))
+	{
+		$reg_errors['last_name'] = 'Please enter a last name.';
+	}
 
 	$username = $_POST['username'];
-	$username = mysqli_escape_string($dbc, $username);
+	if (empty ($username)){
+		$reg_errors['username'] = 'Please enter a username.';
+	}
+
+	$address = $_POST['address'];
+	if (empty ($address)){
+		$reg_errors['address'] = 'Please enter an address.';
+	}
 
 	$password = $_POST['pass1'];
 	$validation_password = $_POST['pass2'];
-	if ($password == $validation_password) {
-		$password = mysqli_escape_string($dbc, $password);
-	} else {
+	if (!($password == $validation_password)) {
 		$reg_errors['pass2'] = 'The entered passwords did not match.';
 	}
 
 	if (empty($reg_errors)) {
-		$query = "SELECT C_USERNAME FROM customers WHERE C_USERNAME='$username'";
-		$result = mysqli_query($dbc, $query);
-		$rows = mysqli_num_rows($result);
-		if ($rows == 0) {
-			$query = "INSERT INTO customers(C_FNAME, C_LNAME, C_USERNAME, C_PASSWORD) VALUES ('$first_name', '$last_name', '$username','" . get_password_hash($password) . "')";
-			$result = mysqli_query($dbc, $query);
-			if (mysqli_affected_rows($dbc) == 1) {
+		$result = get_users_by_username_and_password($username);
+		if (count($result) == 0) {
+			$insert = insert_user_into_database($first_name, $last_name, $address, $username, $password);
+			if ($insert) {
 ?>
 				<h3> Thank you for registering</h3>
 				<p>You can now log in using your username and password.

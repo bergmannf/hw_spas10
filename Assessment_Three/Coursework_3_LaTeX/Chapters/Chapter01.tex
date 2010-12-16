@@ -1,0 +1,50 @@
+%************************************************
+\chapter{Introduction}\label{ch:introduction}
+%************************************************
+
+This chapter will provide an overview over the document and recapture the requested requirements.
+
+\section{Document overview}
+\label{sec:document_overview}
+
+The document is divided into seven chapters that will describe different aspects of the developed program:
+
+\autoref{ch:introduction} provides an overview over the document and the specified requirements, alongside certain assumptions that were made during the development.
+
+\autoref{ch:requirements} will give a short outline of the requirements that were fulfilled, as well as mention added functionality that was not requested.
+
+\autoref{ch:design} will provide a high level overview over the system's architecture.
+
+\autoref{ch:user_guide} is a short user guide that will describe the usage of the program by leading the reader through a selected choice of use cases to accomplish certain tasks.
+
+\autoref{ch:developer_guide} will be based upon \autoref{ch:design} and provide an in-depth explanation of implementation-details.
+
+\autoref{ch:testing} will outline how testing was performed and which cases have been covered.
+
+\autoref{ch:conclusions} will provide a reflection of the development process and the program and highlight areas of interest from the developer's point-of-view.
+
+\section{Remit}
+\label{sec:remit}
+
+The remit will summarize the requirements provided in the document \textit{Systems Programming \& Scripting (2010/2011) Assessment Thee} and list all assumptions made in respect to a certain requirement.
+
+For later reference throughout the document, the requirements will be divided into four groups (\ac{HO}, \ac{SE}, \ac{PR}, \ac{SHO}) and a unique identifier will be assigned to each requirement.
+
+\begin{description}
+\item[HO01:] Home-page allows user to login\footnote{Assumption: The use of a username password combo was used instead of a simple \texttt{userId} to guarantee more safety.}.
+\item[HO02:] Only logged in users are allowed to use the shop\footnote{This requirement was elicited by communication with the MACS company.}.
+\item[HO03:] Provide a link to the Search Request page.
+\item[HO04:] Display customer details after successful login.
+\item[SE01:] Allow user to search for \texttt{Name, Author or Topic}.
+\item[SE02:] Provide link to \texttt{Product Detail}.
+\item[SE03:] Provide link to \texttt{Search Request form}.
+\item[PR01:] Display book details.
+\item[PR02:] Provide book id as parameter.
+\item[PR03:] Provide link to \texttt{Search Request form}.
+\item[PR04:] Provide link to \texttt{Shopping Cart}.
+\item[SHO01:] Allow updating (add or update items) of cart.
+\item[SHO02:] Allow adding of new items.
+\item[SHO03:] Allow updating of already present items.
+\item[SHO04:] Provide link to \texttt{Shopping Cart}.
+\item[SHO05:] Provide link to \texttt{Search Request}.
+\end{description}

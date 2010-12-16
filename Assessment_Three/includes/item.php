@@ -1,4 +1,5 @@
 <?php
+
 class Item {
 
 	public $itemId;
@@ -10,7 +11,7 @@ class Item {
 	public $cost;
 	public $stock;
 
-	function  __construct($itemId, $quantity, $title, $authorId, $publisher, $subject, $cost, $stock) {
+	function __construct($itemId, $quantity, $title, $authorId, $publisher, $subject, $cost, $stock) {
 		$this->itemId = $itemId;
 		$this->quantity = $quantity;
 		$this->title = $title;
@@ -20,5 +21,15 @@ class Item {
 		$this->cost = $cost;
 		$this->stock = $stock;
 	}
+
+	function set_quantity($param) {
+		if ($param > 0) {
+			$this->quantity = $param;
+		} else {
+			throw new Exception("Item quantity can not be empty");
+		}
+	}
+
 }
+
 ?>

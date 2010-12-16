@@ -1,0 +1,101 @@
+% This file was created with JabRef 2.6.
+% Encoding: Cp1252
+
+@BOOK{Balzert09,
+  title = {{Lehrbuch der Software-Technik: Basiskonzepte und Requirements Engineering}},
+  publisher = {Spektrum},
+  year = {2009},
+  author = {Helmut Balzert},
+  address = {Heidelberg},
+  edition = {3.},
+  abstract = {Die Softwaretechnik bildet einen Grundpfeiler der Informatik. Jede
+	Softwareentwicklung basiert auf Prinzipien, Methoden und Werkzeugen.
+	Mit Basiskonzepten kann die Statik, Dynamik und Logik von Softwaresystemen
+	beschrieben und modelliert werden. Die Anforderungen an ein neues
+	Softwareprodukt zu ermitteln, zu spezifizieren, zu analysieren, zu
+	validieren und daraus eine fachliche L{\"o}sung abzuleiten bzw. ein
+	Produktmodell zu entwickeln, geh{\"o}rt mit zu den anspruchsvollsten
+	Aufgaben innerhalb der Softwaretechnik. Dieser Band des dreiteiligen
+	Lehrbuchs der Softwaretechnik vermittelt in systematischer und klassifizierender
+	Art und Weise die Basistechniken und die Basiskonzepte der Softwareentwicklung
+	und beschreibt die Aktivit{\"a}ten, Artefakte und Methoden des Requirements
+	Engineering.},
+  added-at = {2010-07-17T18:46:57.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2ac2443d87bea7fadc0510480f09a0132/flint63},
+  file = {Springer Product page:http\://www.springer.com/978-3-8274-1705-3:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/3827417058/:URL},
+  interhash = {c25f0a2b873cdb0e02032ad579e5bc29},
+  intrahash = {ac2443d87bea7fadc0510480f09a0132},
+  isbn = {9783827417053},
+  keywords = {software development v1002 book requirements engineering}
+}
+
+@BOOK{FreemF2004,
+  title = {Head First - Design Pattern},
+  publisher = {O'Reilly},
+  year = {2004},
+  editor = {Mike Loukides},
+  author = {Eric Freeman and Elisabeth Freeman},
+  added-at = {2010-09-07T21:25:41.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2417a2fcd20ff366b4eb9c00138b7699d/funthomas424242},
+  interhash = {7dae4e874e2f0b7c9ee0f0d9ee6aed2f},
+  intrahash = {417a2fcd20ff366b4eb9c00138b7699d},
+  isbn = {0-596-00712-4},
+  keywords = {Design Pattern},
+  owner = {tmichel},
+  timestamp = {14.05.2007}
+}
+
+@BOOK{McConnell:2004:CCS:1096143,
+  title = {Code Complete, Second Edition},
+  publisher = {Microsoft Press},
+  year = {2004},
+  author = {McConnell, Steve},
+  address = {Redmond, WA, USA},
+  isbn = {0735619670}
+}
+
+@BOOK{Powers2010,
+  title = {PHP Solutions:
+	
+	Dynamic Web Design Made Easy},
+  publisher = {Friends of ED},
+  year = {2010},
+  author = {David Powers},
+  isbn = {978-1-4302-3249-0},
+  owner = {Florian Bergmann},
+  timestamp = {2010.12.16}
+}
+
+@BOOK{Sommerville2006,
+  title = {Software Engineering},
+  publisher = {Addison Wesley},
+  year = {2006},
+  author = {Ian Sommerville},
+  edition = {8},
+  added-at = {2010-10-17T02:11:35.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/2a1a11c215b318a4d9dec80f323429c5f/lleme},
+  file = {Sommerville2006.pdf:Sommerville2006.pdf:PDF},
+  interhash = {dffb8e905d9dc3e19986235545befe3c},
+  intrahash = {a1a11c215b318a4d9dec80f323429c5f},
+  isbn = {9780321210265},
+  keywords = {software-engineering}
+}
+
+@BOOK{Ullman2010,
+  title = {Effortless E-Commerce with PHP and MySQL},
+  publisher = {New Riders},
+  year = {2010},
+  author = {Larry Ullman},
+  isbn = {9780321656223},
+  owner = {Florian Bergmann},
+  timestamp = {2010.12.16}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

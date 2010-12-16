@@ -1,0 +1,24 @@
+\begin{longtable}{X X X X}
+\hline Under Test & Input & Output \\
+\hline 
+\hline Login & No username & Display error to enter username. \\
+\hline Login & No password & Display error to enter password. \\
+\hline Login & Username and password do not match & Display error that login failed. \\
+\hline Register & Some field left empty & Display error that field must contain a value. \\
+\hline Register & Passwords do not match & Display error that passwords do not match. \\
+\hline Access products page & Not logged in & Display information that login is needed. \\
+\hline Access shopping cart page & Not logged in & Display information that login is needed. \\
+\hline Search books & Provide no string & All books are returned. \\
+\hline Search books & Provide string & All books matching the search query in any field are returned. \\
+\hline Search books & Provide string and category & Only books matching the search query in the given category are returned. \\
+\hline Add book & Valid input & Book is added to shopping cart. \\
+\hline Add book & Valid input and add to current quantity is checked & Quantity is increased (book was present). \\
+\hline Add book & Valid input and add to current quantity is checked & Book is added with specified quantity (book was not present). \\
+\hline Add book & Negative quantity & Display error message. \\
+\hline Add book & Non-numeric input & Display error message. \\
+\hline Update book & Delete book & Book is removed from shopping cart. \\
+\hline Update book & Edit quantity (valid) & Quantity is changed. \\
+\hline Update book & Edit quantity (invalid) & Quantity is not changed. Error message is shown. \\
+\hline Logout & -- & Logout message is displayed and session destroyed. \\
+\caption{Performed tests.}
+\end{longtable}

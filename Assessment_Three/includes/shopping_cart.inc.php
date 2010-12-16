@@ -17,17 +17,25 @@ class ShoppingCart {
 	 */
 	function add_item($item) {
 		$itemId = $item->itemId;
-		if (array_key_exists($itemId, $this->items)) {
-			unset($this->items[$itemId]);
+		if ($item->quantity > 0) {
+			if (array_key_exists($itemId, $this->items)) {
+				unset($this->items[$itemId]);
+			}
+			$this->items[$itemId] = $item;
+		} else {
+			throw new Exception("No negative quantity permitted.");
 		}
-		$this->items[$itemId] = $item;
 	}
 
 	function add_item_increase_quantity($item) {
 		$itemId = $item->itemId;
 		if (array_key_exists($itemId, $this->items)) {
 			$currentQuantity = $this->items[$itemId]->quantity;
-			$this->items[$itemId]->quantity = $currentQuantity + $item->quantity;
+			if (($item->quantity > 0) || (($currentQuantity - $item->quantity) > 0)) {
+				$this->items[$itemId]->quantity = $currentQuantity + $item->quantity;
+			} else {
+				throw new Exception("No negative quantity permitted.");
+			}
 		} else {
 			$this->add_item($item);
 		}
@@ -39,7 +47,7 @@ class ShoppingCart {
 	 */
 	function remove_item($item) {
 		$itemId = $item->itemId;
-		if (array_key_exists($itemId, $searcharray)) {
+		if (array_key_exists($itemId, $this->items)) {
 			unset($this->items[$itemId]);
 		} else {
 			throw new Exception("Element $item not found in shopping cart.");
@@ -52,6 +60,14 @@ class ShoppingCart {
 	 */
 	function get_items() {
 		return $this->items;
+	}
+
+	function get_item_for_id($itemId) {
+		if (array_key_exists($itemId, $this->items)) {
+			return $this->items[$itemId];
+		} else {
+			throw new Exception("Item does not exist");
+		}
 	}
 
 }

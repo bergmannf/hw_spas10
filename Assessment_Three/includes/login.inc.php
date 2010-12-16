@@ -13,6 +13,7 @@ if (!empty($username)) {
 			$user = $result[0];
 			$_SESSION['user'] = $user;
 			$_SESSION['cart'] = new ShoppingCart();
+			header("Location:customer_details.php");
 		} else {
 			$login_errors['login'] = 'The username and password do not match';
 		}

@@ -22,7 +22,7 @@ function create_form_input($name, $type, $errors) {
 		echo 'value="' . htmlspecialchars($value) . '"';
 	}
 	if (array_key_exists($name, $errors)) {
-		echo 'class="error"/><span class="error">', $errors[$name] . '</span>';
+		echo '/><span class="error">'. $errors[$name] . '</span>';
 	} else {
 		echo '/>';
 	}

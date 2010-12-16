@@ -1,0 +1,205 @@
+%************************************************
+\chapter{Developer Guide}\label{ch:developer_guide} % $\mathbb{ZNR}$
+%************************************************
+
+This chapter will guide the reader through the different requirements and their implementation in the application.
+
+Having finished with the requirements a section highlighting certain special cases that were encountered during the development will be described.
+
+\section{Implementation of the requirements}
+\label{sec:implementation_requirements}
+
+\subsection{Homepage-Requirements}
+\label{subsec:homepage_requirements}
+
+The requirements under the \texttt{HO}-label were fulfilled in the following manner:
+
+\subsubsection{Provide a login}
+
+The graphical representation of the login is provided in the \texttt{login\_form.inc.php} file, whereas the login-logic (the checking of the username and password) is provided via the \texttt{login.inc.php} file.
+
+This way the developer can reuse the login form by including the \texttt{login\_form.inc.php}-file and the page the form will redirect to in it's form field must implement the \texttt{login.inc.php} as well.
+
+In the current representation of the web page this page is the index page:
+
+\begin{lstlisting}[caption=Redirecting the login\_form.inc.php to the index page]
+<form action="index.php" method="post" accept-charset="utf-8">
+\end{lstlisting}
+
+\subsection{Restrict access to logged-in users}
+
+This feature is provided in the \texttt{config.inc.php}-file by declaring the function \texttt{redirect\_invalid\_users()}:
+
+\begin{lstlisting}[caption=Redirecting invalid users]
+function redirect_invalid_user($check = 'user', $destination = 'index.php', $protocol = 'http://') {
+	if (!isset($_SESSION[$check])) {
+		$url = $protocol . BASE_URL . $destination . '?invalid=true';
+		header("Location:$url");
+		exit();
+	}	
+}
+
+\end{lstlisting}
+%$
+This function checks if a user is already saved in the Session and will only allow user's where this is the case to proceed. The session-variable is set in the function that checks the login.
+
+\subsection{Provide a link to the search request}
+
+This requirements is fulfilled by providing a header via the \texttt{header.php} file that provides links to the major pages.
+
+\subsection{Show user details after logging in}
+
+This requirements is fulfilled by a call to the header function with the \texttt{customer\_details.php} file as destination, after a successful login.
+
+\section{Search requirements}
+
+The search requirements were fulfilled in the following manner:
+
+\subsection{Search functionality}
+
+The search functionality is provided via two files: the form to enter the possible values is declared in the \texttt{products.php} file, whereas the real search function is declared in the \texttt{database.inc.php} file.
+
+The search function is declared in the database file, as it relies heavily on SQL to perform the search.
+
+Therefore an appropriate string is concatenated that represents the desired search:
+
+\begin{lstlisting}[caption=The search function]
+function search_items($search, $category=null) {
+	global $dbc;
+	$items = array();
+	$query;
+	if (isset($category)) {
+		$query = "SELECT i.I_ID, i.I_TITLE, i.I_A_ID, i.I_PUBLISHER, i.I_SUBJECT, i.I_COST, i.I_STOCK FROM items i, authors a WHERE I_A_ID = A_ID AND ";
+		switch ($category) {
+			case 'Title':
+				$query.= "i.I_TITLE like '%$search%'";
+				break;
+			case 'Author':
+				$query.= "a.A_FNAME like '%$search%' OR a.A_LNAME like '%$search%'";
+				break;
+			case 'Publisher':
+				$query.= "i.I_PUBLISHER like '%$search%'";
+				break;
+			case 'Topic':
+				$query.= "i.I_SUBJECT like '%$search%'";
+				break;
+			default:
+				$query = "SELECT DISTINCT i.I_ID, i.I_TITLE, i.I_A_ID, i.I_PUBLISHER, i.I_SUBJECT, i.I_COST, i.I_STOCK FROM items i, authors a WHERE I_A_ID = A_ID AND ";
+				$query .= "i.I_TITLE like '%$search%' OR i.I_PUBLISHER like '%$search%' OR i.I_SUBJECT like '%$search%' OR a.A_FNAME like '%$search%' OR a.A_LNAME like '%$search%'";
+		}
+	} else {
+		$query = "SELECT DISTINCT i.I_ID, i.I_TITLE, i.I_A_ID, i.I_PUBLISHER, i.I_SUBJECT, i.I_COST, i.I_STOCK FROM items i, authors a WHERE I_A_ID = A_ID AND I_A_ID = A_ID AND ";
+		$query .= "i.I_TITLE like '%$search%' OR i.I_PUBLISHER like '%$search%' OR i.I_SUBJECT like '%$search%' OR a.A_FNAME like '%$search%' OR a.A_LNAME like '%$search%'";
+	}
+	$result = mysqli_query($dbc, $query);
+	while ($row = $result->fetch_row()) {
+		$itemId = $row[0];
+		$quantity = 0;
+		$title = $row[1];
+		$authorId = $row[2];
+		$publisher = $row[3];
+		$subject = $row[4];
+		$cost = $row[5];
+		$stock = $row[6];
+		$item = new Item($itemId, $quantity, $title, $authorId, $publisher, $subject, $cost, $stock);
+		array_push($items, $item);
+	}
+	return $items;
+}
+\end{lstlisting}
+
+This search either just compares one attribute (or two in the case of the author) depending on the category, or it tries to find the provided string in all fields.
+
+\subsection{Links}
+
+The links are provided via the header from the \texttt{header.php} file.
+
+\section{Product requirements}
+\label{sec:product_requirements}
+
+\subsection{Display product details}
+
+The product details are displayed via the \texttt{product\_details.php} file that queries the database via the \texttt{database.inc.php} file and the \texttt{id} that was provided from the search form via \texttt{GET}-request.
+
+After that the website is created.
+
+\subsection{Provide links}
+
+The links are provided via the header from the \texttt{header.php} file.
+
+\section{Shopping cart requirements}
+
+The shopping cart requirements were implemented slightly different than requested:
+
+\subsection{Updating of already present items}
+
+This functionality is provided by the \texttt{shopping\_cart.php} file.
+It declares a form in every line of the table that will allow the user to either delete an item or edit it's quantity:
+
+\begin{lstlisting}[caption=Shopping cart form for editing an existing item.]
+<form action="" method="post" accept-charset="utf-8">
+	<input type="text" <?php echo 'name="quantity" id="quantity" value="' . $value->quantity . '"'; ?>/>
+	<button type="submit" <?php echo 'name="delete" id="delete" value="' . $value->itemId . '"'; ?>><img src="images/shopping-basket--minus.png"/> Delete</button>
+	<button type="submit" <?php echo 'name="edit" id="edit" value="' . $value->itemId . '"'; ?>><img src="images/shopping-basket--pencil.png"/> Edit</button>
+</form>
+\end{lstlisting}
+% $
+As can be seen the form will call the same page again.
+
+The page will then determine if it was called via a \texttt{POST}-request and, if this is the case, perform the specified action depending on the button that was pressed.
+
+As can be seen from the form, the affected item will be determined via the button's value.
+
+\subsection{Adding items}
+
+While implementing the shopping cart the approach to allow a user to add items from the shopping cart page seemed counter-intuitive.
+
+Well known sites like \url{http://www.amazon.co.uk} only allow the addition of item's from the search.
+As this seemed a reasonable approach it was copied - why would a user go to the shopping cart to add new items?
+
+\subsection{Provide links}
+
+The links are provided via the header from the \texttt{header.php} file.
+
+\section{Details of the implementation}
+\label{sec:details_implementation}
+
+\subsection{Modularity}
+
+While implementing the bookstore a \texttt{modular} approach was taken to minimise the repetition of code.
+
+Therefore many files are includes: for example the header, footer and sidebar of every web page are implemented in one php file that is included in the page (\texttt{footer.php, sidebar.php, header.php}).
+
+Moreover a central file included by every page was created that holds all information that needs to be accessible to all pages (e.g. access to the database). This file is called \texttt{config.inc.php} and can be seen in the appendix.
+
+In this file a variable is defined (\$live) that decides whether whole error-messages are printed or just a short error-notice. Upon releasing the bookstore this variable should be set to \texttt{true}.
+
+\subsection{Form functions}
+
+Apart from this the \texttt{form\_functions.inc.php} file provides a convenience function to create form elements of the type \texttt{text} or \texttt{password}. This way standard form elements can be created easily and with reliable error-handling. Only a reference to an array where errors can be stored in needs to be provided.
+
+\begin{lstlisting}
+function create_form_input($name, $type, $errors) {
+	$value = null;
+	if (isset($_POST[$name])) {
+		$value = $_POST[$name];
+		if ($value && get_magic_quotes_gpc()) {
+			$value = stripslashes($value);
+		}
+	}
+	if ($type == 'text' || $type == 'password') {
+		echo '<input type="' . $type . '"name="' . $name . '"id="' . $name . '"';
+	}
+	if ($value) {
+		echo 'value="' . htmlspecialchars($value) . '"';
+	}
+	if (array_key_exists($name, $errors)) {
+		echo '/><span class="error">'. $errors[$name] . '</span>';
+	} else {
+		echo '/>';
+	}
+}
+\end{lstlisting}
+%$
+
+Moreover nearly every form is handled on the same page it is declared on (except the displaying of product details): this approach allows the function that creates the form elements to reuse values in the POST variable, if they are present. This way the form remembers the old input, but will still display the error-messages.
